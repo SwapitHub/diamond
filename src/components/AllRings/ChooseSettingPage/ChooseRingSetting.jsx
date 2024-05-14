@@ -1167,7 +1167,7 @@ const ChooseRingSetting = () => {
                     </div>
                   </div>
                 </div>
-<h1>jhfgdfgdfgdfgdfgdfgdjhgd</h1>
+<h1>jhfgdfgdfgdfgdfgdfgdjhgd shamsher</h1>
                 <div className="shape-main">
                   <span>Diamond Shape</span>
                   <SlickSlider
