@@ -24,6 +24,7 @@ import debounce from "lodash.debounce";
 import { productList } from "../../../redux/productAction";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { Helmet } from "react-helmet";
 
 const ChooseRingSetting = () => {
   const wishListDataBase = useSelector((state) => state.productDataWishlist);
@@ -714,6 +715,9 @@ const ChooseRingSetting = () => {
       }
     });
   }
+  <Helmet>
+    <title>my name</title>
+  </Helmet>
   // ===================get wishList all data
 
   // useEffect(() => {
