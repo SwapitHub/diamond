@@ -1,30 +1,29 @@
-import React, { useState, useEffect, useContext, lazy } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
-import Slider from "react-slick";
-import { IoIosStar, IoMdHeart } from "react-icons/io";
+import debounce from "lodash.debounce";
+import React, { useContext, useEffect, useState } from "react";
+import { BiDownArrow, BiSolidPhoneCall, BiUpArrow } from "react-icons/bi";
 import { CiHeart } from "react-icons/ci";
-import { MdEmail } from "react-icons/md";
-import { BiUpArrow, BiDownArrow, BiSolidPhoneCall } from "react-icons/bi";
-import { RiTruckLine } from "react-icons/ri";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { IoMdHeart } from "react-icons/io";
+import { IoInformationCircleOutline } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
+import { RiTruckLine } from "react-icons/ri";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addToWishList,
-  removeToWishlist,
-  setWishlistDetails,
-} from "../../../../redux/action";
+import { Link, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-use-history";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import { v4 as uuidv4 } from "uuid";
 import { UserContext } from "../../../../App";
-import { useHistory } from "react-router-use-history";
-import debounce from "lodash.debounce";
-import { IoInformationCircleOutline } from "react-icons/io5";
-import { ShapePopup } from "../../popups/ShapePopup";
-import LoaderSpinner from "../../../LoaderSpinner";
+import {
+  addToWishList,
+  removeToWishlist
+} from "../../../../redux/action";
 import { productList } from "../../../../redux/productAction";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import LoaderSpinner from "../../../LoaderSpinner";
+import { ShapePopup } from "../../popups/ShapePopup";
 
 export const DetailRingProduct = () => {
   const history = useHistory(); // Call useHistory at the top level of the component
