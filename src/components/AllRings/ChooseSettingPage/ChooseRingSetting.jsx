@@ -974,7 +974,6 @@ const ChooseRingSetting = () => {
                   </Link>
                 </div>
               </div>
-<h1>jgdhghgfdhgdfgds</h1>
               {/* shop by style filtering start here */}
               <div
                 className={`shop-by-page-common shop-by-shape-style buttons-container filter-button ${
