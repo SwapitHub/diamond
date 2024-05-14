@@ -1,22 +1,20 @@
 import axios from "axios";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { CiHeart } from "react-icons/ci";
+import { IoMdHeart } from "react-icons/io";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-use-history";
 import SlickSlider from "react-slick";
 import { v4 as uuidv4 } from "uuid";
+import { UserContext } from "../../../App";
 import {
   addToWishList,
-  removeToWishlist,
-  setWishlistDetails,
+  removeToWishlist
 } from "../../../redux/action";
-import { UserContext } from "../../../App";
-import { IoMdHeart } from "react-icons/io";
-import LoaderSpinner from "../../LoaderSpinner";
-import { useHistory } from "react-router-use-history";
-import debounce from "lodash.debounce";
 import { productList } from "../../../redux/productAction";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import LoaderSpinner from "../../LoaderSpinner";
 
 export const ChooseGemstones = () => {
   const location = useLocation();
