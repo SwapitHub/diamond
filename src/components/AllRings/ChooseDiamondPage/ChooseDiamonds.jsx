@@ -1,17 +1,14 @@
 import axios from "axios";
+import debounce from "lodash.debounce";
 import React, { useEffect, useState } from "react";
-import { FaAngleDown, FaCamera } from "react-icons/fa6";
-import { HiMiniInformationCircle } from "react-icons/hi2";
-import { PiVanFill } from "react-icons/pi";
+import { FaAngleDown } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
-import Slider from "react-slider";
-import Switch from "react-switch";
-import LoaderSpinner from "../../LoaderSpinner";
+import { useHistory } from "react-router-use-history";
 import SlickSlider from "react-slick";
+import Slider from "react-slider";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import { useHistory } from "react-router-use-history";
-import debounce from "lodash.debounce";
+import LoaderSpinner from "../../LoaderSpinner";
 
 export const ChooseDiamonds = () => {
   const location = useLocation();

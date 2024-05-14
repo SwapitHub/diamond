@@ -288,7 +288,7 @@ const ChooseRingSetting = () => {
   const style = "style";
   const shape = "shape";
   const metal = "metal";
-  
+  const price = "price";
 
   const [styleFilter, setStyleFilter] = useState(style);
   const FilterProduct = (styleData) => {
@@ -1167,7 +1167,7 @@ const ChooseRingSetting = () => {
                     </div>
                   </div>
                 </div>
-
+<h1>jhfgdfgdfgdfgdfgdfgdjhgd</h1>
                 <div className="shape-main">
                   <span>Diamond Shape</span>
                   <SlickSlider
