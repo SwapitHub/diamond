@@ -1,30 +1,28 @@
 import axios from "axios";
 import $ from "jquery";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import debounce from "lodash.debounce";
+import React, { useContext, useEffect, useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoMdHeart } from "react-icons/io";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import Select from "react-select";
 import SlickSlider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import { v4 as uuidv4 } from "uuid";
+import { UserContext } from "../../../App";
 import { ProductListFaq } from "../../../pages/home/ProductListFaq";
 import { ProductListMoreToExplore } from "../../../pages/home/ProductListMoreToExplore";
 import {
   addToWishList,
-  removeToWishlist,
-  setWishlistDetails,
+  removeToWishlist
 } from "../../../redux/action";
+import { productList } from "../../../redux/productAction";
 import LoaderSpinner from "../../LoaderSpinner";
 import { ShopByStyleMobileSlider } from "./ShopByStyleMobileSlider";
-import { v4 as uuidv4 } from "uuid";
-import { UserContext } from "../../../App";
-import debounce from "lodash.debounce";
-import { productList } from "../../../redux/productAction";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-import { Helmet } from "react-helmet";
 
 const ChooseRingSetting = () => {
   const wishListDataBase = useSelector((state) => state.productDataWishlist);
@@ -289,8 +287,6 @@ const ChooseRingSetting = () => {
   // filter shape
   const style = "style";
   const shape = "shape";
-  const metal = "metal";
-  const price = "price";
 
   const [styleFilter, setStyleFilter] = useState(style);
   const FilterProduct = (styleData) => {
