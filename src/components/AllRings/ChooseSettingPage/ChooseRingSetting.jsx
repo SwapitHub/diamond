@@ -879,7 +879,7 @@ const ChooseRingSetting = () => {
             </div>
           ) : (
             <>
-              <h1 className="center">ENGAGEMENT RI</h1>
+              <h1 className="center">ENGAGEMENT RINGS</h1>
               <div className="bread-cram-setting-pages">
                 <Link to="/">Home</Link>
                 <Link to="/engagement-rings"> / Engagement Rings</Link> / Settings
