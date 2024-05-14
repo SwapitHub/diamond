@@ -715,9 +715,7 @@ const ChooseRingSetting = () => {
       }
     });
   }
-  <Helmet>
-    <title>my name</title>
-  </Helmet>
+ 
   // ===================get wishList all data
 
   // useEffect(() => {
