@@ -1,46 +1,45 @@
+import axios from "axios";
+import debounce from "lodash.debounce";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { RxDotFilled } from "react-icons/rx";
-import { MdMarkEmailRead } from "react-icons/md";
-import { TfiEmail } from "react-icons/tfi";
+import { CiHeart } from "react-icons/ci";
+import { FaTruckFast } from "react-icons/fa6";
+import { GiMapleLeaf } from "react-icons/gi";
+import { IoIosArrowDown, IoIosArrowUp, IoMdHeart } from "react-icons/io";
 import {
   IoCallOutline,
   IoChatbubbleOutline,
   IoDiamond,
   IoInformationCircleOutline,
 } from "react-icons/io5";
+import { MdMarkEmailRead } from "react-icons/md";
+import { RxDotFilled } from "react-icons/rx";
+import { TfiEmail } from "react-icons/tfi";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
 import Popup from "reactjs-popup";
-import { DropHint } from "../forntFiles/DropHint";
-import { FaTruckFast } from "react-icons/fa6";
-import { IoIosArrowDown, IoIosArrowUp, IoMdHeart } from "react-icons/io";
-import { GiMapleLeaf } from "react-icons/gi";
-import { CaratPopup } from "./popups/CaratPopup";
-import { CutPopup } from "./popups/CutPopup";
-import { ColorPopup } from "./popups/ColorPopup";
-import { ClarityPopup } from "./popups/ClarityPopup";
-import { ShapePopup } from "./popups/ShapePopup";
-import { MeasPopup } from "./popups/MeasPopup";
-import { TablePopup } from "./popups/TablePopup";
-import { DepthPopup } from "./popups/DepthPopup";
-import { SymmetryPopup } from "./popups/SymmetryPopup";
-import { PolishPopup } from "./popups/PolishPopup";
-import { GirdlePopup } from "./popups/GirdlePopup";
-import { CuletPopup } from "./popups/CuletPopup";
-import { FlourePopup } from "./popups/FlourePopup";
-import { PricePopup } from "./popups/PricePopup";
-import { BankPopup } from "./popups/BankPopup";
-import { CiHeart } from "react-icons/ci";
-import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import { UserContext } from "../../App";
 import {
   addToWishList,
-  removeToWishlist,
-  setWishlistDetails,
+  removeToWishlist
 } from "../../redux/action";
-import { useDispatch, useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
-import debounce from "lodash.debounce";
 import { productList } from "../../redux/productAction";
+import { DropHint } from "../forntFiles/DropHint";
+import { BankPopup } from "./popups/BankPopup";
+import { CaratPopup } from "./popups/CaratPopup";
+import { ClarityPopup } from "./popups/ClarityPopup";
+import { ColorPopup } from "./popups/ColorPopup";
+import { CuletPopup } from "./popups/CuletPopup";
+import { CutPopup } from "./popups/CutPopup";
+import { DepthPopup } from "./popups/DepthPopup";
+import { FlourePopup } from "./popups/FlourePopup";
+import { GirdlePopup } from "./popups/GirdlePopup";
+import { MeasPopup } from "./popups/MeasPopup";
+import { PolishPopup } from "./popups/PolishPopup";
+import { PricePopup } from "./popups/PricePopup";
+import { ShapePopup } from "./popups/ShapePopup";
+import { SymmetryPopup } from "./popups/SymmetryPopup";
+import { TablePopup } from "./popups/TablePopup";
 
 export const SelectDiamond = () => {
   const [diamondDetails, setDiamondDetails] = useState({});
