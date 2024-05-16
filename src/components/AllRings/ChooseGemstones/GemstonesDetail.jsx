@@ -1,34 +1,30 @@
+import axios from "axios";
+import debounce from "lodash.debounce";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { RxDotFilled } from "react-icons/rx";
-import { MdFamilyRestroom, MdMarkEmailRead } from "react-icons/md";
-import { TfiEmail } from "react-icons/tfi";
+import { CiHeart } from "react-icons/ci";
+import { FaTruckFast } from "react-icons/fa6";
+import { IoIosArrowDown, IoIosArrowUp, IoMdHeart } from "react-icons/io";
 import {
   IoCallOutline,
   IoChatbubbleOutline,
-  IoDiamond,
-  IoInformationCircleOutline,
+  IoInformationCircleOutline
 } from "react-icons/io5";
-import Popup from "reactjs-popup";
-import { FaRegHeart, FaTruckFast } from "react-icons/fa6";
-import { IoIosArrowDown, IoIosArrowUp, IoMdHeart } from "react-icons/io";
-import { GiMapleLeaf } from "react-icons/gi";
-import { DropHint } from "../../forntFiles/DropHint";
-import { AverageDimensionsPopup } from "../popups/AverageDimensionsPopup";
+import { MdFamilyRestroom, MdMarkEmailRead } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
-import { CiHeart } from "react-icons/ci";
-import axios from "axios";
+import { TfiEmail } from "react-icons/tfi";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
+import Popup from "reactjs-popup";
+import { v4 as uuidv4 } from "uuid";
+import { UserContext } from "../../../App";
 import {
   addToCart,
   addToWishList,
-  removeToWishlist,
-  setWishlistDetails,
+  removeToWishlist
 } from "../../../redux/action";
-import { useDispatch, useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
-import { UserContext } from "../../../App";
-import debounce from "lodash.debounce";
 import { productList, productListCart } from "../../../redux/productAction";
+import { DropHint } from "../../forntFiles/DropHint";
+import { AverageDimensionsPopup } from "../popups/AverageDimensionsPopup";
 
 export const GemstonesDetail = () => {
   const dispatch = useDispatch();
