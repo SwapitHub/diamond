@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Slider from "react-slick";
 
 export const Banner = () => {
   const [homeContext, setHomeContext] = useState([]);
@@ -8,15 +9,12 @@ export const Banner = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-
         const response = await axios.get(
           "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/homecontent"
         );
         const data = response.data.data;
 
         setHomeContext(data);
-
-
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -25,26 +23,81 @@ export const Banner = () => {
     fetchData();
   }, []);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+  };
   return (
     <>
-      <div className="banner-main">
+      <section className="banner-section">
         <div className="container">
-          <div className=" banner flex">
-            <div className="banner-text">
-              <h1>{homeContext.main_banner_title}</h1>
-              <span>{homeContext.main_banner_subtitle}</span>
-              <div>
-                <Link className="button" to="engagement-rings/start-with-a-setting">
-                  Shop Engagement Rings
-                </Link>
+          <div className="common-row banner">
+            <Slider {...settings}>
+              <div className="banner-img-slider">
+                <div className="banner-ring-text-btn">
+                  <h3>Celebrate Love with Timeless Elegance!</h3>
+                  <span>
+                    Explore Our Stunning Collection and Find Your Perfect Piece
+                    Today!
+                  </span>
+                  <div className="banner-Rings">
+                    <Link
+                      className="button"
+                      to="engagement-rings/start-with-a-setting"
+                    >
+                      See Wedding Rings
+                    </Link>
+                  </div>
+                </div>
+                <img src="./images/banner_2.png" alt="" />
               </div>
-            </div>
-            <div className="banner-img">
-              <img src={homeContext.main_banner} alt="" loading="lazy" />
-            </div>
+
+              <div className="banner-img-slider">
+                <div className="banner-ring-text-btn">
+                  <h3>Celebrate Love with Timeless Elegance!</h3>
+                  <span>
+                    Explore Our Stunning Collection and Find Your Perfect Piece
+                    Today!
+                  </span>
+                  <div className="banner-Rings">
+                    <Link
+                      className="button"
+                      to="engagement-rings/start-with-a-setting"
+                    >
+                      See Wedding Rings
+                    </Link>
+                  </div>
+                </div>
+                <img src="./images/banner_2.png" alt="" />
+              </div>
+
+              <div className="banner-img-slider">
+                <div className="banner-ring-text-btn">
+                  <h3>Celebrate Love with Timeless Elegance!</h3>
+                  <span>
+                    Explore Our Stunning Collection and Find Your Perfect Piece
+                    Today!
+                  </span>
+                  <div className="banner-Rings">
+                    <Link
+                      className="button"
+                      to="engagement-rings/start-with-a-setting"
+                    >
+                      See Wedding Rings
+                    </Link>
+                  </div>
+                </div>
+                <img src="./images/banner_2.png" alt="" />
+              </div>
+            </Slider>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

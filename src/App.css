@@ -150,9 +150,17 @@ img.clicked {
   border-radius: 100%;
 }
 a.nature-active {
-  border: 2px solid #310f4c;
+  border-radius: 11px;
+  border: 4.4px solid #734E90;
+  background: #FFF;
+  color: #734E90;
+  font-size: 15.4px;
+  font-weight: 800;
 }
-
+.Diamond-Original > a:hover {
+  border: 4.4px solid #734E90;
+ 
+}
 .header-icons .search-icon > input.search-open {
   width: 200px;
   transition: all 0.3s ease-in-out;
@@ -179,6 +187,7 @@ a.nature-active {
 }
 .data-base-cart .shoping-card.wishLIst-cart {
   width: 100%;
+  font-family: m;
 }
 .wisher-imager {
   cursor: pointer;
@@ -541,4 +550,238 @@ span.common-stand-img-1,span.common-stand-img.white-stand-img {
 }
 .all-metal-color .color{
   display: none;
+}
+/* ============banner new css start */
+
+.common-row.banner .banner-img-slider {
+  margin: 0 auto;
+  position: relative;
+}
+section.banner-section .container{
+  background: #E8E8E8;
+}
+
+
+
+.common-row.banner .banner-ring-text-btn-1 {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  top: 70px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.banner-ring-text-btn > h3 {
+  color: #310F4C;
+}
+.banner-img-slider > img {
+  margin: 0 auto;
+}
+.banner-ring-text-btn > span {
+  color: #310F4C;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138%;
+  padding: 20px 0 25px;
+}
+.common-row.banner .slick-prev {
+  left: 15px;
+  background: #310F4C;
+  padding: 15px;
+
+}
+.common-row.banner .slick-next {
+  right: 20px;
+  background: #310F4C;
+  padding: 15px;
+
+}
+.common-row.banner button.slick-arrow.slick-next:after, .common-row.banner button.slick-arrow.slick-prev:after{
+  border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.common-row.banner button.slick-arrow.slick-next:after{
+  right: 12px;
+  top: 9px;
+}
+.common-row.banner button.slick-arrow.slick-prev:after{
+  right: 7px;
+  top: 9px;
+}
+.common-row.banner .slick-dots {
+  bottom: 18px;
+ 
+}
+.common-row.banner .slick-dots li button:before {
+  font-size: 13px;  
+  color: #310F4C;
+
+}
+.banner-img-slider {
+  display: flex !important;
+  flex-direction: column ;
+  align-items: center ;
+  justify-content: center ;
+  min-height: 646px;
+  text-align: center;
+}
+.common-row.banner .banner-ring-text-btn {
+
+  margin-bottom: 50px;
+}
+/* ============banner new css end */
+/*============ see-products  start====*/
+section.see-products-main .common-row.see-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 7px;
+  flex-wrap: wrap;
+}
+
+section.see-products-main .see-products-img > img {
+  min-height: 295px;
+}
+
+section.see-products-main .see-products-img {
+  width: 24.5%;
+  position: relative;
+}
+.See-Products {
+  position: absolute;
+  bottom: 25px;
+  color: #FFF;
+  font-family: "Sackers Gothic Light AT";
+  font-size: 18.909px;
+  font-weight: 400;
+  line-height: 140%;
+  left: 25px;
+}
+
+.See-Products > span:nth-child(2) {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+}
+/*============ see-products  start====*/
+
+/*============ EngagementBridal  start====*/
+
+.EngagementBridal-img, .EngagementBridal-text {
+  width: 47.8%;
+}
+.EngagementBridal-2-img > span {
+  display: block;
+  color: #000;
+  font-family: Inter;
+  font-size: 17px;
+  line-height: 166%;
+  padding: 36px 0;
+}
+.EngagementBridal-2-img {
+  width: 33%;
+  text-align: center;
+}
+.EngagementBridal-2-img > p {
+  color: #000;
+  font-size: 17px;
+  font-weight: 200;
+  line-height: 166%;
+}
+.EngagementBridal-2-img.text > a {
+  width: 100%;
+  font-weight: 400;
+}
+.EngagementBridal-2-img.text {
+  padding: 50px 50px 0;
+}
+.EngagementBridal-text a.button {
+  background: transparent;
+  color: #1B1818;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  border-color: #000;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+.flex.common-row.EngagementBridal {
+  background: #fff;
+}
+.EngagementBridal-text {
+  padding: 0 65px 0 0;
+}
+.EngagementBridal-text > p {
+  padding: 35px 0 40px;
+}
+.EngagementBridal-img > img {
+  display: block;
+}
+/*============ EngagementBridal  start====*/
+
+section.AnniversaryRing-main .contant-bar p {
+  color: #727272;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  min-height: 120px;
+}
+.AnniversaryRing-main .ring-grid-sec .grid-wrapper-bar {
+  width: calc(50% - 10px);
+  text-align: center;
+}
+.AnniversaryRing-main  .grid-wrapper-bar .img-bar img {
+  width: 100%;
+  max-width: 100%;
+  min-height: auto;
+  max-height: 100%;
+
+}
+.AnniversaryRing-main  .grid-wrapper-bar a {
+  display: inline-block;
+  padding: 12px 48px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  color: #1B1818;
+}
+/* new start with setting */
+.ring-choose-setting.flex {
+  justify-content: center;
+  column-gap: 18px;
+  border: 1px solid #E4E4E4;
+  border-radius: 50px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 40px auto;
+}
+.one-choose-setting:first-child {
+  background: #734E90;
+  padding: 17px 30px 17px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+.one-choose-setting:last-child {
+  padding: 17px 20px 17px 0px;
+}
+.one-choose-setting:first-child > span{
+  color: #fff;
+}
+.one-choose-setting > span {
+  color: #310F4C;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+}
+.ring-choose-setting .svg-icn {
+  display: inline-flex;
 }

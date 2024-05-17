@@ -4,8 +4,8 @@ import debounce from "lodash.debounce";
 import React, { useContext, useEffect, useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoMdHeart } from "react-icons/io";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import Select from "react-select";
@@ -16,10 +16,7 @@ import { v4 as uuidv4 } from "uuid";
 import { UserContext } from "../../../App";
 import { ProductListFaq } from "../../../pages/home/ProductListFaq";
 import { ProductListMoreToExplore } from "../../../pages/home/ProductListMoreToExplore";
-import {
-  addToWishList,
-  removeToWishlist
-} from "../../../redux/action";
+import { addToWishList, removeToWishlist } from "../../../redux/action";
 import { productList } from "../../../redux/productAction";
 import LoaderSpinner from "../../LoaderSpinner";
 import { ShopByStyleMobileSlider } from "./ShopByStyleMobileSlider";
@@ -77,7 +74,7 @@ const ChooseRingSetting = () => {
   const [metalId, setMetalId] = useState([]);
   const [priceShorting, setPriceShorting] = useState();
   const [wishlistId, setWishlistId] = useState();
- const [breadCrumbColor, setBreadCrumbColor] = useState()
+  const [breadCrumbColor, setBreadCrumbColor] = useState();
 
   // bridal set for start
   const checkedBridalSets = queryParams.get("bridal-sets");
@@ -276,10 +273,10 @@ const ChooseRingSetting = () => {
   const onChangeName = (value, className, slug) => {
     setChangeName({ value, className });
     setIsActive(!isActive);
-    setActivePage(className)
-    
+    setActivePage(className);
+
     setActiveColor(value);
-   console.log(value);
+    console.log(value);
   };
 
   // ======================metal three color rose yellow white end =============================
@@ -363,10 +360,10 @@ const ChooseRingSetting = () => {
     setShapeName([]);
   };
 
-  const resetAllColor = () =>{
-   setMetalColorValue()    
-   setMetalId([])
-  }
+  const resetAllColor = () => {
+    setMetalColorValue();
+    setMetalId([]);
+  };
 
   const resetOneStyles = (resetOneStylesSlug) => {
     setActiveStyleIds((prevActiveStyleIds) =>
@@ -380,15 +377,14 @@ const ChooseRingSetting = () => {
   // =============== shop by  style end==============
 
   // =============== shop by metal start ==============
-  const [metalColorValue, setMetalColorValue] = useState()
+  const [metalColorValue, setMetalColorValue] = useState();
   const metalOnclick = (metaColorId, metalValueColor) => {
     setMetalId((prevMetalID) =>
       prevMetalID === metaColorId ? "" : metaColorId
     );
-    setMetalColorValue(metalValueColor)
+    setMetalColorValue(metalValueColor);
   };
 
- 
   // =============== shop by metal end ==============
 
   // =============== shop by price range==============
@@ -711,7 +707,7 @@ const ChooseRingSetting = () => {
       }
     });
   }
- 
+
   // ===================get wishList all data
 
   // useEffect(() => {
@@ -760,7 +756,7 @@ const ChooseRingSetting = () => {
 
     setItems(ringIds);
   }, [wishListDataBase]);
- 
+
   return (
     <>
       {stock_num ? (
@@ -852,7 +848,7 @@ const ChooseRingSetting = () => {
                       src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl.png"
                       alt=""
                     />
-                  </div>      
+                  </div>
                   <div className="browse-setting-data">
                     <span className="step-heading">Choose Setting</span>
                   </div>
@@ -875,59 +871,70 @@ const ChooseRingSetting = () => {
             </div>
           ) : (
             <>
-              <h1 className="center">ENGAGEMENT RINGS</h1>
-              <div className="bread-cram-setting-pages">
-                <Link to="/">Home</Link>
-                <Link to="/engagement-rings"> / Engagement Rings</Link> / Settings
-              </div>
+              <h1 className="center">Engagement Ring Setting</h1>
+              
               {/* ====================create your ring start */}
-              <div className="main-arrow-heading">
-                <div className="main-btn-setting">
-                  <div className="ring Create-Your-Ring">
-                    <span>Create Your Ring</span>
-                    <div className="arrow-shape">{/* arrow design */}</div>
-                  </div>
-
-                  <div className="ring Choose-Setting">
-                    <Link to="#">
-                      <span className="step-counting">1</span>
-                      <div className="img">
-                        <img
-                          src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl4.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="setting step-heading">Setting</div>
-                    </Link>
-                    <div className="arrow-shape">{/* arrow design */}</div>
-                  </div>
-
-                  <div className="ring Choose-Diamond">
-                    <Link to="/engagement-rings/start-with-a-diamond">
-                      <span className="step-counting">2</span>
-                      <div className="img">
-                        <img
-                          src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl.png"
-                          alt=""
-                        />
-                      </div>
-                      <span className="step-heading">Choose Diamond</span>
-                    </Link>
-                    <div className="arrow-shape">{/* arrow design */}</div>
-                  </div>
-
-                  <div className="ring Complete-Ring">
-                    <div className="inner-s">
-                      <span className="step-counting">3</span>
-                      <div className="img">
-                        <img
-                          src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl3.png"
-                          alt=""
-                        />
-                      </div>
-                      <span className="step-heading">Complete Ring</span>
-                    </div>
-                  </div>
+              <div className="ring-choose-setting flex">
+                <div className="one-choose-setting">
+                  <span>1. Choose Setting</span>
+                </div>
+                <div className="svg-icn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <g clip-path="url(#clip0_492_13575)">
+    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#310F4C" stroke="#734E90" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8.25 12H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.75 9L15.75 12L12.75 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_492_13575">
+      <rect width="24" height="24" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                </div>
+                <div className="one-choose-setting">
+                  <span>2. Choose Diamonds</span>
+                </div>
+                <div className="svg-icn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_492_13580)">
+                      <path
+                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                        stroke="#E8E8E8"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8.25 12H15.75"
+                        stroke="#D7D7D7"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.75 9L15.75 12L12.75 15"
+                        stroke="#D7D7D7"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_492_13580">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className="one-choose-setting">
+                  <span>3. Complete Ring </span>
                 </div>
               </div>
             </>
@@ -1305,8 +1312,6 @@ const ChooseRingSetting = () => {
             <span>{shapeBreadCamb} X </span>
           </Link>
 
-          
-
           {mergedArray.length > 1 && (
             <React.Fragment>
               <Link
@@ -1370,12 +1375,14 @@ const ChooseRingSetting = () => {
               resetAllColor();
             }}
             className={`${
-              metalColorValue === platinum ? "style-active-common color" : "color"
+              metalColorValue === platinum
+                ? "style-active-common color"
+                : "color"
             }`}
           >
             <span>Platinum X </span>
           </Link>
-          </div>
+        </div>
         <div className="resultdata setings-Page-img">
           {filterRoseData.length > 0 ? (
             filterRoseData.map((item, index) => (
@@ -1395,14 +1402,15 @@ const ChooseRingSetting = () => {
                             stock_num ? `&stock_num=${stock_num}` : ""
                           }`
                     }
-                  > 
+                  >
                     <div className="main-common-active product-main-img">
                       <div className="all-img1 common-img defaultImg ">
                         <span className="common-stand-img-1">
-                          <LazyLoadImage 
-                           effect="blur" 
-                          className="lazy-image"
-                          src={item.image} alt={item.name} 
+                          <LazyLoadImage
+                            effect="blur"
+                            className="lazy-image"
+                            src={item.image}
+                            alt={item.name}
                           />
                         </span>
                         <span className="common-stand-img white-stand-img">
@@ -1411,11 +1419,12 @@ const ChooseRingSetting = () => {
                             alt={item.name}
                           />
                         </span>
-                        <LazyLoadImage 
-                           effect="blur" 
-                           className="video-poster"
-                          src="https://www.icegif.com/wp-content/uploads/2023/07/icegif-1260.gif" alt={item.name} 
-                          />
+                        <LazyLoadImage
+                          effect="blur"
+                          className="video-poster"
+                          src="https://www.icegif.com/wp-content/uploads/2023/07/icegif-1260.gif"
+                          alt={item.name}
+                        />
                       </div>
 
                       <div className="all-img1 img-1 common-img">
@@ -1501,7 +1510,6 @@ const ChooseRingSetting = () => {
                               : ""
                           }`}
                         >
-                            
                           <Link
                             to="#"
                             style={{

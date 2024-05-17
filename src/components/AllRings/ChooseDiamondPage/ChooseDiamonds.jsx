@@ -840,28 +840,7 @@ export const ChooseDiamonds = () => {
                 })}
               </SlickSlider>
             </div>
-
-            <div className="Diamond-Original-main">
-              <span>Diamond Origin:</span>
-              <div className="Diamond-Original">
-                <Link
-                  to="javascript:void(0)"
-                  className={type === "" ? "nature-active" : ""}
-                  onClick={() => handleTypeChange("")}
-                >
-                  Nature
-                </Link>
-                <Link
-                  to="javascript:void(0)"
-                  className={type === "lab" ? "nature-active" : ""}
-                  onClick={() => handleTypeChange("lab")}
-                >
-                  Lab Grown
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="shape-slider">
+            
             <div className="shape-slider-1">
               <span>Carat</span>
               <Slider
@@ -881,6 +860,28 @@ export const ChooseDiamonds = () => {
               >
                 <div className="range-slider-show"> {caratRange[0]}</div>
                 <div className="range-slider-show"> {caratRange[1]}</div>
+              </div>
+            </div>
+           
+          </div>
+          <div className="shape-slider">
+          <div className="Diamond-Original-main">
+              <span>Diamond Origin:</span>
+              <div className="Diamond-Original">
+                <Link
+                  to="javascript:void(0)"
+                  className={type === "" ? "nature-active" : ""}
+                  onClick={() => handleTypeChange("")}
+                >
+                  Nature
+                </Link>
+                <Link
+                  to="javascript:void(0)"
+                  className={type === "lab" ? "nature-active" : ""}
+                  onClick={() => handleTypeChange("lab")}
+                >
+                  Lab Grown
+                </Link>
               </div>
             </div>
 

@@ -36,7 +36,7 @@ export const ShopCategory = () => {
     <>
       <div className="ShopCategory">
         <div className="container">
-          <h2>Shop by category</h2>
+          <h3>Shop by category</h3>
           <div className="flex">
             <div class="column-width">
 
