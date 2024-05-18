@@ -50,7 +50,16 @@ font-style: normal;
 font-weight: 400;
 line-height: 140%; /* 28px */
 }
-
+ h1.center {
+  color: #000;
+  font-family: "Sackers Gothic Light AT";
+  font-size: 33.917px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138%;
+  text-transform: capitalize;
+  padding-top: 60px;
+}
 h2{
   color: #000;
   font-family: "Sackers Gothic Light AT";
@@ -79,7 +88,9 @@ h4 {
   font-weight: 400;
   line-height: 155%; /* 49.6px */
 }
-
+.choose-diamonds h1.center , .gemstone-main h1.center{
+  padding-top: 0; 
+}
 
 @font-face {
   font-family: Sackers Gothic Light AT;
@@ -1025,22 +1036,27 @@ line-height: normal;
 .shop-by-common {
   position: relative;
 }
+.diamondBy-shape{
+  position: relative;
+}
 
 .lab-diamond-btn .ShopByStyle > a:after,
 .shop-by-shape > a:after,
-.shop-by-metal a:after {
+.shop-by-metal a:after , .diamondBy-shape > a:after{
   content: "";
   display: block;
   width: 1.6px;
   height: 25px;
-  background-color: #ccc;
+  background-color: #734e90;
   position: absolute;
   right: 0;
   top: -3px;
   left: auto;
   margin: 0 auto;
 }
-
+.diamondBy-shape > a:after {
+  right: -24px;
+}
 .lab-diamond-btn .shop-by-shape > a:after,
 .lab-diamond-btn .shop-by-metal > a:after {
   left: 150 auto;
@@ -3393,16 +3409,7 @@ section.enviromental-sec {
   padding-bottom: 30px;
 }
 
-.choose-setting-pages h1.center {
-  color: #000;
-  font-family: "Sackers Gothic Light AT";
-  font-size: 33.917px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 138%;
-  text-transform: capitalize;
-  padding-top: 60px;
-}
+
 
 .best-seller-main span {
   text-transform: capitalize;
@@ -4511,13 +4518,6 @@ input.button[type="submit"]:hover {
   background: #f3f3f3;
 }
 
-.main-arrow-heading {
-  border: 1px solid #ddd;
-  padding: 3px;
-  background: #fff;
-  margin-top: 25px;
-}
-
 .arrow-shape {
   position: relative;
   height: 100%;
@@ -4664,7 +4664,7 @@ span.step-counting {
   margin-top: 25px;
 }
 
-.white-wrapper .lab-diamond-btn {
+.white-wrapper .lab-diamond-btn, .diamond-table-btn {
   border: 1px solid;
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -9394,22 +9394,7 @@ section.gemstone-main {
   position: relative;
   padding: 60px;
 }
-.choose-diamonds:after,
-.checkout-info:after,
-.sticky-right-column:after,
-.details-page.container:after,
-.shoping-car-page:after,
-section.gemstone-main:after {
-  content: "";
-  width: 500vw;
-  height: 100%;
-  left: -50vw;
-  right: -50vw;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-}
+
 .container.choose-diamonds > *,
 .checkout-info > *,
 .sticky-right-column > *,
