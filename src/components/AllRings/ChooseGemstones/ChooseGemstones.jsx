@@ -23,7 +23,7 @@ export const ChooseGemstones = () => {
   const gemColor = gemSlug.get("color");
   const gemShape = gemSlug.get("shape");
   const history = useHistory();
-
+  const {baseUrl} = useContext(UserContext)
   const [removeWishList, setRemoveWishList] = useState(null);
   const wishListDataBase = useSelector((state) => state.productDataWishlist);
 
@@ -338,7 +338,7 @@ export const ChooseGemstones = () => {
     // const savedWishlist = JSON.parse(localStorage.getItem("wish-list-data-base")) || [];
 
     // console.log("============================",savedWishlist);
-    const urlNew = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${formData.user_id}&product_type=${formData.product_type}&gemstone_price=${formData.gemstone_price}&gemstone_id=${formData.gemstone_id}&gemstone_stock_no=${formData.gemstone_stock_no}`;
+    const urlNew = `${baseUrl}/add_to_wishlist?user_id=${formData.user_id}&product_type=${formData.product_type}&gemstone_price=${formData.gemstone_price}&gemstone_id=${formData.gemstone_id}&gemstone_stock_no=${formData.gemstone_stock_no}`;
     axios
       .get(urlNew, {
         headers: {
@@ -387,7 +387,7 @@ export const ChooseGemstones = () => {
     const removeWishlist = async () => {
       try {
         const response = await axios.get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`
+          `${baseUrl}/remove_wishlist_item/${removeWishList}`
         );
         console.log("===========", response.data);
         dispatch(productList());
@@ -405,7 +405,7 @@ export const ChooseGemstones = () => {
   //     try {
   //       if (user_id) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${user_id}`,
+  //           ``${baseUrl}/wishlist-items?user_id=${user_id}`,
   //           {
   //             headers: {
   //               "Content-Type": "application/json",
@@ -473,7 +473,7 @@ export const ChooseGemstones = () => {
     () => async () => {
       try {
         const response = await axios.get(
-          "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/gemstone-attributes"
+          `${baseUrl}/gemstone-attributes`
         );
         setGemstoneFilterData(response.data.data);
         console.log(response.data.data);

@@ -25,6 +25,8 @@ export const WishList = () => {
   const [activeWishList, setActiveWishList] = useState(all);
   const [shapeData, setShapeData] = useState();
   const [removeWishList, setRemoveWishList] = useState();
+  const [newsLetterEmail, setNewsletterEmail] = useState([]);
+  const [newsLetterResult, setNewsLetterResult] = useState("");
 
   const {
     setDiamondRingToggle,
@@ -33,6 +35,7 @@ export const WishList = () => {
     diamondRingLocal,
     setToggledProducts,
     setDiamondRingLocal,
+    baseUrl,
   } = useContext(UserContext);
   const options = [
     { value: "Less than 3", label: "Less than 3" },
@@ -263,7 +266,7 @@ export const WishList = () => {
   //     try {
   //       if (userId) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${userId}`,
+  //           `${baseUrl}/wishlist-items?user_id=${userId}`,
 
   //           {
   //             headers: {
@@ -397,9 +400,7 @@ export const WishList = () => {
   // =======remove to card
   useEffect(() => {
     axios
-      .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`
-      )
+      .get(`${baseUrl}/remove_wishlist_item/${removeWishList}`)
       .then((res) => {
         console.log("=====", res.data);
         dispatch(productList());
@@ -443,7 +444,7 @@ export const WishList = () => {
     const savedWishlist = JSON.parse(localStorage.getItem("cart_data")) || [];
 
     console.log("============================", formData);
-    const API_URl = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/cart?user_id=${formData.user_id}&gemstone_id=${formData.gemstone_id}&gemstone_price=${formData.gemstone_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&diamond_id=${formData.diamond_id}&diamond_price=${diamond_price}&img_sku=${formData.img_sku}&ring_price=${formData.ring_price}`;
+    const API_URl = `${baseUrl}/cart?user_id=${formData.user_id}&gemstone_id=${formData.gemstone_id}&gemstone_price=${formData.gemstone_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&diamond_id=${formData.diamond_id}&diamond_price=${diamond_price}&img_sku=${formData.img_sku}&ring_price=${formData.ring_price}`;
 
     console.log(API_URl);
 
@@ -474,6 +475,24 @@ export const WishList = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const fetchData = () => {
+      axios
+        .get(`${baseUrl}/newsletter?email=${newsLetterResult}`)
+        .then((res) => {
+          setNewsletterEmail(res.data);
+          console.log(res.data);
+        })
+        .catch(() => {
+          console.log("API error");
+        });
+    };
+
+    fetchData();
   };
   return (
     <>
@@ -1383,33 +1402,33 @@ export const WishList = () => {
                   </p>
                 </div>
                 <div className="reset-forms wishlist-acct">
-                  <form action="" className="form-inline">
-                    <div className="input-group">
-                      <label className="sr-only">Email address</label>
-                      <input
-                        type="text"
-                        className="zip-code"
-                        placeholder="your Email Address"
-                        name="email"
-                        id="whishlist-email"
-                        onChange={(e) =>
-                          validateEmail(
-                            e.target.value,
-                            "whishlist-email",
-                            "Email Address"
-                          )
-                        }
-                      />
-                      <div className="error_1"></div>
-                      <span className="input-group-btn">
-                        <button
-                          type="button"
-                          className="view-menu"
-                          onClick={validateWhishList}
-                        ></button>
-                      </span>
-                    </div>
-                  </form>
+                  {newsLetterEmail && newsLetterEmail?.res === "success" ? (
+                    <p>Thank you for subscribing to the SAMA newsletter.</p>
+                  ) : (
+                    <form
+                      action=""
+                      className="form-inline"
+                      onSubmit={handleSubmit}
+                    >
+                      <div className="input-group">
+                        <label className="sr-only">Email address</label>
+                        <input
+                          type="text"
+                          className="zip-code"
+                          placeholder="your Email Address"
+                          name="email"
+                          id="whishlist-email"
+                          onChange={(e) =>
+                            setNewsLetterResult(e.target.value)
+                          }
+                        />
+                        <div className="error_1"></div>
+                        <span className="input-group-btn">
+                          <input type="submit" className="view-menu" value="" onClick={validateWhishList}></input>
+                        </span>
+                      </div>
+                    </form>
+                  )}
                 </div>
               </div>
             )}
@@ -1959,8 +1978,8 @@ export const WishList = () => {
                     </div>
                   </Link>
                 </div>
-                <Link to="/engagement-rings/start-with-a-setting?bridal-sets=true">
-                  <div className="category-tiles-box">
+                <div className="category-tiles-box">
+                  <Link to="/engagement-rings/start-with-a-setting?bridal-sets=true">
                     <div className="wisher-imager">
                       <img
                         src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/chain.jpg"
@@ -1970,8 +1989,8 @@ export const WishList = () => {
                     <div className="category-title">
                       <h4>Fine Jewelry</h4>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

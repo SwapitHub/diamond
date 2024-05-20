@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -15,8 +15,10 @@ import {
   validateTelephone,
 } from "../ValidationFunctions";
 import axios from "axios";
+import { UserContext } from "../../../App";
 
 export const Pickup = () => {
+  const {baseUrl} = useContext(UserContext)
   const [open, setOpen] = useState(false);
   const [clicked, setCliked] = useState(false);
   const [selectedShowroom, setSelectedShowroom] = useState(null);
@@ -34,7 +36,7 @@ export const Pickup = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);

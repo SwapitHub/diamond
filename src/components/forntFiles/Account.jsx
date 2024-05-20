@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-use-history";
 import { toast } from "react-toastify";
 import { validateEmail, validatePass } from "./ValidationFunctions";
+import { UserContext } from "../../App";
 
 export const Account = () => {
+  const {baseUrl} = useContext(UserContext)
   const history = useHistory();
   const [shapeData, setShapeData] = useState([]);
   const cartData = useSelector((state) => state.cartData);
@@ -30,7 +32,7 @@ export const Account = () => {
     } else {
       axios
         .get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/login?email=${formData.email}&password=${formData.password}`
+          `${baseUrl}/login?email=${formData.email}&password=${formData.password}`
         )
         .then((response) => {
           if (response.status === 200) {
@@ -47,7 +49,7 @@ export const Account = () => {
             cartData.forEach((item) => {
               console.log(item);
               // ===========
-              var URL = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/cart?user_id=${user_id}&ring_price=${
+              var URL = `${baseUrl}/cart?user_id=${user_id}&ring_price=${
                 item?.ring_price !== undefined ? item?.ring_price : ""
               }&ring_id=${
                 item.ring_data?.id !== undefined ? item.ring_data?.id : ""
@@ -130,7 +132,7 @@ export const Account = () => {
             }, 3000);
 
             wishlistData.forEach((item) => {
-              var wishListURL = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${user_id}&ring_price=${
+              var wishListURL = `${baseUrl}/add_to_wishlist?user_id=${user_id}&ring_price=${
                 item.product_type === "ring"
                   ? item.item?.white_gold_price
                   : item.product_type === "ring_diamond"

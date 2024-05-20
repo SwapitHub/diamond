@@ -60,7 +60,7 @@ export const SelectDiamond = () => {
   const [priceOpen, setPriceOpen] = useState(false);
   const [clarityOpen, setClarityOpen] = useState(false);
   const [newData, setNewData] = useState([]);
-
+  const {baseUrl} = useContext(UserContext)
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const stock_num = queryParams.get("stock_num");
@@ -119,7 +119,7 @@ export const SelectDiamond = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/product/${productSlug}`
+          `${baseUrl}/product/${productSlug}`
         );
 
         const product = response.data.data;
@@ -285,7 +285,7 @@ export const SelectDiamond = () => {
     console.log("data ring ", formData);
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${formData.user_id}&product_type=${formData.product_type}&diamond_price=${formData.diamond_price}&diamond_id=${formData.diamond_id}&diamond_stock_no=${formData.diamond_stock_no}`
+        `${baseUrl}/add_to_wishlist?user_id=${formData.user_id}&product_type=${formData.product_type}&diamond_price=${formData.diamond_price}&diamond_id=${formData.diamond_id}&diamond_stock_no=${formData.diamond_stock_no}`
 
         // {
         //   headers: {
@@ -312,7 +312,7 @@ export const SelectDiamond = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/diamondshape"
+        "`${baseUrl}/diamondshape"
       )
       .then((res) => {
         setShapeData(res.data.data);
@@ -326,7 +326,7 @@ export const SelectDiamond = () => {
   //     try {
   //       if (user_id) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${user_id}`
+  //           ``${baseUrl}/wishlist-items?user_id=${user_id}`
 
   //           // {
   //           //   headers: {
@@ -374,7 +374,7 @@ export const SelectDiamond = () => {
 
   useEffect(() => {
     const fetchData = () => {
-      const removeWish = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`;
+      const removeWish = `${baseUrl}/remove_wishlist_item/${removeWishList}`;
       console.log(removeWishList);
       console.log(removeWish);
       axios

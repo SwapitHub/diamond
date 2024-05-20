@@ -4146,7 +4146,7 @@ div#user-log {
   border: 1px solid #e4e4e4;
 }
 
-.reset-forms span.input-group-btn button[type="button"] {
+.reset-forms span.input-group-btn input[type="submit"] {
   background-color: #310f4c;
   display: inline-block;
   padding: 11px 20px;
@@ -4157,6 +4157,7 @@ div#user-log {
   color: #fff;
   text-transform: uppercase;
   border: 3px solid #310f4c;
+  cursor: pointer;
 }
 
 .recieve-password ul li a {
@@ -4977,7 +4978,6 @@ span.step-counting {
   padding: 10px 16px;
   letter-spacing: 1px;
   border: 0;
-  text-transform: capitalize;
   border: 1px solid #e4e4e4;
 }
 
@@ -5365,11 +5365,11 @@ span.qty > span:last-child {
 }
 
 .shoping-card-main-wrap .shoping-card {
-  width: 60%;
+  width: 50%;
 }
 
 .shoping-card-main-wrap .card-right-side {
-  width: 37%;
+  width: 48%;
   padding: 0 15px 0 55px;
 }
 

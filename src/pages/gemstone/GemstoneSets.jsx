@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import DOMPurify from "dompurify";
+import { UserContext } from "../../App";
 
 export const GemstoneSets = () => {
     const [bridalSet, setBridalSet] = useState([])
+    const {baseUrl} = useContext(UserContext)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
 
                 const response = await axios.get(
-                    "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/homecontent"
+                    `${baseUrl}/homecontent`
                 );
                 const data = response.data.data;
 

@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import round from "../../images/Round.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import SlickSlider from "react-slick";
+import { UserContext } from "../../App";
 
 export const GemstoneShopByShape = () => {
   const [gemstoneFilterData, setGemstoneFilterData] = useState([]);
-
+  const {baseUrl} = useContext(UserContext)
   // =========shape api
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/gemstone-attributes"
+        `${baseUrl}/gemstone-attributes`
       )
       .then((res) => {
         setGemstoneFilterData(res.data.data);

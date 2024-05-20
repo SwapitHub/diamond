@@ -12,6 +12,8 @@ export const CartHoverData = () => {
   const rose = "18K ROSE GOLD";
   const platinum = "Platinum";
 
+  const {baseUrl} = useContext(UserContext)
+
   const [removeCart, setRemoveCart] = useState(null);
   const [shapeData, setShapeData] = useState();
   console.log("================remove", removeCart);
@@ -39,7 +41,7 @@ export const CartHoverData = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -58,7 +60,7 @@ export const CartHoverData = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove-cartitem/${removeCart}`
+        `${baseUrl}/remove-cartitem/${removeCart}`
       )
       .then((res) => {
         console.log("=====", res.data);
@@ -87,7 +89,7 @@ export const CartHoverData = () => {
       try {
         if (userId) {
           const response = await axios.get(
-            `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/getcart-items?user_id=${userId}`,
+            `${baseUrl}/getcart-items?user_id=${userId}`,
 
             {
               headers: {

@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import engagementRing from "../../images/EngagementRing.png";
 import { Link } from "react-router-dom";
 import SlickSlider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import axios from "axios";
+import { UserContext } from "../../App";
 
 export const ShopCategory = () => {
-
+  const {baseUrl} = useContext(UserContext)
   const ShopStyleSliderOuter = {
     dots: false,
     infinite: true,
@@ -22,7 +23,7 @@ export const ShopCategory = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/product-style"
+        `${baseUrl}/product-style`
       )
       .then((res) => {
         setShopStyle(res.data.data);

@@ -27,7 +27,7 @@ export const SearchPage = () => {
     { value: "low_to_high", label: "Price (Low to High)" },
     { value: "high_to_low", label: "Price (High to Low)" },
   ];
-
+  const {baseUrl} = useContext(UserContext)
   const handlePriceChange = (selectedOption) => {
     setPriceShorting(selectedOption.value);
   };
@@ -50,7 +50,7 @@ export const SearchPage = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -339,7 +339,7 @@ export const SearchPage = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/diamondshape"
+        `${baseUrl}/diamondshape`
       )
       .then((res) => {
         setShapeData(res.data.data);
@@ -352,7 +352,7 @@ export const SearchPage = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/product-style"
+        "${baseUrl}/product-style"
       )
       .then((res) => {
         setShopStyle(res.data.data);

@@ -1,16 +1,13 @@
-import "./pages/Style.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Routing } from "./components/Routing";
-import Header from "./components/forntFiles/Header3";
 import { createContext, useEffect, useRef, useState } from "react";
-import ShopByStyle from "./components/AllRings/ChooseSettingPage/ChooseRingSetting";
-import Example1 from "./components/AllRings/ChooseSettingPage/Example1";
-import { Footer } from "./components/forntFiles/Footer";
-import { ChooseGemstones } from "./components/AllRings/ChooseGemstones/ChooseGemstones";
 import { ToastContainer } from 'react-toastify';
-
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "./App.css";
 import LoaderSpinner from "./components/LoaderSpinner";
+import { Routing } from "./components/Routing";
+import { Footer } from "./components/forntFiles/Footer";
+import Header from "./components/forntFiles/Header3";
+import "./pages/Style.css";
 export const UserContext = createContext(null);
 
 
@@ -26,7 +23,7 @@ function App() {
   const [showSuggestion, setShowSuggestion] = useState(false);
   const [showSuggestionHeader, setShowSuggestionHeader] = useState(false);
   const [loadingCart, setLoadingCart] = useState(false)
-  const baseUrl=""
+  const baseUrl="http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1"
 
   const buttonRef = useRef(null);
 

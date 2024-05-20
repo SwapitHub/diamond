@@ -4,8 +4,9 @@ import { BsInstagram, BsLinkedin, BsTwitter, BsYoutube } from "react-icons/bs";
 import { FaFacebookF, FaMinus, FaPinterestP, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
+import { validateEmail } from "./ValidationFunctions";
 export const Footer = () => {
-  const {baseUrl} = useContext(UserContext)
+  const { baseUrl } = useContext(UserContext);
   const [selected, setSelected] = useState(null);
 
   const toggle = (i) => {
@@ -26,9 +27,7 @@ export const Footer = () => {
     // } else {
     // Fetch data from API if not available in local storage
     axios
-      .get(
-        `${baseUrl}siteinfo`
-      )
+      .get(`${baseUrl}/siteinfo`)
       .then((res) => {
         // localStorage.setItem("ftrIcon", JSON.stringify(res.data.data));
         setFtrIcon(res.data.data);
@@ -43,9 +42,7 @@ export const Footer = () => {
   const [newsLetterResult, setNewsLetterResult] = useState("");
   useEffect(() => {
     axios
-      .get(
-        `${baseUrl}footer-pages`
-      )
+      .get(`${baseUrl}/footer-pages`)
       .then((res) => {
         setFooterData(res.data.data);
       })
@@ -54,14 +51,20 @@ export const Footer = () => {
       });
   }, []);
 
+  function validateNewsLetter() {
+    validateEmail(
+      document.getElementById("newsletter-email").value,
+      "newsletter-email",
+      "Email Address"
+    );
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const fetchData = () => {
       axios
-        .get(
-          `${baseUrl}newsletter?email=${newsLetterResult}`
-        )
+        .get(`${baseUrl}/newsletter?email=${newsLetterResult}`)
         .then((res) => {
           setNewsletterEmail(res.data);
           console.log(res.data);
@@ -113,33 +116,29 @@ export const Footer = () => {
                     Join our mailing list for the latest products, news, and
                     offers!
                   </p>
-                  {newsLetterEmail && 
-                    newsLetterEmail?.res === "success" ? (
-                      <p>
-                        Thank you for subscribing to the Brilliant Earth
-                        newsletter.
-                      </p>
-                    ) : (
-                      <form action="#" onSubmit={handleSubmit}>
-                        <div className="email">
-                          <input
-                            type="email"
-                            placeholder="Enter Email Address.."
-                            onChange={(e) =>
-                              setNewsLetterResult(e.target.value)
-                            }
-                          />
-                        </div>
-                        <div className="submit-btn">
-                          <input
-                            className="button"
-                            type="submit"
-                            value="submit"
-                          />
-                        </div>
-                      </form>
-                    )
-                  }
+                  {newsLetterEmail && newsLetterEmail?.res === "success" ? (
+                    <p>Thank you for subscribing to the SAMA newsletter.</p>
+                  ) : (
+                    <form action="#" onSubmit={handleSubmit}>
+                      <div className="email">
+                        <input
+                          type="text"
+                          placeholder="Enter Email Address.."
+                          id="newsletter-email"
+                          onChange={(e) => setNewsLetterResult(e.target.value)}
+                        />
+                      <div className="error_1"></div>
+                      </div>
+                      <div className="submit-btn">
+                        <input
+                          className="button"
+                          type="submit"
+                          value="submit"
+                          onClick={validateNewsLetter}
+                        />
+                      </div>
+                    </form>
+                  )}
 
                   <div className="ftr-icons flex">
                     <span>
@@ -231,14 +230,29 @@ export const Footer = () => {
                     offers!
                   </p>
 
-                  <form action="#">
-                    <div className="email">
-                      <input type="email" placeholder="Enter Email Address.." />
-                    </div>
-                    <div className="submit-btn">
-                      <input className="button" type="submit" />
-                    </div>
-                  </form>
+                  {newsLetterEmail && newsLetterEmail?.res === "success" ? (
+                    <p>Thank you for subscribing to the SAMA newsletter.</p>
+                  ) : (
+                    <form action="#" onSubmit={handleSubmit}>
+                      <div className="email">
+                        <input
+                          type="text"
+                          placeholder="Enter Email Address.."
+                          id="newsletter-email"
+                          onChange={(e) => setNewsLetterResult(e.target.value)}
+                        />
+                      <div className="error_1"></div>
+                      </div>
+                      <div className="submit-btn">
+                        <input
+                          className="button"
+                          type="submit"
+                          value="submit"
+                          onClick={validateNewsLetter}
+                        />
+                      </div>
+                    </form>
+                  )}
 
                   <div className="ftr-icons flex">
                     <span>
