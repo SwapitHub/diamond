@@ -97,9 +97,6 @@ h4 {
   src: url(../fonts/Sackers\ Gothic\ Light\ AT\ Regular.otf);
 }
 
-
-
-
 .button {
   border-radius: 5px;
   border: 1.067px solid #310F4C;
@@ -568,9 +565,7 @@ nav.mobile-nav {
   line-height: 25px;
 }
 
-.menRings {
-  background: #cbbcb5;
-}
+
 
 .menRings .container {
   max-width: 100%;
@@ -580,10 +575,7 @@ nav.mobile-nav {
   padding: 0 !important;
 }
 
-.menRings-img,
-.menRings-text {
-  width: 64%;
-}
+
 
 .menRings-img img {
   display: block;
@@ -597,9 +589,7 @@ nav.mobile-nav {
   padding: 11px 47px;
 }
 
-.menRings-text {
-  max-width: 36%;
-}
+
 
 /* EternityRings End */
 

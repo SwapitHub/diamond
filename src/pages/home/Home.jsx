@@ -13,7 +13,10 @@ import { MostLovedSlider } from './MostLovedSlider'
 import { ShopByCategorySlider } from './ShopByCategorySlider'
 import { SeeProducts } from './SeeProducts'
 import { EngagementBridal } from './EngagementBridal'
-import { AnniversaryRing } from './AnniversaryRing'
+
+import { ShopDiamondCotegory } from './ShopDiamondCotegory'
+import { AnniversaryRingFeatured } from './AnniversaryRingFeatured'
+import { AnniversaryRings } from './AnniversaryRings'
 
 
 export const Home = () => {
@@ -23,6 +26,11 @@ export const Home = () => {
   <Banner/>
   <ShopDiamondShape/>
   <SeeProducts/>
+  <ShopDiamondCotegory/>
+  <MenRings/>
+<AnniversaryRings/>
+
+
   <EngagementBridal/>
   <ShopDiamondSlider/>
   <ShopCategory/>
@@ -30,10 +38,9 @@ export const Home = () => {
   <EndsSoon/>
   <EternityRings/>
   <BridalSets/>
-  <MenRings/>
   {/* <MostLoved/> */}
   <MostLovedSlider/>
-  <AnniversaryRing/>
+ <AnniversaryRingFeatured/>
   
 </div>
     

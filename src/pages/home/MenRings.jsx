@@ -9,15 +9,12 @@ export const MenRings = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-
         const response = await axios.get(
           "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/homecontent"
         );
         const data = response.data.data;
 
         setMenRings(data);
-
-
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -27,29 +24,28 @@ export const MenRings = () => {
   }, []);
   return (
     <>
-      <div className="menRings">
+      <div className="menRings Bridal-Jewellery">
         <div className=" container">
           <div className="flex menRings-main">
             <div className="menRings-text">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(
-                    menRings.ring_promotion_banner_desc
-                  ),
-                }}
-              ></div>
+              <h2>Bridal Jewellery</h2>
+              <p>
+                Modern and romantic, graceful and feminine, our wedding day
+                jewellery is the perfect finishing touch to your special day and
+                a precious keepsake to be worn for years to come.
+              </p>
               <div>
                 <Link
                   className="button"
                   to="/engagement-rings/start-with-a-setting?bridal-sets=true"
                 >
-                  Shop Now
+                 Discover Collections
                 </Link>
               </div>
             </div>
             <div className="menRings-img">
               <img
-                src={menRings.ring_promotion_banner_last}
+                src="./images/bridal_jwelary.png"
                 alt={menRings.ring_promotion_banner_alt}
                 loading="lazy"
               />

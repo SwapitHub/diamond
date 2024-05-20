@@ -32,7 +32,7 @@ export const ChooseDiamonds = () => {
   const [shapeDataSlider, setShapeDataSlider] = useState([]);
   const [menuShapeNames, setMenuShapeNames] = useState(menuShapeName);
   const [labGrownDetails, setLabGrownDetails] = useState();
-  console.log(labGrownDetails); 
+  console.log(labGrownDetails);
   const pathSegments = location.pathname.split("/");
   const lastPathSegment = pathSegments[pathSegments.length - 1];
   const initialType = lastPathSegment === "lab" ? "lab" : "";
@@ -40,12 +40,13 @@ export const ChooseDiamonds = () => {
 
   const handleTypeChange = (newType) => {
     setType(newType);
-   
+
     history.push(
-      `/engagement-rings/start-with-a-diamond${newType === "lab" ? "/lab" : ""}${location.search}`
+      `/engagement-rings/start-with-a-diamond${
+        newType === "lab" ? "/lab" : ""
+      }${location.search}`
     );
   };
-
 
   useEffect(() => {
     const newPathSegments = location.pathname.split("/");
@@ -206,7 +207,9 @@ export const ChooseDiamonds = () => {
         sliderValue[sliderValue.length - 1]
           ? sliderValue[sliderValue.length - 1]
           : ""
-      }&page_number=${page}&cut_from=${cutSliderValue[0] ? cutSliderValue[0] : ""}&cut_to=${
+      }&page_number=${page}&cut_from=${
+        cutSliderValue[0] ? cutSliderValue[0] : ""
+      }&cut_to=${
         cutSliderValue[cutSliderValue.length]
           ? cutSliderValue[cutSliderValue.length - 1]
           : ""
@@ -568,10 +571,15 @@ export const ChooseDiamonds = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, [filterData.product?.sku, listColor, filterData.product?.metalColor,diamond_original]);
+  }, [
+    filterData.product?.sku,
+    listColor,
+    filterData.product?.metalColor,
+    diamond_original,
+  ]);
   return (
     <div className="container choose-diamonds">
-     <h1 class="center">Design your own Diamond Engagement Ring</h1>
+      <h1 class="center">Design your own Diamond Engagement Ring</h1>
       {productSlug ? (
         <div className="main-arrow-heading">
           <div className="main-btn-setting">
@@ -636,8 +644,8 @@ export const ChooseDiamonds = () => {
                     <div>
                       <span>{filterData.product?.name}</span>
                     </div>
-                    
-                    { diamond_original == "lab_grown" ? (
+
+                    {diamond_original == "lab_grown" ? (
                       <div className={`price-tabbing-common `}>
                         <span> ${labGrownDetails?.price} </span>
                       </div>
@@ -723,93 +731,93 @@ export const ChooseDiamonds = () => {
         <div className="main-arrow-heading">
           {/* ====================create your ring start */}
           <div className="ring-choose-setting flex">
-                <div className="one-choose-setting">
-                  <span>1. Choose Diamonds</span>
-                </div>
-                <div className="svg-icn">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_492_13575)">
-                      <path
-                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
-                        fill="#310F4C"
-                        stroke="#734E90"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8.25 12H15.75"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M12.75 9L15.75 12L12.75 15"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_492_13575">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div className="one-choose-setting">
-                  <span>2. Choose Setting</span>
-                </div>
-                <div className="svg-icn">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_492_13580)">
-                      <path
-                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
-                        stroke="#E8E8E8"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8.25 12H15.75"
-                        stroke="#D7D7D7"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M12.75 9L15.75 12L12.75 15"
-                        stroke="#D7D7D7"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_492_13580">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div className="one-choose-setting">
-                  <span>3. Complete Ring </span>
-                </div>
-              </div>
+            <div className="one-choose-setting">
+              <span>1. Choose Diamonds</span>
+            </div>
+            <div className="svg-icn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g clip-path="url(#clip0_492_13575)">
+                  <path
+                    d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                    fill="#310F4C"
+                    stroke="#734E90"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.25 12H15.75"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.75 9L15.75 12L12.75 15"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_492_13575">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div className="one-choose-setting">
+              <span>2. Choose Setting</span>
+            </div>
+            <div className="svg-icn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g clip-path="url(#clip0_492_13580)">
+                  <path
+                    d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                    stroke="#E8E8E8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.25 12H15.75"
+                    stroke="#D7D7D7"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.75 9L15.75 12L12.75 15"
+                    stroke="#D7D7D7"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_492_13580">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div className="one-choose-setting">
+              <span>3. Complete Ring </span>
+            </div>
+          </div>
         </div>
       )}
 
@@ -888,7 +896,7 @@ export const ChooseDiamonds = () => {
                 })}
               </SlickSlider>
             </div>
-            
+
             <div className="shape-slider-1">
               <span>Carat</span>
               <Slider
@@ -910,10 +918,9 @@ export const ChooseDiamonds = () => {
                 <div className="range-slider-show"> {caratRange[1]}</div>
               </div>
             </div>
-           
           </div>
           <div className="shape-slider">
-          <div className="Diamond-Original-main">
+            <div className="Diamond-Original-main">
               <span>Diamond Origin:</span>
               <div className="Diamond-Original">
                 <Link
@@ -1051,7 +1058,7 @@ export const ChooseDiamonds = () => {
         </div>
       </div>
 
-      <div className="data-table-responsive-main-parent">        
+      <div className="data-table-responsive-main-parent">
         <div className="data-table-responsive-main">
           <div className="data-table-responsive">
             <div className="diamonds-table">

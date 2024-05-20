@@ -422,7 +422,7 @@ export const GemstonesDetail = () => {
                         <img src={item.image_url} alt="" />
                       </div>
                     </div>
-                    <h1>shamsher </h1>
+                    
                     <div className="right-product-content ">
                       <h4 className="heading-four">
                         9x7mm {item.color} {item.shape} Lab Grown Sapphire

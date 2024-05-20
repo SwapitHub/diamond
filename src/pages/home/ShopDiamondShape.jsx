@@ -22,7 +22,7 @@ export const ShopDiamondShape = () => {
     <>
       <div className="ShopDiamondShape">
         <div className="container">
-          <h3>Shop diamonds by shape</h3>
+          <h3>Design Your Own Engagement Ring</h3>
           <div className="flex">
             {shapeData.map((shapeItem) => {
               return (

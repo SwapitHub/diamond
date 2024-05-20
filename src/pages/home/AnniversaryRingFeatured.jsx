@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const AnniversaryRing = () => {
+export const AnniversaryRingFeatured = () => {
   return (
     <section className="AnniversaryRing-main own-engagment education p-t">
       <div className="container">

@@ -785,3 +785,18 @@ section.AnniversaryRing-main .contant-bar p {
 .ring-choose-setting .svg-icn {
   display: inline-flex;
 }
+.ShopDiamondCotegory .column-width {
+  width: calc(100%/5 - 5px);
+  padding: 0;
+}
+.menRings .container {
+  background: #fff;
+}
+.menRings-img, .menRings-text {
+  width: calc(100%/2 - 30px);
+  padding: 0;
+}
+.Bridal-Jewellery a.button {
+  background: transparent;
+  color: #1B1818;
+}
