@@ -35,6 +35,7 @@ export const Header = () => {
     setShowSuggestion,
     setShowSuggestionHeader,
     showSuggestionHeader,
+    baseUrl
   } = useContext(UserContext);
 
   const ToggleClass = () => {
@@ -69,7 +70,7 @@ export const Header = () => {
     // Fetch data from API if not available in local storage
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/menu"
+        `${baseUrl}/menu`
       )
       .then((res) => {
         // localStorage.setItem("navData", JSON.stringify(res.data.data));
@@ -91,7 +92,7 @@ export const Header = () => {
     const delayedSuggestion = debounce(() => {
       axios
         .get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/search-suggestion?q=${suggestion}`
+          `${baseUrl}/search-suggestion?q=${suggestion}`
         )
         .then((res) => {
           setSuggestionData(res.data.data);
@@ -123,7 +124,7 @@ export const Header = () => {
     const delayedSearch = debounce(() => {
       axios
         .get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/search?q=${searching}`
+          `${baseUrl}/search?q=${searching}`
         )
         .then((res) => {
           setSearchData(res.data.data);

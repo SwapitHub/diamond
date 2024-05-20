@@ -1,31 +1,25 @@
+import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { IoIosClose, IoIosStar, IoMdHeart } from "react-icons/io";
+import { CiGift, CiHeart } from "react-icons/ci";
+import { HiInformationCircle } from "react-icons/hi2";
+import { IoIosClose, IoIosStar } from "react-icons/io";
+import { IoCallOutline, IoPricetagOutline } from "react-icons/io5";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { RiTruckFill } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
-import { IoCallOutline, IoPricetagOutline } from "react-icons/io5";
-import { CiGift, CiHeart } from "react-icons/ci";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import { HiInformationCircle } from "react-icons/hi2";
-import { FaMinus, FaPlus } from "react-icons/fa6";
-import axios from "axios";
 import { toast } from "react-toastify";
 
+import { FaExclamationCircle } from "react-icons/fa";
+import { GiBigDiamondRing } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import { UserContext } from "../../App";
 import {
   addToWishList,
-  removeToCart,
-  removeToWishlist,
-  setCartDetails,
-  setWishlistDetails,
+  removeToCart
 } from "../../redux/action";
-import cartData from "../../redux/reducer";
-import { v4 as uuidv4 } from "uuid";
-import { FaExclamationCircle } from "react-icons/fa";
-import { UserContext } from "../../App";
-import { GiBigDiamondRing } from "react-icons/gi";
-import LoaderSpinner from "../LoaderSpinner";
-import Select from "react-select";
 import { productList, productListCart } from "../../redux/productAction";
+import LoaderSpinner from "../LoaderSpinner";
 
 export const CartPage = () => {
   const dispatch = useDispatch();
@@ -53,6 +47,7 @@ export const CartPage = () => {
   const cartData = useSelector((state) => state.cartData);
   const cartDetails = useSelector((state) => state.productDataCart);
   const wishListDataBase = useSelector((state) => state.wishlistReducer);
+  const {baseUrl} = useContext(UserContext)
   const user_id = localStorage.getItem("formData");
   console.log(cartData);
   const handleSaveMessage = () => {
@@ -110,7 +105,7 @@ export const CartPage = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -223,7 +218,7 @@ export const CartPage = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove-cartitem/${removeCartItem}`
+        `${baseUrl}/remove-cartitem/${removeCartItem}`
       )
       .then((res) => {
         console.log("=====", res.data);
@@ -241,7 +236,7 @@ export const CartPage = () => {
   //     try {
   //       if (userId) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/getcart-items?user_id=${userId}`,
+  //           `${baseUrl}/getcart-items?user_id=${userId}`,
 
   //           {
   //             headers: {
@@ -300,7 +295,7 @@ export const CartPage = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        "${baseUrl}/metalcolor"
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -343,7 +338,7 @@ export const CartPage = () => {
   ) => {
     try {
       // Construct URL for API call
-      const apiUrl = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${user_id}&gemstone_price=${gemstone_price}&gemstone_id=${gemstone_id}&product_type=${product_type}&ring_id=${ring_id}&ring_color=${ring_color}&img_sku=${img_sku}&ring_price=${ring_price}&diamond_id=${diamond_id}&diamond_price=${diamond_price}&ring_type=${ring_type}&ring_size=${ring_size}`;
+      const apiUrl = `${baseUrl}/add_to_wishlist?user_id=${user_id}&gemstone_price=${gemstone_price}&gemstone_id=${gemstone_id}&product_type=${product_type}&ring_id=${ring_id}&ring_color=${ring_color}&img_sku=${img_sku}&ring_price=${ring_price}&diamond_id=${diamond_id}&diamond_price=${diamond_price}&ring_type=${ring_type}&ring_size=${ring_size}`;
       // Make API call
       console.log(apiUrl);
       const response = await axios.get(apiUrl, {
@@ -433,7 +428,7 @@ export const CartPage = () => {
   // useEffect(() => {
   //   axios
   //     .get(
-  //       `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/get_product_price?product_sku=${
+  //       `${baseUrl}/get_product_price?product_sku=${
   //         filterData.product?.sku
   //       }&metalType=${
   //         listColor === "Platinum" ? "Platinum" : "18kt"

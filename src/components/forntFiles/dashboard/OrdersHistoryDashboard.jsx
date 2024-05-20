@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsChat } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
@@ -11,6 +11,7 @@ import axios from "axios";
 import LoaderSpinner from '../../LoaderSpinner'
 import ResponsivePagination from 'react-responsive-pagination';
 import 'react-responsive-pagination/themes/classic.css';
+import { UserContext } from "../../../App";
 
 export const OrdersHistoryDashboard = ({
   showOrderId,
@@ -22,7 +23,7 @@ export const OrdersHistoryDashboard = ({
   const [showOrderHistory, setShowOrderHistory] = useState()
   const [currentPage, setCurrentPage] = useState(1);
 
-
+  const {baseUrl} = useContext(UserContext)
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("email-popup-open");
@@ -39,7 +40,7 @@ export const OrdersHistoryDashboard = ({
     setLoading(true)
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/order-detail?order_id=${showOrderId}`
+        `${baseUrl}/order-detail?order_id=${showOrderId}`
       )
       .then((res) => {
         setOrderId(res.data);
@@ -57,7 +58,7 @@ export const OrdersHistoryDashboard = ({
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/order-history?user_id=${user_id}&page=${currentPage}`
+        `${baseUrl}/order-history?user_id=${user_id}&page=${currentPage}`
       )
       .then((res) => {
         setShowOrderHistory(res.data);

@@ -33,6 +33,7 @@ export const WishList = () => {
     diamondRingLocal,
     setToggledProducts,
     setDiamondRingLocal,
+    baseUrl,
   } = useContext(UserContext);
   const options = [
     { value: "Less than 3", label: "Less than 3" },
@@ -263,7 +264,7 @@ export const WishList = () => {
   //     try {
   //       if (userId) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${userId}`,
+  //           `${baseUrl}/wishlist-items?user_id=${userId}`,
 
   //           {
   //             headers: {
@@ -398,7 +399,7 @@ export const WishList = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`
+        `${baseUrl}/remove_wishlist_item/${removeWishList}`
       )
       .then((res) => {
         console.log("=====", res.data);
@@ -443,7 +444,7 @@ export const WishList = () => {
     const savedWishlist = JSON.parse(localStorage.getItem("cart_data")) || [];
 
     console.log("============================", formData);
-    const API_URl = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/cart?user_id=${formData.user_id}&gemstone_id=${formData.gemstone_id}&gemstone_price=${formData.gemstone_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&diamond_id=${formData.diamond_id}&diamond_price=${diamond_price}&img_sku=${formData.img_sku}&ring_price=${formData.ring_price}`;
+    const API_URl = `${baseUrl}/cart?user_id=${formData.user_id}&gemstone_id=${formData.gemstone_id}&gemstone_price=${formData.gemstone_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&diamond_id=${formData.diamond_id}&diamond_price=${diamond_price}&img_sku=${formData.img_sku}&ring_price=${formData.ring_price}`;
 
     console.log(API_URl);
 

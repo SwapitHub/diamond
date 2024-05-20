@@ -27,6 +27,7 @@ export const WishlistHover = () => {
     setLocalWishlist,
     setDiamondRingLocal,
     diamondRingLocal,
+    baseUrl,
   } = useContext(UserContext);
 
   useEffect(() => {
@@ -164,7 +165,7 @@ export const WishlistHover = () => {
     return async (removeWishList) => {
       try {
         const response = await axios.get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`
+          `${baseUrl}/remove_wishlist_item/${removeWishList}`
         );
         console.log("===========", response.data);
         dispatch(productList());
@@ -185,7 +186,7 @@ export const WishlistHover = () => {
   //     try {
   //       if (userId) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${userId}`,
+  //           `${baseUrl}/wishlist-items?user_id=${userId}`,
   //           {
   //             headers: {
   //               "Content-Type": "application/json",
@@ -218,7 +219,7 @@ export const WishlistHover = () => {
   //     try {
   //       if (userId) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/getcart-items?user_id=${userId}`,
+  //           `${baseUrl}/getcart-items?user_id=${userId}`,
 
   //           {
   //             headers: {
@@ -280,7 +281,7 @@ export const WishlistHover = () => {
     localStorage.setItem("cart_data", JSON.stringify(formData));
     const savedWishlist = JSON.parse(localStorage.getItem("cart_data")) || [];
 
-    const API_URl = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/cart?user_id=${formData.user_id}&gemstone_id=${formData.gemstone_id}&gemstone_price=${formData.gemstone_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&diamond_id=${formData.diamond_id}&diamond_price=${diamond_price}&img_sku=${formData.img_sku}&ring_price=${formData.ring_price}&gemstone_stock_no=${formData.gemstone_stock_no}&diamond_stock_no=${formData.diamond_stock_no}&ring_size=${formData.ring_size}`;
+    const API_URl = `${baseUrl}/cart?user_id=${formData.user_id}&gemstone_id=${formData.gemstone_id}&gemstone_price=${formData.gemstone_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&diamond_id=${formData.diamond_id}&diamond_price=${diamond_price}&img_sku=${formData.img_sku}&ring_price=${formData.ring_price}&gemstone_stock_no=${formData.gemstone_stock_no}&diamond_stock_no=${formData.diamond_stock_no}&ring_size=${formData.ring_size}`;
 
     console.log(API_URl);
     axios

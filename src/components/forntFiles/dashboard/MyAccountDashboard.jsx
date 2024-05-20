@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SettingPreferences } from "./SettingPreferences";
@@ -10,7 +10,9 @@ import { removeToCart } from "../../../redux/action";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import { format } from "date-fns";
+import { UserContext } from "../../../App";
 export const MyAccountDashboard = () => {
+  const {baseUrl} = useContext(UserContext)
   const history = useHistory();
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(1);
@@ -50,7 +52,7 @@ export const MyAccountDashboard = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/user-account?user_id=${user_id}`
+        `${baseUrl}/user-account?user_id=${user_id}`
       )
       .then((res) => {
         setProfileData(res.data);

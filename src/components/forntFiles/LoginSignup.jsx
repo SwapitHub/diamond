@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-use-history";
 import { toast } from "react-toastify";
@@ -10,12 +10,14 @@ import {
 } from "./ValidationFunctions";
 
 import { useSelector } from "react-redux";
+import { UserContext } from "../../App";
 export const LoginSignup = () => {
   const history = useHistory();
   const cartData = useSelector((state) => state.cartData);
   console.log(cartData);
   const wishlistData = useSelector((state) => state.wishlistData);
   console.log(wishlistData);
+  const {baseUrl} = useContext(UserContext)
   function validatedCpass(value, id, error) {
     const element = document.querySelector(`#${id} + .error_1`);
     const passwordValue = document.getElementById("create-pass").value;
@@ -51,7 +53,7 @@ export const LoginSignup = () => {
     } else {
       axios
         .get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/login?email=${formData.email}&password=${formData.password}`
+          `${baseUrl}/login?email=${formData.email}&password=${formData.password}`
         )
         .then((response) => {
           if (response.status === 200) {
@@ -68,7 +70,7 @@ export const LoginSignup = () => {
             cartData.forEach((item) => {
               console.log(item);
               // ===========
-              var URL = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/cart?user_id=${user_id}&ring_price=${
+              var URL = `${baseUrl}/cart?user_id=${user_id}&ring_price=${
                 item?.ring_price !== undefined ? item?.ring_price : ""
               }&ring_id=${
                 item.ring_data?.id !== undefined ? item.ring_data?.id : ""
@@ -151,7 +153,7 @@ export const LoginSignup = () => {
             }, 3000);
 
             wishlistData.forEach((item) => {
-              var wishListURL = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${user_id}&ring_price=${
+              var wishListURL = `${baseUrl}/add_to_wishlist?user_id=${user_id}&ring_price=${
                 item.product_type === "ring"
                   ? item.item?.white_gold_price
                   : item.product_type === "ring_diamond"
@@ -280,7 +282,7 @@ export const LoginSignup = () => {
       };
       console.log(formData);
       const response = await axios.post(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/user-registration",
+        `${baseUrl}/user-registration`,
         formData,
         {
           headers: {

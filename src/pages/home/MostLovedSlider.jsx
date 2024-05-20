@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import shipRings from "../../images/shipRings.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import DOMPurify from "dompurify";
 import axios from "axios";
+import { UserContext } from "../../App";
 export const MostLovedSlider = () => {
   const settings = {
     dots: false,
@@ -73,12 +74,13 @@ export const MostLovedSlider = () => {
 
     ],
   };
+  const {baseUrl} = useContext(UserContext)
   const [shapeData, setShapeData] = useState([]);
   console.log(shapeData);
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/homepage-data"
+        `${baseUrl}/homepage-data`
       )
       .then((res) => {
         setShapeData(res.data.data);

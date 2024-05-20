@@ -69,6 +69,7 @@ export const ChooseRingGemstone = () => {
     setLocalWishlist,
     localWishlist,
     toggledProducts,
+    baseUrl
   } = useContext(UserContext);
 
   const wishListDataBase = useSelector((state) => state.productDataWishlist);
@@ -176,7 +177,7 @@ export const ChooseRingGemstone = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/get_product_price?product_sku=${
+        `${baseUrl}/get_product_price?product_sku=${
           filterData.product?.sku
         }&metalType=${
           listColor === "Platinum" ? "Platinum" : "18kt"
@@ -235,7 +236,7 @@ export const ChooseRingGemstone = () => {
       setLocalWishlist([...localWishlist, newItem]);
 
       // Construct URL for API call
-      const apiUrl = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${user_id}&product_type=${product_type}&ring_id=${ring_id}&ring_color=${ring_color}&img_sku=${img_sku}&ring_price=${ring_price}&ring_type=${diamondTypeClick}`;
+      const apiUrl = `${baseUrl}/add_to_wishlist?user_id=${user_id}&product_type=${product_type}&ring_id=${ring_id}&ring_color=${ring_color}&img_sku=${img_sku}&ring_price=${ring_price}&ring_type=${diamondTypeClick}`;
       // Make API call
       console.log(apiUrl);
       const response = await axios.get(apiUrl, {
@@ -291,7 +292,7 @@ export const ChooseRingGemstone = () => {
   //     try {
   //       if (user_id) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${user_id}`,
+  //           ``${baseUrl}/wishlist-items?user_id=${user_id}`,
 
   //           {
   //             headers: {
@@ -326,7 +327,7 @@ export const ChooseRingGemstone = () => {
 
   useEffect(() => {
     const fetchData = () => {
-      const removeWish = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`;
+      const removeWish = `${baseUrl}/remove_wishlist_item/${removeWishList}`;
 
       axios
         .get(removeWish)
@@ -353,7 +354,7 @@ export const ChooseRingGemstone = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/product/${productSlug}`
+          `${baseUrl}/product/${productSlug}`
         );
 
         const product = response.data.data;
@@ -385,7 +386,7 @@ export const ChooseRingGemstone = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/diamondshape"
+        "`${baseUrl}/diamondshape"
       )
       .then((res) => {
         setShapeData(res.data.data);
@@ -481,7 +482,7 @@ export const ChooseRingGemstone = () => {
     );
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/get_product_price?product_sku=${productSku}&metalType=${productType}&metalColor=${ProductMetalColor}&diamond_type=${diamond_type}`
+        `${baseUrl}/get_product_price?product_sku=${productSku}&metalType=${productType}&metalColor=${ProductMetalColor}&diamond_type=${diamond_type}`
       )
 
       .then((response) => {
@@ -511,7 +512,7 @@ export const ChooseRingGemstone = () => {
 
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/get_product_price?product_sku=${productSku}&metalType=${productType}&metalColor=${ProductMetalColor}&diamond_type=${diamond_type}`
+        `${baseUrl}/get_product_price?product_sku=${productSku}&metalType=${productType}&metalColor=${ProductMetalColor}&diamond_type=${diamond_type}`
       )
 
       .then((response) => {

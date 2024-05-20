@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -15,8 +15,10 @@ import {
   validateTelephone,
 } from "../ValidationFunctions";
 import { Pickup } from "./Pickup";
+import { UserContext } from "../../../App";
 
 export const CheckOutPage = () => {
+  const {baseUrl} = useContext(UserContext)
   const white = "18K WHITE GOLD";
   const yellow = "18K YELLOW GOLD";
   const rose = "18K ROSE GOLD";
@@ -52,7 +54,7 @@ export const CheckOutPage = () => {
 
     const addressId = [];
 
-    const URL = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/save-users-address?user_id=${user_id}&address_type=${
+    const URL = `${baseUrl}/save-users-address?user_id=${user_id}&address_type=${
       checked ? "both" : "shipping_address"
     }&first_name=${formData.first_name}&last_name=${
       formData.last_name
@@ -104,7 +106,7 @@ export const CheckOutPage = () => {
         selectState: document.getElementById("billingselectState").value,
       };
 
-      const URL_1 = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/save-users-address?user_id=${user_id}&address_type=billing_address&first_name=${formData_1.first_name}&last_name=${formData_1.last_name}&address_line1=${formData_1.address}&address_line2&city=${formData_1.selectCity}&state=${formData_1.selectState}&zipcode=${formData_1?.postcode}&country=India&email=${formData?.email}.com&phone=${formData_1.telephone}&send_me_updates=true`;
+      const URL_1 = `${baseUrl}/save-users-address?user_id=${user_id}&address_type=billing_address&first_name=${formData_1.first_name}&last_name=${formData_1.last_name}&address_line1=${formData_1.address}&address_line2&city=${formData_1.selectCity}&state=${formData_1.selectState}&zipcode=${formData_1?.postcode}&country=India&email=${formData?.email}.com&phone=${formData_1.telephone}&send_me_updates=true`;
       console.log(URL_1);
       axios
         .get(
@@ -254,7 +256,7 @@ export const CheckOutPage = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);

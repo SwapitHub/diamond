@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FaStar } from "react-icons/fa";
 import round from "../../images/Round.png";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { UserContext } from "../../App";
 export const ShopDiamondSlider = () => {
+  const {baseUrl} = useContext(UserContext)
   const settings = {
     dots: false,
     infinite: true,
@@ -49,7 +51,7 @@ export const ShopDiamondSlider = () => {
 console.log(shapeData);
   useEffect(() => {
     axios
-      .get("http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/diamondshape")
+      .get(`${baseUrl}/diamondshape`)
       .then((res) => {
         setShapeData(res.data.data);
         console.log(res.data.data);

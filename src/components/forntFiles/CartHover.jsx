@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,12 +6,15 @@ import { removeToCart, setCartDetails } from "../../redux/action";
 import axios from "axios";
 import { productListCart } from "../../redux/productAction";
 import { toast } from "react-toastify";
+import { UserContext } from "../../App";
 
 export const CartHover = () => {
   const white = "18K WHITE GOLD";
   const yellow = "18K YELLOW GOLD";
   const rose = "18K ROSE GOLD";
   const platinum = "Platinum";
+
+  const {baseUrl} = useContext(UserContext)
 
   const dispatch = useDispatch();
 
@@ -50,7 +53,7 @@ export const CartHover = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        "${baseUrl}/metalcolor"
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -70,7 +73,7 @@ export const CartHover = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -110,7 +113,7 @@ export const CartHover = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove-cartitem/${removeCart}`
+        `${baseUrl}/remove-cartitem/${removeCart}`
       )
       .then((res) => {
         console.log("=====", res.data);
@@ -140,7 +143,7 @@ export const CartHover = () => {
   //     try {
   //       if (userId) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/getcart-items?user_id=${userId}`,
+  //           `${baseUrl}/getcart-items?user_id=${userId}`,
 
   //           {
   //             headers: {

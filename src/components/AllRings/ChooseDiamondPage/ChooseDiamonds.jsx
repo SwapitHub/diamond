@@ -1,6 +1,6 @@
 import axios from "axios";
 import debounce from "lodash.debounce";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
 import { useHistory } from "react-router-use-history";
@@ -9,6 +9,7 @@ import Slider from "react-slider";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import LoaderSpinner from "../../LoaderSpinner";
+import { UserContext } from "../../../App";
 
 export const ChooseDiamonds = () => {
   const location = useLocation();
@@ -48,6 +49,7 @@ export const ChooseDiamonds = () => {
     );
   };
 
+  const {baseUrl} = useContext(UserContext)
   useEffect(() => {
     const newPathSegments = location.pathname.split("/");
     const newLastPathSegment = newPathSegments[newPathSegments.length - 1];
@@ -321,7 +323,7 @@ export const ChooseDiamonds = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/diamondshape"
+        "`${baseUrl}/diamondshape"
       )
       .then((res) => {
         setShapeData(res.data.data);
@@ -484,7 +486,7 @@ export const ChooseDiamonds = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/product/${productSlug}`
+          `${baseUrl}/product/${productSlug}`
         );
 
         const product = response.data.data;
@@ -550,7 +552,7 @@ export const ChooseDiamonds = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/get_product_price?product_sku=${
+        `${baseUrl}/get_product_price?product_sku=${
           filterData.product?.sku
         }&metalType=${
           listColor === "Platinum" ? "Platinum" : "18kt"

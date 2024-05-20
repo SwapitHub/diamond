@@ -36,7 +36,7 @@ export const SuccessPayment = () => {
   const [removeWishList, setRemoveWishList] = useState();
   const [shapeData, setShapeData] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
-
+  const {baseUrl} = useContext(UserContext)
   const handleChange = (event) => setMessage(event.target.value);
   const cartData = useSelector((state) => state.cartData);
   const cartDetails = useSelector((state) => state.cartReducer);
@@ -197,7 +197,7 @@ export const SuccessPayment = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove-cartitem/${removeWishList}`
+        `${baseUrl}/remove-cartitem/${removeWishList}`
       )
       .then((res) => {
         console.log("=====", res.data);
@@ -214,7 +214,7 @@ export const SuccessPayment = () => {
       try {
         if (userId) {
           const response = await axios.get(
-            `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/getcart-items?user_id=${userId}`,
+            `${baseUrl}/getcart-items?user_id=${userId}`,
 
             {
               headers: {
@@ -273,7 +273,7 @@ export const SuccessPayment = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -314,7 +314,7 @@ export const SuccessPayment = () => {
   ) => {
     try {
       // Construct URL for API call
-      const apiUrl = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${user_id}&gemstone_price=${gemstone_price}&gemstone_id=${gemstone_id}&product_type=${product_type}&ring_id=${ring_id}&ring_color=${ring_color}&img_sku=${img_sku}&ring_price=${ring_price}&diamond_id=${diamond_id}&diamond_price=${diamond_price}`;
+      const apiUrl = `${baseUrl}/add_to_wishlist?user_id=${user_id}&gemstone_price=${gemstone_price}&gemstone_id=${gemstone_id}&product_type=${product_type}&ring_id=${ring_id}&ring_color=${ring_color}&img_sku=${img_sku}&ring_price=${ring_price}&diamond_id=${diamond_id}&diamond_price=${diamond_price}`;
       // Make API call
       const response = await axios.get(apiUrl, {
         headers: {
@@ -403,7 +403,7 @@ export const SuccessPayment = () => {
   useEffect(() => {
     axios
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/order-detail?order_id=${order_id}`
+        `${baseUrl}/order-detail?order_id=${order_id}`
       )
       .then((res) => {
         setOrderId(res.data);
@@ -432,7 +432,7 @@ export const SuccessPayment = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);

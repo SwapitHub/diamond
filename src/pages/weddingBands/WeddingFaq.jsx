@@ -1,7 +1,8 @@
 import axios from "axios";
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import { BiUpArrow, BiDownArrow } from "react-icons/bi";
 import DOMPurify from "dompurify";
+import { UserContext } from "../../App";
 
 export const WeddingFaq = () => {
     const [selected, setSelected] = useState(null);
@@ -12,14 +13,14 @@ export const WeddingFaq = () => {
 
         setSelected(i)
     }
-
+    const {baseUrl} = useContext(UserContext)
     // diamond shape
     const [shapeData, setShapeData] = useState([]);
     // console.log(shapeData);
     useEffect(() => {
         axios
             .get(
-                "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/faq"
+                `${baseUrl}/faq`
             )
             .then((res) => {
                 setShapeData(res.data.data);

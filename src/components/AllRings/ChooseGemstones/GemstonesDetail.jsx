@@ -39,6 +39,7 @@ export const GemstonesDetail = () => {
     setToggledProducts,
     localWishlist,
     setLocalWishlist,
+    baseUrl,
   } = useContext(UserContext);
 
   const [removeWishList, setRemoveWishList] = useState();
@@ -161,7 +162,7 @@ export const GemstonesDetail = () => {
 
     // console.log("============================",savedWishlist);
     console.log("data ring ", formData);
-    const urlNew = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${formData.user_id}&product_type=${formData.product_type}&gemstone_price=${formData.gemstone_price}&gemstone_id=${formData.gemstone_id}&gemstone_stock_no=${formData.gemstone_stock_no}`;
+    const urlNew = `${baseUrl}/add_to_wishlist?user_id=${formData.user_id}&product_type=${formData.product_type}&gemstone_price=${formData.gemstone_price}&gemstone_id=${formData.gemstone_id}&gemstone_stock_no=${formData.gemstone_stock_no}`;
     console.log(urlNew);
     axios
       .get(urlNew, {
@@ -186,7 +187,7 @@ export const GemstonesDetail = () => {
 
   useEffect(() => {
     const fetchData = () => {
-      const removeWish = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`;
+      const removeWish = `${baseUrl}/remove_wishlist_item/${removeWishList}`;
       console.log(removeWishList);
       console.log(removeWish);
       axios
@@ -262,7 +263,7 @@ export const GemstonesDetail = () => {
     const savedWishlist = JSON.parse(localStorage.getItem("cart_data")) || [];
 
     console.log("============================", savedWishlist);
-    var newApi = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/cart?user_id=${formData.user_id}&gemstone_id=${formData.gemstone_id}&gemstone_price=${formData.gemstone_price}&gemstone_stock_no=${formData.gemstone_stock_no}&product_type=${formData.product_type}`;
+    var newApi = `${baseUrl}/cart?user_id=${formData.user_id}&gemstone_id=${formData.gemstone_id}&gemstone_price=${formData.gemstone_price}&gemstone_stock_no=${formData.gemstone_stock_no}&product_type=${formData.product_type}`;
     console.log(newApi);
 
     axios
@@ -295,7 +296,7 @@ export const GemstonesDetail = () => {
   //     try {
   //       if (user_id) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${user_id}`,
+  //           ``${baseUrl}/wishlist-items?user_id=${user_id}`,
 
   //           {
   //             headers: {

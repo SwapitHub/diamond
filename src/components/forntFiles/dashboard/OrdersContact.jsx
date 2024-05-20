@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   validateCpass,
   validateEmail,
@@ -7,8 +7,10 @@ import {
 } from "../ValidationFunctions";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { UserContext } from "../../../App";
 
 export const OrdersContact = () => {
+  const {baseUrl} = useContext(UserContext)
   function validatedPass(value, id, error) {
     const element = document.querySelector(`#${id} + .error_1`);
     if (element.length < 8) {
@@ -67,7 +69,7 @@ export const OrdersContact = () => {
     console.log(formData);
     axios
     .get(
-      `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/update_preferences/${user_id}?first_name=${formData.first_name}&last_name=${formData.last_name}&email=${formData.email}&current_password=${formData.current_password}&password=${formData.password}&c_password=${formData.c_password}&send_updates=${formData.send_updates}&newsletter=${formData.newsletter}`
+      `${baseUrl}/update_preferences/${user_id}?first_name=${formData.first_name}&last_name=${formData.last_name}&email=${formData.email}&current_password=${formData.current_password}&password=${formData.password}&c_password=${formData.c_password}&send_updates=${formData.send_updates}&newsletter=${formData.newsletter}`
     )
     .then((res)=>{
           console.log(res);

@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import  {useHistory}   from "react-router-use-history";
 import LoaderSpinner from "../LoaderSpinner";
 import { productListCart } from "../../redux/productAction";
+import { UserContext } from "../../App";
  
 export const PaymentForm = () => {
   const white = "18K WHITE GOLD";
@@ -15,6 +16,7 @@ export const PaymentForm = () => {
 const history = useHistory()
 const location = useLocation();
 const dispatch = useDispatch();
+const {baseUrl} = useContext(UserContext)
   const queryParams = new URLSearchParams(location.search);
 const address_id = queryParams.get("address_id");
 
@@ -44,7 +46,7 @@ const address_id = queryParams.get("address_id");
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -100,7 +102,7 @@ const address_id = queryParams.get("address_id");
     axios
    
       .get(
-        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/checkout?user_id=${user_id}&order_data=${jsonString}&address=${address_id}`
+        `${baseUrl}/checkout?user_id=${user_id}&order_data=${jsonString}&address=${address_id}`
       )
       .then((res) => {
         console.log(res.data.data.order_id);
@@ -110,7 +112,7 @@ const address_id = queryParams.get("address_id");
           itemIdsArray?.forEach((itemId) => {
             axios
               .get(
-                `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove-cartitem/${itemId}`
+                `${baseUrl}/remove-cartitem/${itemId}`
               )
               .then((res2) => {
                 console.log(

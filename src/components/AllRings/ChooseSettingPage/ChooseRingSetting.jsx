@@ -34,7 +34,7 @@ const ChooseRingSetting = () => {
   const ring = "ring";
   console.log("remove ============wish", removeWishList);
   const [items, setItems] = useState([]);
-
+  const {baseUrl} = useContext(UserContext)
   const options = [
     { value: "best_seller", label: "Best Sellers" },
     { value: "Newest", label: "Newest" },
@@ -153,12 +153,12 @@ const ChooseRingSetting = () => {
   const [range, setRange] = useState([minRange, maxRange]);
 
   // =============== shop by price range end==============
-  // `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/products?page=${page}&sortby=${priceShorting}&ring_style=${selectedShopStyleIds}&shape=${shapeName}&metal_color=${metalId}&price_range=${minPrice},${maxPrice}`
+  // ``${baseUrl}/products?page=${page}&sortby=${priceShorting}&ring_style=${selectedShopStyleIds}&shape=${shapeName}&metal_color=${metalId}&price_range=${minPrice},${maxPrice}`
 
   useEffect(() => {
     setLoading(true);
 
-    const URLNEW = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/products?page=${page}&sortby=${priceShorting}&ring_style=${selectedShopStyleIdsString}&shape=${
+    const URLNEW = `${baseUrl}/products?page=${page}&sortby=${priceShorting}&ring_style=${selectedShopStyleIdsString}&shape=${
       shapeName ? shapeName : ""
     }&metal_color=${metalId}&bridal_sets=${bridalSets}`;
     console.log(URLNEW);
@@ -259,7 +259,7 @@ const ChooseRingSetting = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/metalcolor"
+        `${baseUrl}/metalcolor`
       )
       .then((res) => {
         setMetalColor(res.data.data);
@@ -294,7 +294,7 @@ const ChooseRingSetting = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/diamondshape"
+        "`${baseUrl}/diamondshape"
       )
       .then((res) => {
         setShapeData(res.data.data);
@@ -320,7 +320,7 @@ const ChooseRingSetting = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/product-style"
+          "`${baseUrl}/product-style"
         );
         setShopStyle(response.data.data);
         console.log(response.data.data);
@@ -599,7 +599,7 @@ const ChooseRingSetting = () => {
         try {
           // Construct URL for API call
           setLoading(true);
-          const apiUrl = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${user_id}&ring_price=${ring_price}&ring_id=${ring_id}&ring_color=${ring_color}&product_type=${product_type}&img_sku=${imgSku}&ring_type=natural`;
+          const apiUrl = `${baseUrl}/add_to_wishlist?user_id=${user_id}&ring_price=${ring_price}&ring_id=${ring_id}&ring_color=${ring_color}&product_type=${product_type}&img_sku=${imgSku}&ring_type=natural`;
           // Make API call
           const response = await axios.get(apiUrl, {
             headers: {
@@ -656,7 +656,7 @@ const ChooseRingSetting = () => {
   useEffect(() => {
     setLoading(true);
     const fetchData = () => {
-      const removeWish = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`;
+      const removeWish = `${baseUrl}/remove_wishlist_item/${removeWishList}`;
 
       axios
         .get(removeWish)
@@ -716,7 +716,7 @@ const ChooseRingSetting = () => {
   //     try {
   //       if (user_id) {
   //         const response = await axios.get(
-  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${user_id}`,
+  //           ``${baseUrl}/wishlist-items?user_id=${user_id}`,
   //           {
   //             headers: {
   //               "Content-Type": "application/json",
