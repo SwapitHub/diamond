@@ -26,6 +26,7 @@ function App() {
   const [showSuggestion, setShowSuggestion] = useState(false);
   const [showSuggestionHeader, setShowSuggestionHeader] = useState(false);
   const [loadingCart, setLoadingCart] = useState(false)
+  const baseUrl=""
 
   const buttonRef = useRef(null);
 
@@ -72,6 +73,7 @@ function App() {
             triggerCart: triggerCart,
             loadingCart : loadingCart,
             setLoadingCart: setLoadingCart,
+            baseUrl : baseUrl,
           }}
         >
           {loading ? (
