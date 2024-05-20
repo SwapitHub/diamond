@@ -294,7 +294,7 @@ const ChooseRingSetting = () => {
   useEffect(() => {
     axios
       .get(
-        "`${baseUrl}/diamondshape"
+        `${baseUrl}/diamondshape`
       )
       .then((res) => {
         setShapeData(res.data.data);
@@ -320,7 +320,7 @@ const ChooseRingSetting = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "`${baseUrl}/product-style"
+          `${baseUrl}/product-style`
         );
         setShopStyle(response.data.data);
         console.log(response.data.data);

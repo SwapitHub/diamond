@@ -46,7 +46,6 @@ export const CartPage = () => {
   const handleChange = (event) => setMessage(event.target.value);
   const cartData = useSelector((state) => state.cartData);
   const cartDetails = useSelector((state) => state.productDataCart);
-  const wishListDataBase = useSelector((state) => state.wishlistReducer);
   const {baseUrl} = useContext(UserContext)
   const user_id = localStorage.getItem("formData");
   console.log(cartData);

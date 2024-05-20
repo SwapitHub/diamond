@@ -386,7 +386,7 @@ export const ChooseRingGemstone = () => {
   useEffect(() => {
     axios
       .get(
-        "`${baseUrl}/diamondshape"
+        `${baseUrl}/diamondshape`
       )
       .then((res) => {
         setShapeData(res.data.data);

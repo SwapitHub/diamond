@@ -473,7 +473,7 @@ export const ChooseGemstones = () => {
     () => async () => {
       try {
         const response = await axios.get(
-          "`${baseUrl}/gemstone-attributes"
+          `${baseUrl}/gemstone-attributes`
         );
         setGemstoneFilterData(response.data.data);
         console.log(response.data.data);
