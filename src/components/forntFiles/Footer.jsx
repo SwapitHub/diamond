@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { BsYoutube, BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";
-import { FaFacebookF, FaPinterestP, FaPlus, FaMinus } from "react-icons/fa";
 import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { BsInstagram, BsLinkedin, BsTwitter, BsYoutube } from "react-icons/bs";
+import { FaFacebookF, FaMinus, FaPinterestP, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
 export const Footer = () => {
+  const {baseUrl} = useContext(UserContext)
   const [selected, setSelected] = useState(null);
 
   const toggle = (i) => {
@@ -22,26 +24,27 @@ export const Footer = () => {
     // if (storedNavData) {
     //   setFtrIcon(JSON.parse(storedNavData));
     // } else {
-      // Fetch data from API if not available in local storage
-      axios
-        .get(
-          "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/siteinfo"
-        )
-        .then((res) => {
-          // localStorage.setItem("ftrIcon", JSON.stringify(res.data.data));
-          setFtrIcon(res.data.data);
-        })
-        .catch(() => {
-          console.log("API error");
-        });
-    
+    // Fetch data from API if not available in local storage
+    axios
+      .get(
+        `${baseUrl}siteinfo`
+      )
+      .then((res) => {
+        // localStorage.setItem("ftrIcon", JSON.stringify(res.data.data));
+        setFtrIcon(res.data.data);
+      })
+      .catch(() => {
+        console.log("API error");
+      });
   }, []);
 
   const [FooterData, setFooterData] = useState([]);
+  const [newsLetterEmail, setNewsletterEmail] = useState([]);
+  const [newsLetterResult, setNewsLetterResult] = useState("");
   useEffect(() => {
     axios
       .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/footer-pages"
+        `${baseUrl}footer-pages`
       )
       .then((res) => {
         setFooterData(res.data.data);
@@ -50,6 +53,28 @@ export const Footer = () => {
         console.log("API error");
       });
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const fetchData = () => {
+      axios
+        .get(
+          `${baseUrl}newsletter?email=${newsLetterResult}`
+        )
+        .then((res) => {
+          setNewsletterEmail(res.data);
+          console.log(res.data);
+        })
+        .catch(() => {
+          console.log("API error");
+        });
+    };
+
+    fetchData();
+  };
+
+  console.log(newsLetterEmail);
   return (
     <>
       <footer className="footer">
@@ -88,15 +113,33 @@ export const Footer = () => {
                     Join our mailing list for the latest products, news, and
                     offers!
                   </p>
-
-                  <form action="#">
-                    <div className="email">
-                      <input type="email" placeholder="Enter Email Address.." />
-                    </div>
-                    <div className="submit-btn">
-                      <input className="button" type="submit" value="submit" />
-                    </div>
-                  </form>
+                  {newsLetterEmail && 
+                    newsLetterEmail?.res === "success" ? (
+                      <p>
+                        Thank you for subscribing to the Brilliant Earth
+                        newsletter.
+                      </p>
+                    ) : (
+                      <form action="#" onSubmit={handleSubmit}>
+                        <div className="email">
+                          <input
+                            type="email"
+                            placeholder="Enter Email Address.."
+                            onChange={(e) =>
+                              setNewsLetterResult(e.target.value)
+                            }
+                          />
+                        </div>
+                        <div className="submit-btn">
+                          <input
+                            className="button"
+                            type="submit"
+                            value="submit"
+                          />
+                        </div>
+                      </form>
+                    )
+                  }
 
                   <div className="ftr-icons flex">
                     <span>
