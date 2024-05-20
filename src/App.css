@@ -151,15 +151,14 @@ img.clicked {
 }
 a.nature-active {
   border-radius: 11px;
-  border: 4.4px solid #734E90;
-  background: #FFF;
-  color: #734E90;
+  border: 4.4px solid #734e90;
+  background: #fff;
+  color: #734e90;
   font-size: 15.4px;
   font-weight: 800;
 }
 .Diamond-Original > a:hover {
-  border: 4.4px solid #734E90;
- 
+  border: 4.4px solid #734e90;
 }
 .header-icons .search-icon > input.search-open {
   width: 200px;
@@ -497,16 +496,19 @@ ul.pagination.justify-content-center {
   border-color: #310f4c !important;
   color: #fff !important;
 }
-.header-top.active .header-contact-us, .header-top.active .header-icons {
+.header-top.active .header-contact-us,
+.header-top.active .header-icons {
   display: none;
 }
 .header-top.active .header-logo {
   margin: 0 auto;
 }
 
-.header-top.success-active .header-icons .bell-icon,.header-top.success-active .header-icons .bag-icon, .header-top.success-active .header-icons .header-heart-icon{
+.header-top.success-active .header-icons .bell-icon,
+.header-top.success-active .header-icons .bag-icon,
+.header-top.success-active .header-icons .header-heart-icon {
   display: none;
-} 
+}
 .header-top.success-active .header-icons {
   width: 20%;
 }
@@ -521,12 +523,12 @@ ul.pagination.justify-content-center {
 .blur {
   filter: blur(5px); /* Change the blur amount as needed */
 }
-video::poster{
+video::poster {
   width: 30px !important;
   max-width: 30px !important;
   height: 30px !important;
 }
-.details-videos span.lazy-load-image-background{
+.details-videos span.lazy-load-image-background {
   position: absolute;
   display: flex !important;
   align-items: center;
@@ -537,18 +539,19 @@ video::poster{
   right: 0;
   /* z-index: -1; */
 }
-.all-img1.common-img.defaultImg>span:nth-child(3) {
+.all-img1.common-img.defaultImg > span:nth-child(3) {
   position: absolute;
   width: 100px;
 }
-span.common-stand-img-1,span.common-stand-img.white-stand-img {
+span.common-stand-img-1,
+span.common-stand-img.white-stand-img {
   position: relative;
   z-index: 1;
 }
 .all-metal-color a.style-active-common.color {
   display: block;
 }
-.all-metal-color .color{
+.all-metal-color .color {
   display: none;
 }
 /* ============banner new css start */
@@ -557,11 +560,9 @@ span.common-stand-img-1,span.common-stand-img.white-stand-img {
   margin: 0 auto;
   position: relative;
 }
-section.banner-section .container{
-  background: #E8E8E8;
+section.banner-section .container {
+  background: #e8e8e8;
 }
-
-
 
 .common-row.banner .banner-ring-text-btn-1 {
   position: absolute;
@@ -573,13 +574,13 @@ section.banner-section .container{
   right: 0;
 }
 .banner-ring-text-btn > h3 {
-  color: #310F4C;
+  color: #310f4c;
 }
 .banner-img-slider > img {
   margin: 0 auto;
 }
 .banner-ring-text-btn > span {
-  color: #310F4C;
+  color: #310f4c;
   font-family: Montserrat;
   font-size: 18px;
   font-style: normal;
@@ -589,47 +590,43 @@ section.banner-section .container{
 }
 .common-row.banner .slick-prev {
   left: 15px;
-  background: #310F4C;
+  background: #310f4c;
   padding: 15px;
-
 }
 .common-row.banner .slick-next {
   right: 20px;
-  background: #310F4C;
+  background: #310f4c;
   padding: 15px;
-
 }
-.common-row.banner button.slick-arrow.slick-next:after, .common-row.banner button.slick-arrow.slick-prev:after{
+.common-row.banner button.slick-arrow.slick-next:after,
+.common-row.banner button.slick-arrow.slick-prev:after {
   border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
+  border-right: 2px solid #fff;
 }
-.common-row.banner button.slick-arrow.slick-next:after{
+.common-row.banner button.slick-arrow.slick-next:after {
   right: 12px;
   top: 9px;
 }
-.common-row.banner button.slick-arrow.slick-prev:after{
+.common-row.banner button.slick-arrow.slick-prev:after {
   right: 7px;
   top: 9px;
 }
 .common-row.banner .slick-dots {
   bottom: 18px;
- 
 }
 .common-row.banner .slick-dots li button:before {
-  font-size: 13px;  
-  color: #310F4C;
-
+  font-size: 13px;
+  color: #310f4c;
 }
 .banner-img-slider {
   display: flex !important;
-  flex-direction: column ;
-  align-items: center ;
-  justify-content: center ;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 646px;
   text-align: center;
 }
 .common-row.banner .banner-ring-text-btn {
-
   margin-bottom: 50px;
 }
 /* ============banner new css end */
@@ -653,7 +650,7 @@ section.see-products-main .see-products-img {
 .See-Products {
   position: absolute;
   bottom: 25px;
-  color: #FFF;
+  color: #fff;
   font-family: "Sackers Gothic Light AT";
   font-size: 18.909px;
   font-weight: 400;
@@ -662,7 +659,7 @@ section.see-products-main .see-products-img {
 }
 
 .See-Products > span:nth-child(2) {
-  color: #FFF;
+  color: #fff;
   font-family: Montserrat;
   font-size: 14px;
   font-style: normal;
@@ -673,7 +670,8 @@ section.see-products-main .see-products-img {
 
 /*============ EngagementBridal  start====*/
 
-.EngagementBridal-img, .EngagementBridal-text {
+.EngagementBridal-img,
+.EngagementBridal-text {
   width: 47.8%;
 }
 .EngagementBridal-2-img > span {
@@ -703,7 +701,7 @@ section.see-products-main .see-products-img {
 }
 .EngagementBridal-text a.button {
   background: transparent;
-  color: #1B1818;
+  color: #1b1818;
   font-family: Montserrat;
   font-size: 16px;
   font-weight: 400;
@@ -740,44 +738,56 @@ section.AnniversaryRing-main .contant-bar p {
   width: calc(50% - 10px);
   text-align: center;
 }
-.AnniversaryRing-main  .grid-wrapper-bar .img-bar img {
+.AnniversaryRing-main .grid-wrapper-bar .img-bar img {
   width: 100%;
   max-width: 100%;
   min-height: auto;
   max-height: 100%;
-
 }
-.AnniversaryRing-main  .grid-wrapper-bar a {
+.AnniversaryRing-main .grid-wrapper-bar a {
   display: inline-block;
   padding: 12px 48px;
   border-radius: 5px;
   border: 1px solid #000;
-  color: #1B1818;
+  color: #1b1818;
 }
 /* new start with setting */
 .ring-choose-setting.flex {
   justify-content: center;
   column-gap: 18px;
-  border: 1px solid #E4E4E4;
+  border: 1px solid #e4e4e4;
   border-radius: 50px;
   max-width: -moz-fit-content;
   max-width: fit-content;
   margin: 40px auto;
 }
-.one-choose-setting:first-child {
-  background: #734E90;
+
+.one-choose-setting:first-child,
+.chooseDiamond-active .one-choose-setting:nth-child(3), .diamond-bread-crumb-active .one-choose-setting:nth-child(3),
+.final-ring .one-choose-setting:nth-child(5) {
+  background: #734e90;
   padding: 17px 30px 17px 30px;
   border-radius: 50px;
   font-weight: 700;
 }
+.chooseDiamond-active .one-choose-setting:first-child, .final-ring .one-choose-setting:first-child , .diamond-bread-crumb-active .one-choose-setting:first-child{
+  background: transparent;
+}
+.chooseDiamond-active .one-choose-setting:first-child > span ,.final-ring .one-choose-setting:first-child > span, .diamond-bread-crumb-active .one-choose-setting:first-child > span{
+  color: #310f4c;
+}
+.chooseDiamond-active .one-choose-setting:nth-child(3) > span,
+.final-ring .one-choose-setting:nth-child(5) > span, .diamond-bread-crumb-active .one-choose-setting:nth-child(3) > span{
+  color: #fff;
+}
 .one-choose-setting:last-child {
   padding: 17px 20px 17px 0px;
 }
-.one-choose-setting:first-child > span{
+.one-choose-setting:first-child > span {
   color: #fff;
 }
 .one-choose-setting > span {
-  color: #310F4C;
+  color: #310f4c;
   font-family: Montserrat;
   font-size: 16px;
   font-weight: 500;
@@ -786,17 +796,38 @@ section.AnniversaryRing-main .contant-bar p {
   display: inline-flex;
 }
 .ShopDiamondCotegory .column-width {
-  width: calc(100%/5 - 5px);
+  width: calc(100% / 5 - 5px);
   padding: 0;
 }
 .menRings .container {
   background: #fff;
 }
-.menRings-img, .menRings-text {
-  width: calc(100%/2 - 30px);
+.menRings-img,
+.menRings-text {
+  width: calc(100% / 2 - 30px);
   padding: 0;
 }
+
+/* ==============ser */
 .Bridal-Jewellery a.button {
   background: transparent;
-  color: #1B1818;
+  color: #1b1818;
+}
+.WeddingCollection {
+  padding: 0 !important;
+  background: none !important;
+}
+.WeddingCollection .ring-grid-sec .grid-wrapper-bar {
+  width: calc(33% - 10px);
+}
+.WeddingCollection .grid-wrapper-bar .img-bar img {
+  max-height: 100%;
+}
+.details-page .Diamond-Original > a {
+  width: 235px;
+  padding: 10px 27px;
+  height: auto;
+}
+.details-page .Diamond-Original > a:hover {
+  border: 2px solid #734e90;
 }

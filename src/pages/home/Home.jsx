@@ -17,6 +17,7 @@ import { EngagementBridal } from './EngagementBridal'
 import { ShopDiamondCotegory } from './ShopDiamondCotegory'
 import { AnniversaryRingFeatured } from './AnniversaryRingFeatured'
 import { AnniversaryRings } from './AnniversaryRings'
+import { WeddingCollection } from './WeddingCollection'
 
 
 export const Home = () => {
@@ -29,7 +30,7 @@ export const Home = () => {
   <ShopDiamondCotegory/>
   <MenRings/>
 <AnniversaryRings/>
-
+<WeddingCollection/>
 
   <EngagementBridal/>
   <ShopDiamondSlider/>
