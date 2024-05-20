@@ -44,7 +44,7 @@ export const Footer = () => {
   useEffect(() => {
     axios
       .get(
-        `${baseUrl}footer-pages`
+        `${baseUrl}/footer-pages`
       )
       .then((res) => {
         setFooterData(res.data.data);
@@ -60,7 +60,7 @@ export const Footer = () => {
     const fetchData = () => {
       axios
         .get(
-          `${baseUrl}newsletter?email=${newsLetterResult}`
+          `${baseUrl}/newsletter?email=${newsLetterResult}`
         )
         .then((res) => {
           setNewsletterEmail(res.data);
