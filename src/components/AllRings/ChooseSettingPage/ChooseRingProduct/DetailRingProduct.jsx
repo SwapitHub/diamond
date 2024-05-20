@@ -533,136 +533,193 @@ export const DetailRingProduct = () => {
   // };
 
   return (
-    <div className="details-page container">
-      <div className="bread-cram-setting-pages">
-        <Link to="#">Home</Link> / <Link to="#">Engagement Rings</Link> /{" "}
-        <Link to="#">Ring style </Link> / Ring Name
-      </div>
-
+    <div className={`details-page container ${stock_num ? "diamond-bread-crumb-active": null}`}>
+     
       <div className="">
         <>
           {/* ====================create your ring start */}
           {stock_num !== null ? (
-            <div className="main-btn-setting">
-              <div className="ring Create-Your-Ring">
-                <span>Design Your Ring</span>
-                <div className="arrow-shape">{/* arrow design */}</div>
-              </div>
-              <div className="ring Choose-Setting">
-                <Link to="#">
-                  {diamondData.map((item) => {
-                    return (
-                      <>
-                        <span className="step-counting">1</span>
-                        <div className="image-of-gemstone">
-                          <img src={item.image_url} alt="" />
-                        </div>
-                        <div className="gemstone-detail-banner">
-                          <div className="setting step-heading">Diamond</div>
-                          <div className="name-of-gemstone">
-                            {item.shape} - ${item.total_sales_price}
-                            <div className="change-view">
-                              <div className="change">
-                                <Link
-                                  to={`/gemstones-detail/?stock_num=${item.stock_num}`}
-                                >
-                                  view
-                                </Link>
-                              </div>
-                              <div className="change">
-                                <Link to="/engagement-rings/start-with-a-gemstone">
-                                  Change
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </>
-                    );
-                  })}
-                </Link>
-
-                <div className="arrow-shape">{/* arrow design */}</div>
-              </div>
-              <div className="ring Choose-Diamond">
-                <Link to="/engagement-rings/start-with-a-diamond">
-                  <span className="step-counting">2</span>
-                  <div className="img">
-                    <img
-                      src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl.png"
-                      alt=""
-                    />
-                  </div>
-                  <div className="browse-setting-data">
-                    <span className="step-heading">Choose Setting</span>
-                  </div>
-                </Link>
-                <div className="arrow-shape">{/* arrow design */}</div>
-              </div>
-
-              <div className="ring Complete-Ring">
-                <div className="inner-s">
-                  <span className="step-counting">3</span>
-                  <div className="img">
-                    <img
-                      src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl3.png"
-                      alt=""
-                    />
-                  </div>
-                  <span className="step-heading">Complete Ring</span>
-                </div>
-              </div>
-            </div>
+             <div className="ring-choose-setting flex">
+             <div className="one-choose-setting">
+               <span>1. Choose Diamonds</span>
+             </div>
+             <div className="svg-icn">
+               <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+               >
+                 <g clip-path="url(#clip0_492_13580)">
+                   <path
+                     d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                     stroke="#E8E8E8"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                   <path
+                     d="M8.25 12H15.75"
+                     stroke="#D7D7D7"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                   <path
+                     d="M12.75 9L15.75 12L12.75 15"
+                     stroke="#D7D7D7"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                 </g>
+                 <defs>
+                   <clipPath id="clip0_492_13580">
+                     <rect width="24" height="24" fill="white" />
+                   </clipPath>
+                 </defs>
+               </svg>
+             </div>
+             <div className="one-choose-setting">
+               <span>2. Choose Setting</span>
+             </div>
+             <div className="svg-icn">
+               <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+               >
+                 <g clip-path="url(#clip0_492_13575)">
+                   <path
+                     d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                     fill="#310F4C"
+                     stroke="#734E90"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                   <path
+                     d="M8.25 12H15.75"
+                     stroke="white"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                   <path
+                     d="M12.75 9L15.75 12L12.75 15"
+                     stroke="white"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                 </g>
+                 <defs>
+                   <clipPath id="clip0_492_13575">
+                     <rect width="24" height="24" fill="white" />
+                   </clipPath>
+                 </defs>
+               </svg>
+             </div>
+            
+             <div className="one-choose-setting">
+               <span>3. Complete Ring </span>
+             </div>
+           </div>
           ) : (
             <>
               <div className="main-arrow-heading">
-                <div className="main-btn-setting">
-                  <div className="ring Create-Your-Ring">
-                    <span>Create Your Ring</span>
-                    <div className="arrow-shape">{/* arrow design */}</div>
-                  </div>
-
-                  <div className="ring Choose-Setting">
-                    <Link to="#">
-                      <span className="step-counting">1</span>
-                      <div className="img">
-                        <img
-                          src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl4.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="setting step-heading">Setting</div>
-                    </Link>
-                    <div className="arrow-shape">{/* arrow design */}</div>
-                  </div>
-
-                  <div className="ring Choose-Diamond">
-                    <Link to="/engagement-rings/start-with-a-diamond">
-                      <span className="step-counting">2</span>
-                      <div className="img">
-                        <img
-                          src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl.png"
-                          alt=""
-                        />
-                      </div>
-                      <span className="step-heading">Choose Diamond</span>
-                    </Link>
-                    <div className="arrow-shape">{/* arrow design */}</div>
-                  </div>
-
-                  <div className="ring Complete-Ring">
-                    <div className="inner-s">
-                      <span className="step-counting">3</span>
-                      <div className="img">
-                        <img
-                          src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl3.png"
-                          alt=""
-                        />
-                      </div>
-                      <span className="step-heading">Complete Ring</span>
-                    </div>
-                  </div>
+                  {/* ====================create your ring start */}
+              <div className="ring-choose-setting flex">
+                <div className="one-choose-setting">
+                  <span>1. Choose Setting</span>
                 </div>
+                <div className="svg-icn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_492_13575)">
+                      <path
+                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                        fill="#310F4C"
+                        stroke="#734E90"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8.25 12H15.75"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.75 9L15.75 12L12.75 15"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_492_13575">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className="one-choose-setting">
+                  <span>2. Choose Diamonds</span>
+                </div>
+                <div className="svg-icn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_492_13580)">
+                      <path
+                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                        stroke="#E8E8E8"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8.25 12H15.75"
+                        stroke="#D7D7D7"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.75 9L15.75 12L12.75 15"
+                        stroke="#D7D7D7"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_492_13580">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className="one-choose-setting">
+                  <span>3. Complete Ring </span>
+                </div>
+              </div>
               </div>
             </>
           )}
