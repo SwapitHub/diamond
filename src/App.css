@@ -766,27 +766,30 @@ section.AnniversaryRing-main .contant-bar p {
 .chooseDiamond-active .one-choose-setting:nth-child(3), .diamond-bread-crumb-active .one-choose-setting:nth-child(3),
 .final-ring .one-choose-setting:nth-child(5) {
   background: #734e90;
-  padding: 17px 30px 17px 30px;
+  /* padding: 17px 30px 17px 30px; */
   border-radius: 50px;
   font-weight: 700;
 }
-.chooseDiamond-active .one-choose-setting:first-child, .final-ring .one-choose-setting:first-child , .diamond-bread-crumb-active .one-choose-setting:first-child{
+  .chooseDiamond-active .one-choose-setting:first-child, .final-ring .one-choose-setting:first-child , .diamond-bread-crumb-active .one-choose-setting:first-child{
   background: transparent;
 }
-.chooseDiamond-active .one-choose-setting:first-child > span ,.final-ring .one-choose-setting:first-child > span, .diamond-bread-crumb-active .one-choose-setting:first-child > span{
+.one-choose-setting > span , .chooseDiamond-active .one-choose-setting:first-child > a ,.final-ring .one-choose-setting:first-child > a, .diamond-bread-crumb-active .one-choose-setting:first-child > a{
   color: #310f4c;
 }
-.chooseDiamond-active .one-choose-setting:nth-child(3) > span,
-.final-ring .one-choose-setting:nth-child(5) > span, .diamond-bread-crumb-active .one-choose-setting:nth-child(3) > span{
+.chooseDiamond-active .one-choose-setting:nth-child(3) > a,
+.final-ring .one-choose-setting:nth-child(5) > span , .diamond-bread-crumb-active .one-choose-setting:nth-child(3) > a{
   color: #fff;
 }
 .one-choose-setting:last-child {
-  padding: 17px 20px 17px 0px;
+  padding: 17px 30px 17px 30px;
 }
-.one-choose-setting:first-child > span {
+.one-choose-setting:first-child > a, .diamond-bread-crumb-active .one-choose-setting:nth-child(3) > a {
   color: #fff;
+  padding: 17px 30px 17px 30px; 
+     display: inline-block;
 }
-.one-choose-setting > span {
+
+.one-choose-setting > a, .one-choose-setting > span{
   color: #310f4c;
   font-family: Montserrat;
   font-size: 16px;
@@ -1333,4 +1336,330 @@ section.own-engagment .inner-own-eng .ring-grid-sec {
   letter-spacing: 1.45px;
   font-size: 14.5px;
   margin-top: 20px;
+}
+
+
+/**21-05-24**/
+
+.main-content .white-wrapper .lab-diamond-btn {
+  border: 1px solid #E4E4E4;
+  border-radius: 30px;
+  padding: 10px 25px;
+  margin-bottom: 38px;
+}
+.main-content .white-wrapper .lab-diamond-btn .shop-by-common a {
+  padding: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  color: #310F4C;
+}
+.main-content .white-wrapper .lab-diamond-btn .shop-by-common.active a {
+	font-weight: 800;
+}
+.main-content .white-wrapper .lab-diamond-btn .shop-by-common:not(:last-child) a::after {
+  width: 2px;
+  height: 20px;
+  top: 0;
+}
+.main-content .white-wrapper .lab-diamond-btn .shop-by-common.shop-by-shape {
+  padding-left: 10px;
+}
+
+
+.shop-by-page-common .shop-style-img {
+	width: 129px;
+	height: 129px;
+	background: #FFF;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;margin: 0 auto;
+  border: 2.2px solid transparent;
+}
+.shop-by-page-common .shop-style-img img {
+  height: auto;
+  background-color: transparent;
+  border: 0 !important;
+  padding: 0;
+  border-radius: 0;
+  margin: 0;
+  width: auto;
+  object-fit: inherit;
+}
+.shop-by-page-common.shop-by-shape-style {
+  max-width: 72%;
+}
+
+.shop-by-page-common .shop-style-text {
+  padding-top: 17.6px;
+}
+.shop-by-page-common .shop-style-text span {
+  font-size: 17.6px;
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+}
+
+.shop-by-page-common .style-active-common  .shop-style-img {
+	border-color: #310F4C;
+}
+.shop-by-page-common .slick-slide.slick-current .shop-style-text span {
+  color: #310F4C;
+}
+
+.shop-by-page-common.Bridal-Sets-Only-setting-style {
+	max-width: 100%;
+}
+
+.shop-by-page-common.Bridal-Sets-Only-setting-style .shop-style-text {
+  padding-top: 14.3px;
+}
+.shop-by-page-common.Bridal-Sets-Only-setting-style .shop-style-img {
+  width: 101px;
+  height: 101px;
+}
+.shop-by-page-common .corusel-diamond {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+
+
+
+
+
+.shop-by-page-common .corusel-diamond .check-text {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.shop-by-page-common .corusel-diamond .check-text span {
+  font-size: 15.735px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
+}
+.shop-by-page-common .corusel-diamond .check-text .corusel-diamond-checkbox {
+  margin-left: 0;
+  margin-right: 8.8px;
+}
+.shop-by-page-common .corusel-diamond .check-text .corusel-diamond-checkbox .form-group-diamond label::before {
+  border-radius: 4.917px;
+  background: #D9D9D9;
+}
+.shop-by-page-common .corusel-diamond .corusel-diamond-heading, 
+.shop-by-shape-page .shop-by-metal-page .metal-variants .metal-text, .choose-setting-pages-main .shape-main > span {
+	font-size: 15.4px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	color: #000;
+}
+.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider {
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+}
+.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider .slick-arrow.slick-prev, .choose-setting-pages-main .shape-main .slick-slider .slick-arrow.slick-prev {
+  left: 0;
+}
+.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider .slick-arrow.slick-next, .choose-setting-pages-main .shape-main .slick-slider .slick-arrow.slick-next {
+  right: 0;
+}
+
+.choose-setting-pages-main .shape-main > span {
+	margin-top: 10px;
+	display: block;
+	margin-bottom: 19px;
+	padding-bottom: 0;
+}
+.choose-setting-pages-main .shape-main {
+  width: 50%;
+  padding: 0;
+}
+.choose-setting-pages-main .shape-main .slick-slider {
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+}
+.choose-setting-pages-main .shape-main .diamond-image-slider {
+  width: 101px;
+  height: 101px;
+  background: #FFF;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.choose-setting-pages-main .shape-main .diamond-image-slider img {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.shop-by-shape-style .shop-style-text, .shape-main .shape-text {
+	font-size: 17.6px;
+	font-style: normal;
+	font-weight: 400;
+	color: #000;
+}
+.choose-setting-pages-main .shape-main .shape-text {
+  padding-top: 14.3px;
+}
+.choose-setting-pages-main .style-main {
+  padding-right: 6px;
+}
+
+.choose-setting-pages-main .shape-main {
+	padding-left: 6px;
+}
+
+
+.shop-by-shape-page .shop-by-metal-page {
+	padding-left: 0;
+	width: 100%;
+	padding-top: 0;
+	max-width: 490px;
+	margin-left: auto;
+	margin-right: auto; margin-top: 37px;
+}
+.metal-variant-list {
+	gap: 10px;
+}
+.metal-variant-list .shop-by-metal-color {
+	width: calc(100% / 4 - 8px);
+	padding-bottom: 0;
+}
+.metal-variant-list .shop-by-metal-color a[type="button"] {
+  width: 113px;
+  height: 113px;
+  border: 22px solid #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.shop-by-metal-color-name {
+  font-size: 17.6px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
+  padding-top: 15.4px;
+}
+.best-seller-main {
+  border-radius: 10px;
+  background: #FFF;
+  padding: 14px 28px 14px 10px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 24px; align-items: center;
+}
+.best-seller-main > span {
+  width: 61%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  color: #310F4C;
+  text-align: right;
+  display: block;
+  line-height: normal;
+}
+.best-seller-main > .best-seller {
+  width: 39%;
+}
+.best-seller-main > .best-seller form label {
+  margin-right: 25px;
+  width: auto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #000;
+}
+.best-seller-main > .best-seller form .css-b62m3t-container {
+  min-width: inherit;
+}
+.best-seller-main > .best-seller form {
+  display: flex;
+  align-items: center;
+  flex-wrap: inherit;
+  justify-content: flex-end;
+}
+.best-seller-main > .best-seller form .css-b62m3t-container .css-13cymwt-control .css-1fdsijx-ValueContainer {
+  padding: 0;
+}
+.best-seller-main > .best-seller form .css-13cymwt-control {
+  border: 0;
+  min-height: inherit;
+  width: auto;
+}
+.best-seller-main > .best-seller form .css-b62m3t-container .css-13cymwt-control .css-1fdsijx-ValueContainer > div {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #000;
+}
+.best-seller-main > .best-seller form .css-13cymwt-control .css-1hb7zxy-IndicatorsContainer .css-1u9des2-indicatorSeparator {
+  display: none;
+}
+.best-seller-main > .best-seller form .css-13cymwt-control .css-1hb7zxy-IndicatorsContainer .css-1xc3v61-indicatorContainer {
+  padding: 0;
+}
+
+
+.resultdata.setings-Page-img {
+  gap: 10px;
+}
+
+
+.resultdata.setings-Page-img .all-pages-data {
+  margin: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #F6F6F6;
+  width: calc(100% / 4 - 8px);
+  padding: 0 20px 30px;
+}
+
+.product-main-img .common-img {
+  width: 100%;
+
+  padding: 31px 0;
+}
+
+.heart-icon svg {
+  position: absolute;
+  top: 10px;
+  right: 11px;
+  font-size: 30px;
+  color: #616161; z-index: 11;
+}
+.resultdata.all-pages-data.active .all-pages-data .metal-name, .metal-name-item-name, .metal-name-by-default {
+	font-size: 22.666px;
+	font-style: normal;
+	font-weight: 400;
+	color: #000;
+	line-height: 31.28px; margin-bottom: 13px;
+}
+
+.product-price {
+	font-size: 22.666px;
+	font-style: normal;
+	font-weight: 400;
+	color: #BCBCBC;
+	line-height: normal;
+}
+.all-card-four-color > a {
+	margin: 0 4px 12px;
+}
+.resultdata.all-pages-data .all-card-four-colors ~ div {
+  padding: 0;
 }
