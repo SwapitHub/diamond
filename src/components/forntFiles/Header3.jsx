@@ -172,7 +172,7 @@ export const Header = () => {
             } ${location.pathname == "/success" ? "success-active" : ""}`}
           >
             <div className="header-contact-us ">
-              <Link to="/contact-us">Contact Us</Link>
+              <Link to="/contact-us">Contact Us <span><img src="./images/call.svg" alt="" /></span></Link>
             </div>
 
             <div className="header-logo">

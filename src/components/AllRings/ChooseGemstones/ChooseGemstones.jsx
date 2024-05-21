@@ -20,7 +20,7 @@ export const ChooseGemstones = () => {
   const gemColor = gemSlug.get("color");
   const gemShape = gemSlug.get("shape");
   const history = useHistory();
-  const {baseUrl} = useContext(UserContext)
+  const { baseUrl } = useContext(UserContext);
   const [removeWishList, setRemoveWishList] = useState(null);
   const wishListDataBase = useSelector((state) => state.productDataWishlist);
 
@@ -469,9 +469,7 @@ export const ChooseGemstones = () => {
   const fetchGemstoneAttributes = useMemo(
     () => async () => {
       try {
-        const response = await axios.get(
-          `${baseUrl}/gemstone-attributes`
-        );
+        const response = await axios.get(`${baseUrl}/gemstone-attributes`);
         setGemstoneFilterData(response.data.data);
         console.log(response.data.data);
       } catch (error) {
@@ -521,7 +519,7 @@ export const ChooseGemstones = () => {
               {/* ====================create your ring start */}
               <div className="ring-choose-setting flex">
                 <div className="one-choose-setting">
-                  <span>1. Choose Gemstone</span>
+                  <Link to="javascript:void(0)">1. Choose Gemstone</Link>
                 </div>
                 <div className="svg-icn">
                   <svg
@@ -563,7 +561,9 @@ export const ChooseGemstones = () => {
                   </svg>
                 </div>
                 <div className="one-choose-setting">
-                  <span>2. Choose Setting</span>
+                  <Link to="/engagement-rings/start-with-a-setting">
+                    2. Choose Rings
+                  </Link>
                 </div>
                 <div className="svg-icn">
                   <svg
@@ -683,16 +683,20 @@ export const ChooseGemstones = () => {
                           <Link
                             to="javascript:void(0);"
                             onClick={() => handelSettingStyle(item.name)}
-                            className={`style-active-common ${
+                            className={` ${
                               styleDataSlider.includes(item?.name) ||
                               menuStyleNames === item?.name ||
                               gemStyles_use === item?.name
-                                ? "active"
+                                ? "style-active-common"
                                 : ""
                             }`}
                           >
-                            <img src={item.image} alt="Sapphire-img" />
-                            <span className="color-name">{item.name}</span>
+                            <div className="shop-style-img">
+                              <img src={item.image} alt="Sapphire-img" />
+                            </div>
+                            <div className="shop-style-text">
+                              <span className="color-name">{item.name}</span>
+                            </div>
                           </Link>
                         </>
                       );
@@ -730,7 +734,7 @@ export const ChooseGemstones = () => {
                         {
                           breakpoint: 991,
                           settings: {
-                            slidesToShow: 6,
+                            slidesToShow: 5,
                             slidesToScroll: 3,
                             infinite: true,
                           },
@@ -760,16 +764,20 @@ export const ChooseGemstones = () => {
                             <Link
                               to="javascript:void(0);"
                               onClick={() => handelSettingStyle(item.name)}
-                              className={`style-active-common ${
+                              className={` ${
                                 styleDataSlider.includes(item?.name) ||
                                 menuStyleNames === item?.name ||
                                 gemStyles_use === item?.name
-                                  ? "active"
+                                  ? "style-active-common"
                                   : ""
                               }`}
                             >
+                              <div className="shop-style-img">
                               <img src={item.image} alt="Sapphire-img" />
+                            </div>
+                            <div className="shop-style-text">
                               <span className="color-name">{item.name}</span>
+                            </div>
                             </Link>
                           </>
                         );
@@ -815,11 +823,11 @@ export const ChooseGemstones = () => {
                             <Link
                               to="#"
                               onClick={() => handleColor(item.name)}
-                              className={`style-active-common ${
+                              className={` ${
                                 colorDataSlider.includes(item?.name) ||
                                 menuColorNames === item?.name ||
                                 gemColor_use === item?.name
-                                  ? "active"
+                                  ? "style-active-common"
                                   : ""
                               }`}
                             >
@@ -870,11 +878,11 @@ export const ChooseGemstones = () => {
                             <Link
                               to="javascript:void(0);"
                               onClick={() => handleShapeClick(item?.name)}
-                              className={`style-active-common ${
+                              className={` ${
                                 shapeDataSlider.includes(item?.name) ||
                                 menuShapeNames == item?.name ||
                                 gemShape_use == item?.name
-                                  ? "active"
+                                  ? "style-active-common"
                                   : ""
                               }`}
                             >

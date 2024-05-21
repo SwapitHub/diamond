@@ -424,83 +424,100 @@ export const SelectDiamond = () => {
 
   return (
     <>
-      <div className="sticky-right-column final-ring">
+      <div className="sticky-right-column  diamond-view">
         <div className="container">
           {/* ====================create your ring start */}
-          <div className="main-btn-setting">
-            <div className="ring Create-Your-Ring">
-              <span>Create Your Ring</span>
-              <div className="arrow-shape">{/* arrow design */}</div>
+          <div className="main-arrow-heading">
+          {/* ====================create your ring start */}
+          <div className="ring-choose-setting flex">
+            <div className="one-choose-setting">
+              <Link to="javascript:void(0)">1. Choose Diamonds</Link>
             </div>
-            {newData.map((item) => {
-              return (
-                <>
-                  <div className="ring Choose-Diamond">
-                    <Link to="javascript:void(0);">
-                      <span className="step-counting">2</span>
-                      <div className="img">
-                        <img src={item.image_url} alt="" />
-                      </div>
-                      <div className="text-price">
-                        <span className="step-heading">Diamond</span>
-                        <div className="name-price">
-                          <span>
-                            {item.size} carat {item.shape} $
-                            {item.total_sales_price}
-                          </span>
-                        </div>
-                        <div className="change-view">
-                          <div className="change">
-                            {productSlug ? (
-                              <Link
-                                to={`/engagement-rings/start-with-a-diamond?slug=${filterData.product?.slug}&color=${productColor}`}
-                              >
-                                Change
-                              </Link>
-                            ) : (
-                              <Link
-                                to={`/engagement-rings/start-with-a-diamond`}
-                              >
-                                Change
-                              </Link>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                    <div className="arrow-shape">{/* arrow design */}</div>
-                  </div>
-                </>
-              );
-            })}
-
-            <div className="ring Choose-Diamond">
-              <Link to="/engagement-rings/start-with-a-diamond">
-                <span className="step-counting">2</span>
-                <div className="img">
-                  <img
-                    src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl.png"
-                    alt=""
+            <div className="svg-icn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g clip-path="url(#clip0_492_13575)">
+                  <path
+                    d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                    fill="#310F4C"
+                    stroke="#734E90"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
-                </div>
-                <span className="step-heading">Choose Diamond</span>
-              </Link>
-              <div className="arrow-shape">{/* arrow design */}</div>
+                  <path
+                    d="M8.25 12H15.75"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.75 9L15.75 12L12.75 15"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_492_13575">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
             </div>
-
-            <div className="ring Complete-Ring">
-              <div className="inner-s">
-                <span className="step-counting">3</span>
-                <div className="img">
-                  <img
-                    src="https://s3-sama.s3.us-east-2.amazonaws.com/frontend/images/dimondbl3.png"
-                    alt=""
+            <div className="one-choose-setting">
+              <Link to="/engagement-rings/start-with-a-setting">2. Choose Rings</Link>
+            </div>
+            <div className="svg-icn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g clip-path="url(#clip0_492_13580)">
+                  <path
+                    d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                    stroke="#E8E8E8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
-                </div>
-                <span className="step-heading">Complete Ring</span>
-              </div>
+                  <path
+                    d="M8.25 12H15.75"
+                    stroke="#D7D7D7"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.75 9L15.75 12L12.75 15"
+                    stroke="#D7D7D7"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_492_13580">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div className="one-choose-setting">
+              <span>3. Complete Ring </span>
             </div>
           </div>
+        </div>
           <div className="sticky-right-column">
             {newData.map((item) => {
               console.log(item);
@@ -539,9 +556,9 @@ export const SelectDiamond = () => {
                       </div>
                     </div>
                     <div className="right-product-content ">
-                      <h4 className="heading-four">
+                      <h5 className="heading-four">
                         {item.size} Carat {item.shape} Diamond
-                      </h4>
+                      </h5>
                       <p>
                         {item.cut} Cut{" "}
                         <span>
