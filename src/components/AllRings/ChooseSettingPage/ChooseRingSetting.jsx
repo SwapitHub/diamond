@@ -528,7 +528,7 @@ const ChooseRingSetting = () => {
     dots: false,
     infinite: true,
     speed: 700,
-    slidesToShow: 8,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
@@ -790,9 +790,9 @@ const ChooseRingSetting = () => {
             <div className="ring-choose-setting flex">
               <div className="one-choose-setting">
                 {newData.length > 0 ? (
-                  <span>1. Choose Gemstones</span>
+                  <Link to="/engagement-rings/start-with-a-gemstone">1. Choose Gemstones</Link>
                 ) : (
-                  <span>1. Choose Diamonds</span>
+                  <Link to="/engagement-rings/start-with-a-diamond">1. Choose Diamonds</Link>
                 )}
               </div>
               <div className="svg-icn">
@@ -834,7 +834,7 @@ const ChooseRingSetting = () => {
                 </svg>
               </div>
               <div className="one-choose-setting">
-                <span>2. Choose Setting</span>
+                <Link to="javascript:void(0)">2. Choose Settings</Link>
               </div>
               <div className="svg-icn">
                 <svg
@@ -887,7 +887,7 @@ const ChooseRingSetting = () => {
               {/* ====================create your ring start */}
               <div className="ring-choose-setting flex">
                 <div className="one-choose-setting">
-                  <span>1. Choose Setting</span>
+                  <Link to="javascript:void(0)">1. Choose Setting</Link>
                 </div>
                 <div className="svg-icn">
                   <svg
@@ -929,7 +929,7 @@ const ChooseRingSetting = () => {
                   </svg>
                 </div>
                 <div className="one-choose-setting">
-                  <span>2. Choose Diamonds</span>
+                  <Link to="/engagement-rings/start-with-a-diamond">2. Choose Diamonds</Link>
                 </div>
                 <div className="svg-icn">
                   <svg
@@ -1013,8 +1013,8 @@ const ChooseRingSetting = () => {
                   </Link>
                 </div>
               </div>
-              {/* shop by style filtering start here */}
-              <div
+               {/* shop by style filtering start here */}
+               <div
                 className={`shop-by-page-common shop-by-shape-style buttons-container filter-button ${
                   styleFilter === "style" ? "active" : ""
                 }`}
@@ -1080,7 +1080,8 @@ const ChooseRingSetting = () => {
 
               {/* shop by Shape filtering  start */}
               <div
-                className={`shop-by-page-common shop-by-shape-page ${
+                className={`shop-by-page-common shop-by-shape-page Bridal-Sets-Only-setting-style
+                ${
                   styleFilter === "shape" ? "active" : ""
                 }`}
               >
@@ -1171,43 +1172,7 @@ const ChooseRingSetting = () => {
                   {/* shop by style filtering  end */}
                 </div>
 
-                <div
-                  className={`shop-by-metal-page ${
-                    styleFilter === "metal" ? "active" : ""
-                  }`}
-                >
-                  <div className="metal-variants">
-                    <div className="metal-text">Metal</div>
-                    <div className="metal-variant-list">
-                      {metalColor.map((MetalColor, index) => (
-                        <div
-                          key={MetalColor.id}
-                          className="shop-by-metal-color"
-                        >
-                          <Link
-                            to="javascript:void(0);"
-                            className={`${
-                              metalId === MetalColor.id
-                                ? "metal-color-active"
-                                : ""
-                            }`}
-                            type="button"
-                            style={{
-                              background: MetalColor.color,
-                            }}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              metalOnclick(MetalColor.id, MetalColor.value);
-                            }}
-                          >
-                            <div>{MetalColor.name}</div>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+               
 
                 <div className="shape-main">
                   <span>Diamond Shape</span>
@@ -1217,7 +1182,7 @@ const ChooseRingSetting = () => {
                       {
                         breakpoint: 1024,
                         settings: {
-                          slidesToShow: 6,
+                          slidesToShow: 3,
                           slidesToScroll: 3,
                           infinite: true,
                         },
@@ -1225,7 +1190,7 @@ const ChooseRingSetting = () => {
                       {
                         breakpoint: 991,
                         settings: {
-                          slidesToShow: 5,
+                          slidesToShow: 4,
                           slidesToScroll: 3,
                           infinite: true,
                         },
@@ -1263,6 +1228,7 @@ const ChooseRingSetting = () => {
                               e.stopPropagation();
                               shapeOnclick(ShapeItem.shape);
                             }}
+                            className="diamond-image-slider"
                           >
                             <img src={ShapeItem.icon} alt={ShapeItem.name} />
                           </div>
@@ -1273,6 +1239,47 @@ const ChooseRingSetting = () => {
                       </div>
                     ))}
                   </SlickSlider>
+                </div>
+                <div
+                  className={`shop-by-metal-page ${
+                    styleFilter === "metal" ? "active" : ""
+                  }`}
+                >
+                  <div className="metal-variants">
+                    <div className="metal-text">Metal</div>
+                    <div className="metal-variant-list">
+                      {metalColor.map((MetalColor, index) => (
+                        <div
+                          key={MetalColor.id}
+                          className="shop-by-metal-color"
+                        >
+                          <Link
+                            to="javascript:void(0);"
+                            className={`${
+                              metalId === MetalColor.id
+                                ? "metal-color-active"
+                                : ""
+                            }`}
+                            type="button"
+                            style={{
+                              background: MetalColor.color,
+                            }}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              metalOnclick(MetalColor.id, MetalColor.value);
+                            }}
+                          >
+                          </Link>
+                          <div className="shop-by-metal-color-name">
+                          <div>{MetalColor.name}</div>
+
+                        </div>
+                        </div>
+                        
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

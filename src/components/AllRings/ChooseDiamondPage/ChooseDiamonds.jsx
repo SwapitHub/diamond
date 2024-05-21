@@ -322,11 +322,10 @@ export const ChooseDiamonds = () => {
   // =============== shop by shape start ==============
   useEffect(() => {
     axios
-      .get(
-        `${baseUrl}/diamondshape`
-      )
+      .get(`${baseUrl}/diamondshape`)
       .then((res) => {
         setShapeData(res.data.data);
+        console.log(res.data.data);
       })
       .catch(() => {
         console.log("API error");
@@ -587,7 +586,8 @@ export const ChooseDiamonds = () => {
            {/* ====================create your ring start */}
            <div className="ring-choose-setting flex">
             <div className="one-choose-setting">
-              <span>1. Choose Diamonds</span>
+            <Link to="/engagement-rings/start-with-a-setting">1. Choose Rings</Link>
+
             </div>
             <div className="svg-icn">
               <svg
@@ -628,7 +628,7 @@ export const ChooseDiamonds = () => {
               </svg>
             </div>
             <div className="one-choose-setting">
-              <span>1. Choose Diamonds</span>
+              <Link to="javascript:void(0)">1. Choose Diamonds</Link>
             </div>
             <div className="svg-icn">
               <svg
@@ -680,7 +680,7 @@ export const ChooseDiamonds = () => {
           {/* ====================create your ring start */}
           <div className="ring-choose-setting flex">
             <div className="one-choose-setting">
-              <span>1. Choose Diamonds</span>
+              <Link to="javascript:void(0)">1. Choose Diamonds</Link>
             </div>
             <div className="svg-icn">
               <svg
@@ -722,7 +722,7 @@ export const ChooseDiamonds = () => {
               </svg>
             </div>
             <div className="one-choose-setting">
-              <span>2. Choose Setting</span>
+              <Link to="/engagement-rings/start-with-a-setting">2. Choose Rings</Link>
             </div>
             <div className="svg-icn">
               <svg

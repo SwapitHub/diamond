@@ -157,7 +157,7 @@ a.nature-active {
   font-size: 15.4px;
   font-weight: 800;
 }
-.Diamond-Original > a:hover {
+.choose-diamonds .Diamond-Original > a:hover {
   border: 4.4px solid #734e90;
 }
 .header-icons .search-icon > input.search-open {
@@ -751,7 +751,7 @@ section.AnniversaryRing-main .contant-bar p {
   border: 1px solid #000;
   color: #1b1818;
 }
-/* new start with setting */
+/* all breda crumb style start */
 .ring-choose-setting.flex {
   justify-content: center;
   column-gap: 18px;
@@ -766,32 +766,35 @@ section.AnniversaryRing-main .contant-bar p {
 .chooseDiamond-active .one-choose-setting:nth-child(3), .diamond-bread-crumb-active .one-choose-setting:nth-child(3),
 .final-ring .one-choose-setting:nth-child(5) {
   background: #734e90;
-  padding: 17px 30px 17px 30px;
   border-radius: 50px;
   font-weight: 700;
 }
-.chooseDiamond-active .one-choose-setting:first-child, .final-ring .one-choose-setting:first-child , .diamond-bread-crumb-active .one-choose-setting:first-child{
+  .chooseDiamond-active .one-choose-setting:first-child, .final-ring .one-choose-setting:first-child , .diamond-bread-crumb-active .one-choose-setting:first-child{
   background: transparent;
 }
-.chooseDiamond-active .one-choose-setting:first-child > span ,.final-ring .one-choose-setting:first-child > span, .diamond-bread-crumb-active .one-choose-setting:first-child > span{
+.one-choose-setting > span , .chooseDiamond-active .one-choose-setting:first-child > a ,.final-ring .one-choose-setting:first-child > a, .diamond-bread-crumb-active .one-choose-setting:first-child > a{
   color: #310f4c;
 }
-.chooseDiamond-active .one-choose-setting:nth-child(3) > span,
-.final-ring .one-choose-setting:nth-child(5) > span, .diamond-bread-crumb-active .one-choose-setting:nth-child(3) > span{
+.chooseDiamond-active .one-choose-setting:nth-child(3) > a,
+.final-ring .one-choose-setting:nth-child(5) > span , .diamond-bread-crumb-active .one-choose-setting:nth-child(3) > a{
   color: #fff;
 }
 .one-choose-setting:last-child {
-  padding: 17px 20px 17px 0px;
+  padding: 17px 30px 17px 30px;
 }
-.one-choose-setting:first-child > span {
+.one-choose-setting:first-child > a, .diamond-bread-crumb-active .one-choose-setting:nth-child(3) > a, .chooseDiamond-active .one-choose-setting:nth-child(3) > a {
   color: #fff;
+  padding: 17px 30px 17px 30px; 
+     display: inline-block;
 }
-.one-choose-setting > span {
+
+.one-choose-setting > a, .one-choose-setting > span{
   color: #310f4c;
   font-family: Montserrat;
   font-size: 16px;
   font-weight: 500;
 }
+/* all breda crumb style end */
 .ring-choose-setting .svg-icn {
   display: inline-flex;
 }
@@ -841,6 +844,18 @@ section.AnniversaryRing-main .contant-bar p {
   background-color: #f6f6f6;
   padding-top: 20px;
   padding-bottom: 20px;
+  position: relative;
+}
+.header nav.nav:before {
+  content: "";  
+  width: 5000vw;
+  background-color: #f6f6f6;
+  position: absolute;
+  left: -50vw;
+  right: -50vw;
+  height: 100%;
+  top: 0;
+  z-index: 1;
 }
 .celebrate-inner {
 	height: 478px;
@@ -1333,4 +1348,216 @@ section.own-engagment .inner-own-eng .ring-grid-sec {
   letter-spacing: 1.45px;
   font-size: 14.5px;
   margin-top: 20px;
+}
+/**21-05-24**/
+
+.main-content .white-wrapper .lab-diamond-btn {
+  border: 1px solid #E4E4E4;
+  border-radius: 30px;
+  padding: 10px 25px;
+  margin-bottom: 38px;
+}
+.main-content .white-wrapper .lab-diamond-btn .shop-by-common a {
+  padding: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  color: #310F4C;
+}
+.main-content .white-wrapper .lab-diamond-btn .shop-by-common.active a , .gemstone-main .gemstone-Active a{
+	font-weight: 800 !important;
+}
+.main-content .white-wrapper .lab-diamond-btn .shop-by-common:not(:last-child) a::after {
+  width: 2px;
+  height: 20px;
+  top: 0;
+}
+.main-content .white-wrapper .lab-diamond-btn .shop-by-common.shop-by-shape {
+  padding-left: 10px;
+}
+
+
+.shop-by-page-common .shop-style-img {
+	width: 129px;
+	height: 129px;
+	background: #FFF;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;margin: 0 auto;
+  border: 2.2px solid transparent;
+}
+.shop-by-page-common .shop-style-img img {
+  height: auto;
+  background-color: transparent;
+  border: 0 !important;
+  padding: 15px;
+  border-radius: 0;
+  margin: 0;
+  width: auto;
+  object-fit: inherit;
+}
+.shop-by-page-common.shop-by-shape-style {
+  max-width: 72%;
+}
+
+.shop-by-page-common .shop-style-text {
+  padding-top: 17.6px;
+}
+.shop-by-page-common .shop-style-text span {
+  font-size: 17.6px;
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+}
+
+.shop-by-page-common .style-active-common  .shop-style-img , a.style-active-common.active{
+	border-color: #310F4C;
+}
+.shop-by-page-common  .style-active-common .shop-style-text span {
+  color: #310F4C;
+}
+
+.shop-by-page-common.Bridal-Sets-Only-setting-style {
+	max-width: 100%;
+}
+
+.shop-by-page-common.Bridal-Sets-Only-setting-style .shop-style-text {
+  padding-top: 14.3px;
+}
+.shop-by-page-common.Bridal-Sets-Only-setting-style .shop-style-img {
+  width: 101px;
+  height: 101px;
+}
+.shop-by-page-common .corusel-diamond {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+
+
+
+
+
+.shop-by-page-common .corusel-diamond .check-text {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.shop-by-page-common .corusel-diamond .check-text span {
+  font-size: 15.735px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
+}
+.shop-by-page-common .corusel-diamond .check-text .corusel-diamond-checkbox {
+  margin-left: 0;
+  margin-right: 8.8px;
+}
+.shop-by-page-common .corusel-diamond .check-text .corusel-diamond-checkbox .form-group-diamond label::before {
+  border-radius: 4.917px;
+  background: #D9D9D9;
+}
+.shop-by-page-common .corusel-diamond .corusel-diamond-heading, 
+.shop-by-shape-page .shop-by-metal-page .metal-variants .metal-text, .choose-setting-pages-main .shape-main > span {
+	font-size: 15.4px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	color: #000;
+}
+.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider {
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+}
+.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider .slick-arrow.slick-prev, .choose-setting-pages-main .shape-main .slick-slider .slick-arrow.slick-prev {
+  left: 0;
+}
+.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider .slick-arrow.slick-next, .choose-setting-pages-main .shape-main .slick-slider .slick-arrow.slick-next {
+  right: 0;
+}
+
+.choose-setting-pages-main .shape-main > span {
+	margin-top: 10px;
+	display: block;
+	margin-bottom: 19px;
+	padding-bottom: 0;
+}
+.choose-setting-pages-main .shape-main {
+  width: 50%;
+  padding: 0;
+}
+.choose-setting-pages-main .shape-main .slick-slider {
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+}
+.choose-setting-pages-main .shape-main .diamond-image-slider {
+  width: 101px;
+  height: 101px;
+  background: #FFF;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.choose-setting-pages-main .shape-main .diamond-image-slider img {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.shop-by-shape-style .shop-style-text, .shape-main .shape-text {
+	font-size: 17.6px;
+	font-style: normal;
+	font-weight: 400;
+	color: #000;
+}
+.choose-setting-pages-main .shape-main .shape-text {
+  padding-top: 14.3px;
+}
+.choose-setting-pages-main .style-main {
+  padding-right: 6px;
+}
+
+.choose-setting-pages-main .shape-main {
+	padding-left: 6px;
+}
+
+
+.shop-by-shape-page .shop-by-metal-page {
+	padding-left: 0;
+	width: 100%;
+	padding-top: 0;
+	max-width: 490px;
+	margin-left: auto;
+	margin-right: auto; margin-top: 37px;
+}
+.metal-variant-list {
+	gap: 10px;
+}
+.metal-variant-list .shop-by-metal-color {
+	width: calc(100% / 4 - 8px);
+	padding-bottom: 0;
+}
+.metal-variant-list .shop-by-metal-color a[type="button"] {
+  width: 113px;
+  height: 113px;
+  border: 22px solid #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.shop-by-metal-color-name {
+  font-size: 17.6px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
+  padding-top: 15.4px;
 }

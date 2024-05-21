@@ -25,7 +25,7 @@ import LoveBrilliance from './LoveBrilliance'
 export const Home = () => {
   return (
     <>    
-<div>
+<div className='home-page'>
 <Banner/>
   <ShopDiamondShape/>
   <SeeProducts/>
