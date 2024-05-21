@@ -15,7 +15,7 @@ img {
 }
 */
 .container {
-  max-width: 1440px;
+  max-width: 1210px;
   margin: 0 auto;
 }
 
@@ -421,8 +421,6 @@ nav.mobile-nav {
 .ShopCategory h3,
 .MostLoved h3 {
   text-align: center;
-  padding-bottom: 60px;
-  padding-top: 90px;
 }
 
 .ShopDiamondShape.container {
@@ -563,16 +561,6 @@ nav.mobile-nav {
 .menRings-text p:nth-child(3) {
   padding: 13px 0 21px;
   line-height: 25px;
-}
-
-
-
-.menRings .container {
-  max-width: 100%;
-  width: calc(50% + 570px);
-  margin-left: auto;
-  margin-right: 0;
-  padding: 0 !important;
 }
 
 
@@ -1551,7 +1539,15 @@ footer.footer .footer-main {
   border-bottom: 2px solid #ddd;
   padding: 85px 0 70px;
 }
-
+footer.footer h4 {
+  color: #310F4C;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
 .ftr-contact-ul {
   width: 17%;
 }
@@ -3056,13 +3052,6 @@ span {
   align-items: center;
   justify-content: center;
 }
-
-.container {
-  width: 100%;
-  max-width: 1150px;
-}
-
-
 
 section.own-engagment {
   background-color: #f6f4f2;

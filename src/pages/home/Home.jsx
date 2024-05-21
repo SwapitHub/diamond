@@ -18,29 +18,34 @@ import { ShopDiamondCotegory } from './ShopDiamondCotegory'
 import { AnniversaryRingFeatured } from './AnniversaryRingFeatured'
 import { AnniversaryRings } from './AnniversaryRings'
 import { WeddingCollection } from './WeddingCollection'
+import { CelebarteLove } from './CelebarteLove'
+import LoveBrilliance from './LoveBrilliance'
 
 
 export const Home = () => {
   return (
     <>    
 <div>
-  <Banner/>
+<Banner/>
   <ShopDiamondShape/>
   <SeeProducts/>
   <ShopDiamondCotegory/>
   <MenRings/>
 <AnniversaryRings/>
+<CelebarteLove/>
 <WeddingCollection/>
 
   <EngagementBridal/>
-  <ShopDiamondSlider/>
+
+<LoveBrilliance/>
+  {/* <ShopDiamondSlider/>
   <ShopCategory/>
   <ShopByCategorySlider/>
   <EndsSoon/>
   <EternityRings/>
-  <BridalSets/>
+  <BridalSets/> */}
   {/* <MostLoved/> */}
-  <MostLovedSlider/>
+  {/* <MostLovedSlider/> */}
  <AnniversaryRingFeatured/>
   
 </div>

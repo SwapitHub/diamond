@@ -30,7 +30,6 @@ export const FinalRing = () => {
     setDiamondRingToggle,
     diamondRingLocal,
     setDiamondRingLocal,
-    baseUrl
   } = useContext(UserContext);
   const [removeWishList, setRemoveWishList] = useState();
   const dispatch = useDispatch();
@@ -142,7 +141,7 @@ export const FinalRing = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${baseUrl}/product/${productSlug}`
+          `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/product/${productSlug}`
         );
 
         const product = response.data.data;
@@ -247,7 +246,7 @@ export const FinalRing = () => {
     const savedWishlist = JSON.parse(localStorage.getItem("cart_data")) || [];
 
     console.log("============================", savedWishlist);
-    const URL_2 = `${baseUrl}/cart?user_id=${formData.user_id}&ring_price=${formData.ring_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&diamond_id=${formData.diamond_id}&diamond_price=${formData.diamond_price}&img_sku=${formData.img_sku}&metalType=${formData.metalType}&metalColor=${formData.metalColor}&product_type=${formData.product_type}&ring_type=${formData.ring_type}&ring_size=${formData.ring_size}`;
+    const URL_2 = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/cart?user_id=${formData.user_id}&ring_price=${formData.ring_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&diamond_id=${formData.diamond_id}&diamond_price=${formData.diamond_price}&img_sku=${formData.img_sku}&metalType=${formData.metalType}&metalColor=${formData.metalColor}&product_type=${formData.product_type}&ring_type=${formData.ring_type}&ring_size=${formData.ring_size}`;
 
     console.log(URL_2);
     console.log(formData.metalColor);
@@ -419,7 +418,7 @@ export const FinalRing = () => {
     console.log("data ring ", formData);
     axios
       .get(
-        `${baseUrl}/add_to_wishlist?user_id=${formData.user_id}&ring_price=${formData.ring_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&product_type=${formData.product_type}&img_sku=${formData.img_sku}&diamond_price=${formData.diamond_price}&diamond_id=${formData.diamond_id}&diamond_stock_no=${formData.diamond_stock_no}&ring_type=${diamond_original}&ring_size=${formData.ring_size}`,
+        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/add_to_wishlist?user_id=${formData.user_id}&ring_price=${formData.ring_price}&ring_id=${formData.ring_id}&ring_color=${formData.ring_color}&product_type=${formData.product_type}&img_sku=${formData.img_sku}&diamond_price=${formData.diamond_price}&diamond_id=${formData.diamond_id}&diamond_stock_no=${formData.diamond_stock_no}&ring_type=${diamond_original}&ring_size=${formData.ring_size}`,
 
         {
           headers: {
@@ -458,7 +457,7 @@ export const FinalRing = () => {
 
   useEffect(() => {
     const fetchData = () => {
-      const removeWish = `${baseUrl}/remove_wishlist_item/${removeWishList}`;
+      const removeWish = `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/remove_wishlist_item/${removeWishList}`;
       console.log(removeWishList);
       console.log(removeWish);
       axios
@@ -486,7 +485,7 @@ export const FinalRing = () => {
   //     try {
   //       if (user_id) {
   //         const response = await axios.get(
-  //           ``${baseUrl}/wishlist-items?user_id=${user_id}`,
+  //           `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/wishlist-items?user_id=${user_id}`,
 
   //           {
   //             headers: {
@@ -547,7 +546,7 @@ export const FinalRing = () => {
   useEffect(() => {
     axios
       .get(
-        `${baseUrl}/get_product_price?product_sku=${
+        `http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/v1/get_product_price?product_sku=${
           filterData.product?.sku
         }&metalType=${
           listColor === "Platinum" ? "Platinum" : "18kt"
@@ -587,96 +586,94 @@ export const FinalRing = () => {
             <>
               {/* ====================create your ring start */}
               <div className="main-arrow-heading">
-                
                 <div className="ring-choose-setting flex">
-            <div className="one-choose-setting">
-              <span>1. Choose Setting</span>
-            </div>
-            <div className="svg-icn">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_492_13580)">
-                      <path
-                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
-                        stroke="#E8E8E8"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8.25 12H15.75"
-                        stroke="#D7D7D7"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M12.75 9L15.75 12L12.75 15"
-                        stroke="#D7D7D7"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_492_13580">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <div className="one-choose-setting">
+                    <span><Link to="">1. Choose Setting</Link></span>
+                  </div>
+                  <div className="svg-icn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_492_13580)">
+                        <path
+                          d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                          stroke="#E8E8E8"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M8.25 12H15.75"
+                          stroke="#D7D7D7"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.75 9L15.75 12L12.75 15"
+                          stroke="#D7D7D7"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_492_13580">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div className="one-choose-setting">
+                    <span>2. Choose Diamonds</span>
+                  </div>
+                  <div className="svg-icn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_492_13575)">
+                        <path
+                          d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                          fill="#310F4C"
+                          stroke="#734E90"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M8.25 12H15.75"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.75 9L15.75 12L12.75 15"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_492_13575">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div className="one-choose-setting">
+                    <span>3. Complete Ring </span>
+                  </div>
                 </div>
-            <div className="one-choose-setting">
-              <span>2. Choose Diamonds</span>
-            </div>
-            <div className="svg-icn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_492_13575)">
-                  <path
-                    d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
-                    fill="#310F4C"
-                    stroke="#734E90"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M8.25 12H15.75"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M12.75 9L15.75 12L12.75 15"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_492_13575">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-            <div className="one-choose-setting">
-              <span>3. Complete Ring </span>
-            </div>
-          </div>
-               
               </div>
               {/* ====================create your ring end */}
               <div className="sticky-inner-main">

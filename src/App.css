@@ -795,9 +795,9 @@ section.AnniversaryRing-main .contant-bar p {
 .ring-choose-setting .svg-icn {
   display: inline-flex;
 }
-.ShopDiamondCotegory .column-width {
-  width: calc(100% / 5 - 5px);
-  padding: 0;
+.Anniversary.Rings .column-width, .ShopDiamondCotegory .column-width{
+  width: calc(100% / 5 - 6px) !important;
+  padding: 0 !important;
 }
 .menRings .container {
   background: #fff;
@@ -813,16 +813,7 @@ section.AnniversaryRing-main .contant-bar p {
   background: transparent;
   color: #1b1818;
 }
-.WeddingCollection {
-  padding: 0 !important;
-  background: none !important;
-}
-.WeddingCollection .ring-grid-sec .grid-wrapper-bar {
-  width: calc(33% - 10px);
-}
-.WeddingCollection .grid-wrapper-bar .img-bar img {
-  max-height: 100%;
-}
+
 .details-page .Diamond-Original > a {
   width: 235px;
   padding: 10px 27px;
@@ -830,4 +821,516 @@ section.AnniversaryRing-main .contant-bar p {
 }
 .details-page .Diamond-Original > a:hover {
   border: 2px solid #734e90;
+}
+/* =======================sahil sir============== */
+
+
+.header-contact-us a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #310F4C;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header nav.nav {
+  margin-top: 60px;
+  background-color: #f6f6f6;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.celebrate-inner {
+	height: 478px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right;
+	background-color: #dfdee0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 60px;
+}
+.celebrate-content {
+  max-width: 502px;
+}
+.celebrate-content p {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.70);
+  display: block;
+  max-width: 380px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  line-height: 33.4px;
+}
+.celebrate-content a.see-btn {
+  border: 1px solid #000;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+  display: inline-block;
+}
+
+/****/
+
+
+.love-right-content h4 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  color: #FFF;
+  line-height: 22.4px;
+  font-family: Montserrat;
+}
+.love-right-content h3 {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 78.4px;
+  color: #FFF;
+  margin-top: 10px;
+}
+.love-right-content p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: #FFF;
+  line-height: 22.4px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.love-right-content a.explore {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: #FFF;
+  line-height: 22.4px;
+  padding: 16px 24px;
+  border-radius: 5px;
+  border: 1px solid #FFF;
+  display: inline-block;
+}
+
+
+.loves-inner {
+  height: auto;
+  background-color: #1F2020;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 68px 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.loves-inner::before {
+	content: "";
+	background-color: #1F2020;
+	width: 41%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	filter: blur(50px);
+}
+
+
+.loves-inner .love-left-image {
+  width: 42%;
+}
+.love-right-content {
+  text-align: center;
+  width: 58%;
+}
+.love-left-image img {
+  width: 100%;
+  max-width: 435px;
+}
+
+.common-row.banner .slick-dots li button::before {
+  display: none;
+}
+
+.common-row.banner .slick-dots li button {
+  width: 13px;
+  height: 13px;
+  background: rgba(49, 15, 76, 0.20);
+  padding: 0;
+  border-radius: 50%;
+}
+.common-row.banner .slick-dots li {
+  margin: 6px 6px;
+  width: auto;
+  height: auto;
+}
+.common-row.banner .slick-dots li.slick-active button {
+  background: #310F4C;
+}
+
+.ShopDiamondShape {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.ShopDiamondShape-img-text .own-ring-white img {
+  width: 100%;
+  max-width: 53px;
+}
+.own-ring-white {
+  border-radius: 4.493px;
+  background: #FFF;
+  width: 100%;
+  height: 113px;
+  border: 0px solid #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ShopDiamondShape .ShopDiamondShape-img-text {
+	width: calc(100% / 10 - 0px);
+	padding: 0;
+}
+.ShopDiamondShape .ShopDiamondShape-img-text:not(:last-child) {
+  border-right: 7px solid #f6f6f6;
+}
+.ShopDiamondShape div.flex {
+  margin-top: 35px;
+}
+.ShopDiamondShape .ShopDiamondShape-img-text span {
+  padding-top: 0;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  color: #000;
+  margin-top: 22px;
+  display: block;
+}
+
+
+section.see-products-main .common-row.see-products {
+	column-gap: 0;
+}
+section.see-products-main .see-products-img {
+  width: calc(100% / 4);
+  position: relative;
+}
+section.see-products-main .see-products-img:not(:last-child) {
+  border-right: 5px solid transparent;
+}
+section.see-products-main .see-products-img > img {
+  min-height: 240px;
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
+}
+.common-row.see-products .See-Products {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 30px 30px;
+}
+.common-row.see-products .See-Products .heading {
+  font-size: 18.909px;
+  font-style: normal;
+  font-weight: 400;
+  color: #FFF;
+  border-bottom: 0;
+  padding: 0;
+}
+.common-row.see-products .See-Products .see-more {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  color: #FFF;
+  font-family: Montserrat;
+}
+
+.ShopCategory.ShopDiamondCotegory div.flex {
+  margin-top: 50px;
+}
+.ShopCategory.ShopDiamondCotegory {
+	padding-top: 40px;
+	padding-bottom: 60px;
+}
+
+.ShopDiamondCotegory .column-width h4 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  color: #000;
+  font-family: Montserrat;
+  padding-top: 20px;
+}
+.ShopDiamondCotegory .column-width .ShopCategory-img {
+  border-radius: 5px;
+  background: #FFF;
+  height: 234px;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ShopCategory.ShopDiamondCotegory div.flex {
+  margin-top: 50px;
+  gap: 7px;
+  justify-content: inherit;
+}
+.ShopCategory.ShopDiamondCotegory div.flex .column-width {
+  width: calc(100% / 5 - 6px);
+}
+
+
+
+.menRings.Bridal-Jewellery .menRings-main {
+  justify-content: inherit;
+  align-items: inherit;
+}
+.menRings.Bridal-Jewellery .menRings-main .menRings-text {
+  width: 53%;
+  padding: 83px 74px 69px 52px; border-radius: 0px 5px 5px 0;
+  background-color:#fff;
+} 
+.menRings.Bridal-Jewellery .menRings-main .menRings-img {
+  width: 47%;
+}
+.menRings.Bridal-Jewellery .menRings-main .menRings-img img {
+  border-radius: 5px 0px 0px 5px;
+  max-height: inherit;
+  height: 100%; object-fit: cover;
+  
+}
+
+.menRings.Bridal-Jewellery .menRings-main .menRings-text h2 {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+}
+.menRings.Bridal-Jewellery .menRings-main .menRings-text p {
+  font-size: 20px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+.menRings.Bridal-Jewellery .menRings-main .menRings-text a.button {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: #1B1818;
+  padding: 16px 24px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.ShopCategory.ShopDiamondCotegory.Anniversary .column-width h4 {
+  font-weight: 700;
+  font-size: 15px;
+  display: block;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+.ShopCategory.ShopDiamondCotegory.Anniversary div.flex .discover-collection a.button {
+  border-radius: 5px;
+  border: 1px solid #000;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+  background-color: transparent;
+  line-height: normal;
+}
+.ShopCategory.ShopDiamondCotegory.Anniversary div.flex .discover-collection {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+.ShopCategory.ShopDiamondCotegory.Anniversary.Rings {
+  padding-bottom: 80px;
+}
+.ShopCategory.Anniversary h3 {
+  color: #310F4C;
+}
+
+
+.own-engagment .grid-wrapper-bar .img-bar img {
+	height: 350px;
+	max-height: 350px;
+	min-height: inherit;
+	border-radius: 5px;
+}
+section.own-engagment .inner-own-eng .ring-grid-sec .grid-wrapper-bar {
+	width: calc(100% / 3 - 34px);
+}
+section.own-engagment .inner-own-eng .ring-grid-sec {
+	justify-content: inherit;
+	gap: 50px;
+}
+
+.grid-wrapper-bar .contant-bar {
+	margin-top: 26px;
+}
+.grid-wrapper-bar .contant-bar h5 {
+	font-size: 21px;
+	font-style: normal;
+	font-weight: 700;
+	color: #000;
+	font-family: Montserrat;
+	line-height: normal;
+}
+
+.menRings .container {
+	background: transparent;
+}
+
+
+.EngagementBridal-main .flex.common-row.EngagementBridal {
+	background-color: transparent;
+	justify-content: inherit;
+	align-items: inherit;
+}
+.EngagementBridal-main .flex.common-row.EngagementBridal .EngagementBridal-text {
+	background-color: #fff;
+	padding: 62px 84px 62px 52px;
+	border-radius: 5px 0 0px 5px;
+	width: 53%;
+}
+.EngagementBridal-main .flex.common-row.EngagementBridal .EngagementBridal-img {
+	width: 47%;
+}
+.EngagementBridal-main .flex.common-row.EngagementBridal .EngagementBridal-img img {
+  border-radius: 0 5px 5px 0px; max-height: inherit;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.EngagementBridal-main .EngagementBridal-text .button {
+	padding: 16px 24px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	color: #1B1818;
+	line-height: normal;
+}
+.EngagementBridal-main .EngagementBridal-text p {
+	padding-top: 30px;
+	padding-bottom: 35px;
+}
+section.own-engagment .inner-own-eng .ring-grid-sec {
+  margin-bottom: 50px;
+}
+
+
+.flex.common-row.EngagementBridal-2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: inherit;
+  align-items: flex-end;
+}
+
+.flex.common-row.EngagementBridal-2 .EngagementBridal-2-img {
+	width: 32%;
+}
+.flex.common-row.EngagementBridal-2 .EngagementBridal-2-img.text {
+	width: 36%;
+	padding: 0 63px;
+}
+.flex.common-row.EngagementBridal-2 .EngagementBridal-2-img.text p {
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 200;
+	color: #000;
+}
+.flex.common-row.EngagementBridal-2 .EngagementBridal-2-img.text span {
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 400;
+	color: #000;
+	line-height: normal;
+	display: block;
+	padding: 45px 0; font-family: Montserrat;
+} 
+.flex.common-row.EngagementBridal-2 .EngagementBridal-2-img.text a.button {
+	padding: 15px 20px;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	color: #FFF;
+	border-radius: 5px;
+	background: #310F4C;
+}
+.EngagementBridal-2-img img {
+  border-radius: 5px;
+}
+
+
+
+.AnniversaryRing-main.own-engagment.education {
+  padding-top: 45px !important;
+  padding-bottom: 45px;
+}
+.AnniversaryRing-main.own-engagment.education .ring-grid-sec {
+  gap: 10px;
+  margin-bottom: 0;
+}
+.AnniversaryRing-main.own-engagment.education .ring-grid-sec .grid-wrapper-bar {
+  width: calc(100% / 2 - 5px);
+}
+.AnniversaryRing-main.own-engagment.education .grid-wrapper-bar .img-bar img {
+  border-radius: 0;
+  height: 370px;
+  max-height: 370px;
+}
+
+.AnniversaryRing-main.own-engagment.education .grid-wrapper-bar .contant-bar p {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	color: #727272;
+	line-height: 22.4px;
+	display: block;
+	margin-top: 15px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.AnniversaryRing-main.own-engagment.education .grid-wrapper-bar .contant-bar a {
+	padding: 12px 48px;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	color: #1B1818;
+	line-height: normal;
+	border-radius: 5px;
+	border: 1px solid #000;
+}
+.AnniversaryRing-main.own-engagment.education .heading-text span {
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #310F4C;
+  font-family: Montserrat;
+  letter-spacing: 1.45px;
+  font-size: 14.5px;
+  margin-top: 20px;
 }
