@@ -240,7 +240,7 @@ export const ChooseGemstones = () => {
     dots: false,
     infinite: true,
     speed: 700,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,

@@ -817,11 +817,11 @@ export const ChooseDiamonds = () => {
                       <Link
                         to="javascript:void(0)"
                         onClick={() => handleShapeClick(styleItem?.shape)}
-                        className={`style-active-common ${
+                        className={` ${
                           shapeDataSlider.includes(styleItem?.shape) ||
                           menuShapeNames === styleItem?.shape ||
                           menuShapeName === styleItem?.shape
-                            ? "active"
+                            ? "style-active-common"
                             : ""
                         }`}
                         key={styleItem.slug} // Add a unique key for each item in the map function

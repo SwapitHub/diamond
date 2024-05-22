@@ -31,7 +31,7 @@ export const ShopDiamondShape = () => {
                 <>
                   <div className="ShopDiamondShape-img-text">
                     <Link to={`/engagement-rings/settings?shape=${shapeItem.shape}`}>
-                      <div>
+                      <div className="shop-white-icon">
                       <img src={shapeItem.icon} alt="" />
 
                       </div>

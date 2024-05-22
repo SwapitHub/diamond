@@ -442,10 +442,10 @@ nav.mobile-nav {
   width: 160px;
 }
 
-.ShopDiamondShape {
+/*.ShopDiamondShape {
   padding-bottom: 90px;
 }
-
+*/
 .MostLoved {
   padding-bottom: 65px;
   display: block;
@@ -2339,8 +2339,7 @@ a.all-card-four-colors.active {
   max-width: 68%;
 }
 
-.shop-by-shape-page .shape-main > span {
-  padding-bottom: 20px;
+.shop-by-shape-page .shape-main > span {  
   font-weight: 600;
   font-size: 14px;
 }
@@ -6112,8 +6111,8 @@ span#title_price {
 .right-product-content h4.heading-four {
   margin-bottom: 15px;
   padding-bottom: 7px;
+  font-size: 25px;
 }
-
 .social-icons ul {
   display: flex;
   flex-wrap: wrap;
@@ -7765,8 +7764,11 @@ li.similar-span.similar-img {
   margin-bottom: 0;
   padding-bottom: 0px;
   font-size: 14px;
+  color: #000;
 }
-
+.seleted-items-purchage h4.media-heading {
+  font-size: 20px;
+}
 .custom-bg-right ul li > p {
   font-size: small;
 }

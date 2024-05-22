@@ -1030,8 +1030,20 @@ section.AnniversaryRing-main .contant-bar p {
   margin-top: 22px;
   display: block;
 }
-
-
+.shop-white-icon {
+  width: 114px;
+  height: 112px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.shop-white-icon img {
+  width: 100%;
+  max-width: 89px;
+  display: block;
+  margin: 0 auto;
+}
 section.see-products-main .common-row.see-products {
 	column-gap: 0;
 }
@@ -1509,7 +1521,7 @@ section.own-engagment .inner-own-eng .ring-grid-sec {
 .choose-setting-pages-main .shape-main .diamond-image-slider img {
   padding: 0;
   border: 0;
-  background-color: transparent;
+  background-color: transparent; max-width: 70px;     width: 100%;
 }
 
 .shop-by-shape-style .shop-style-text, .shape-main .shape-text {
@@ -1560,4 +1572,8 @@ section.own-engagment .inner-own-eng .ring-grid-sec {
   line-height: normal;
   color: #000;
   padding-top: 15.4px;
+}
+
+.details-page p {
+  color: #000;
 }
