@@ -1349,215 +1349,152 @@ section.own-engagment .inner-own-eng .ring-grid-sec {
   font-size: 14.5px;
   margin-top: 20px;
 }
-/**21-05-24**/
 
-.main-content .white-wrapper .lab-diamond-btn {
-  border: 1px solid #E4E4E4;
-  border-radius: 30px;
-  padding: 10px 25px;
-  margin-bottom: 38px;
+.detail-price-main {
+	width: 100%;
+	max-width: 616px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
 }
-.main-content .white-wrapper .lab-diamond-btn .shop-by-common a {
-  padding: 0;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  color: #310F4C;
-}
-.main-content .white-wrapper .lab-diamond-btn .shop-by-common.active a , .gemstone-main .gemstone-Active a{
-	font-weight: 800 !important;
-}
-.main-content .white-wrapper .lab-diamond-btn .shop-by-common:not(:last-child) a::after {
-  width: 2px;
-  height: 20px;
-  top: 0;
-}
-.main-content .white-wrapper .lab-diamond-btn .shop-by-common.shop-by-shape {
-  padding-left: 10px;
-}
-
-
-.shop-by-page-common .shop-style-img {
-	width: 129px;
-	height: 129px;
-	background: #FFF;
-	border-radius: 50%;
+.detail-price-main .detail-col {
+	width: calc(100% / 2 - 8px);
+	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;margin: 0 auto;
-  border: 2.2px solid transparent;
 }
-.shop-by-page-common .shop-style-img img {
-  height: auto;
-  background-color: transparent;
-  border: 0 !important;
-  padding: 15px;
-  border-radius: 0;
-  margin: 0;
-  width: auto;
-  object-fit: inherit;
+.detail-ring-image img {
+	width: 100%;
+}.detail-col.white {
+	background-color: #fff;
+	padding: 36px 38px;
+	box-sizing: border-box;
 }
-.shop-by-page-common.shop-by-shape-style {
-  max-width: 72%;
+.detail-ring-image.ring img {
+  max-width: 216px;
+  display: block;
+  margin: 0 auto;
 }
 
-.shop-by-page-common .shop-style-text {
-  padding-top: 17.6px;
+
+.detail-content-main > h4 {
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 28.908px;
+	color: #000;
 }
-.shop-by-page-common .shop-style-text span {
-  font-size: 17.6px;
+.detail-content-list {
+	margin-top: 40px;
+	display: block;
+}
+.detail-content-list ul {
+	list-style: none;
+}
+.detail-content-list ul li {
+  font-size: 15px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   color: #000;
-}
-
-.shop-by-page-common .style-active-common  .shop-style-img , a.style-active-common.active{
-	border-color: #310F4C;
-}
-.shop-by-page-common  .style-active-common .shop-style-text span {
-  color: #310F4C;
-}
-
-.shop-by-page-common.Bridal-Sets-Only-setting-style {
-	max-width: 100%;
-}
-
-.shop-by-page-common.Bridal-Sets-Only-setting-style .shop-style-text {
-  padding-top: 14.3px;
-}
-.shop-by-page-common.Bridal-Sets-Only-setting-style .shop-style-img {
-  width: 101px;
-  height: 101px;
-}
-.shop-by-page-common .corusel-diamond {
-  max-width: 100%;
+  line-height: 24.09px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 19px;
+  margin-bottom: 16px;
+}
+.detail-content-list ul li span {
+  font-weight: 700;
+}
+.detail-content-list ul li:last-child {
+  margin-bottom: 0;
+}
+.protect-purchase-main {
+	padding: 30px 38px;
+	background-color: #fff;
+	width: 100%;
+	border-radius: 5px;
 }
 
 
-
-
-
-.shop-by-page-common .corusel-diamond .check-text {
-  display: flex;
-  flex-direction: row-reverse;
+.protect-content {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
 }
-.shop-by-page-common .corusel-diamond .check-text span {
-  font-size: 15.735px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: #000;
+.protect-content .pro-left {
+	width: 60%;
 }
-.shop-by-page-common .corusel-diamond .check-text .corusel-diamond-checkbox {
-  margin-left: 0;
-  margin-right: 8.8px;
+.protect-content .pro-right {
+	width: 40%;
+	text-align: right;
 }
-.shop-by-page-common .corusel-diamond .check-text .corusel-diamond-checkbox .form-group-diamond label::before {
-  border-radius: 4.917px;
-  background: #D9D9D9;
-}
-.shop-by-page-common .corusel-diamond .corusel-diamond-heading, 
-.shop-by-shape-page .shop-by-metal-page .metal-variants .metal-text, .choose-setting-pages-main .shape-main > span {
-	font-size: 15.4px;
+.protect-content h4 {
+	font-size: 18px;
 	font-style: normal;
 	font-weight: 800;
-	line-height: normal;
+	line-height: 27px;
 	color: #000;
+	margin-bottom: 5px;
 }
-.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider {
-  padding-left: 16.5px;
-  padding-right: 16.5px;
-}
-.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider .slick-arrow.slick-prev, .choose-setting-pages-main .shape-main .slick-slider .slick-arrow.slick-prev {
-  left: 0;
-}
-.choose-setting-pages-main .style-main .shop-by-shape-style .slick-slider .slick-arrow.slick-next, .choose-setting-pages-main .shape-main .slick-slider .slick-arrow.slick-next {
-  right: 0;
-}
-
-.choose-setting-pages-main .shape-main > span {
-	margin-top: 10px;
-	display: block;
-	margin-bottom: 19px;
-	padding-bottom: 0;
-}
-.choose-setting-pages-main .shape-main {
-  width: 50%;
-  padding: 0;
-}
-.choose-setting-pages-main .shape-main .slick-slider {
-  padding-left: 16.5px;
-  padding-right: 16.5px;
-}
-.choose-setting-pages-main .shape-main .diamond-image-slider {
-  width: 101px;
-  height: 101px;
-  background: #FFF;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-.choose-setting-pages-main .shape-main .diamond-image-slider img {
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-.shop-by-shape-style .shop-style-text, .shape-main .shape-text {
-	font-size: 17.6px;
+.protect-content p {
+	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
+	line-height: 27px;
 	color: #000;
 }
-.choose-setting-pages-main .shape-main .shape-text {
-  padding-top: 14.3px;
-}
-.choose-setting-pages-main .style-main {
-  padding-right: 6px;
-}
-
-.choose-setting-pages-main .shape-main {
-	padding-left: 6px;
+.protect-content a.learn {
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27px;
+	color: #000;
+	text-decoration: none;
 }
 
-
-.shop-by-shape-page .shop-by-metal-page {
-	padding-left: 0;
+.protect-check-list ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 21px;
+	gap: 18px;
+}
+.protect-check-list ul li {
+	width: calc(100% / 4 - 14px);
+	text-align: center;
+	box-sizing: border-box;
+}
+.protect-check-list ul li label {
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27px;
+	color: #000;
+	border-radius: 10px;
+	background: #F6F6F6;
+	display: flex;
 	width: 100%;
-	padding-top: 0;
-	max-width: 490px;
-	margin-left: auto;
-	margin-right: auto; margin-top: 37px;
+	padding: 16px 10px;
+	min-height: 86px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	border: 3px solid transparent;
+	height: 100%;
 }
-.metal-variant-list {
-	gap: 10px;
-}
-.metal-variant-list .shop-by-metal-color {
-	width: calc(100% / 4 - 8px);
-	padding-bottom: 0;
-}
-.metal-variant-list .shop-by-metal-color a[type="button"] {
-  width: 113px;
-  height: 113px;
-  border: 22px solid #fff;
+.protect-check-list ul li label b {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 0;
 }
-.shop-by-metal-color-name {
-  font-size: 17.6px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: #000;
-  padding-top: 15.4px;
+.protect-check-list ul li input[type="checkbox"] {
+  display: none;
+}
+.protect-check-list ul li input[type="checkbox"]:checked + label {
+  border-color: #734E90;
+  color: #734E90;
 }

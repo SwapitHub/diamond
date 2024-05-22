@@ -24,7 +24,7 @@ export const AnniversaryRingFeatured = () => {
                   Discover why a Graff diamond engagement ring is the ultimate
                   expression of your love and commitment.
                 </p>
-                <Link to="engagement-rings/start-with-a-setting">Discover</Link>
+                <Link to="/engagement-rings/start-with-a-setting">Discover</Link>
               </div>
             </div>
             <div className="grid-wrapper-bar">
@@ -37,7 +37,7 @@ export const AnniversaryRingFeatured = () => {
                  With a legacy of cutting and polishing some of history’s greatest gems, discover why our diamonds are considered the finest in the world.
 
                 </p>
-                <Link to="engagement-rings/start-with-a-setting">Discover</Link>
+                <Link to="/engagement-rings/start-with-a-diamond">Discover</Link>
               </div>
             </div>
           </div>
