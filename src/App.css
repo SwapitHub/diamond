@@ -1561,3 +1561,115 @@ section.own-engagment .inner-own-eng .ring-grid-sec {
   color: #000;
   padding-top: 15.4px;
 }
+.best-seller-main {
+  border-radius: 10px;
+  background: #FFF;
+  padding: 14px 28px 14px 10px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 24px; align-items: center;
+}
+.best-seller-main > span {
+  width: 61%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  color: #310F4C;
+  text-align: right;
+  display: block;
+  line-height: normal;
+}
+.best-seller-main > .best-seller {
+  width: 39%;
+}
+.best-seller-main > .best-seller form label {
+  margin-right: 25px;
+  width: auto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #000;
+}
+.best-seller-main > .best-seller form .css-b62m3t-container {
+  min-width: inherit;
+}
+.best-seller-main > .best-seller form {
+  display: flex;
+  align-items: center;
+  flex-wrap: inherit;
+  justify-content: flex-end;
+}
+.best-seller-main > .best-seller form .css-b62m3t-container .css-13cymwt-control .css-1fdsijx-ValueContainer {
+  padding: 0;
+}
+.best-seller-main > .best-seller form .css-13cymwt-control {
+  border: 0;
+  min-height: inherit;
+  width: auto;
+}
+.best-seller-main > .best-seller form .css-b62m3t-container .css-13cymwt-control .css-1fdsijx-ValueContainer > div {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #000;
+}
+.best-seller-main > .best-seller form .css-13cymwt-control .css-1hb7zxy-IndicatorsContainer .css-1u9des2-indicatorSeparator {
+  display: none;
+}
+.best-seller-main > .best-seller form .css-13cymwt-control .css-1hb7zxy-IndicatorsContainer .css-1xc3v61-indicatorContainer {
+  padding: 0;
+}
+
+
+.resultdata.setings-Page-img {
+  gap: 10px;
+}
+
+
+.resultdata.setings-Page-img .all-pages-data {
+  margin: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #F6F6F6;
+  width: calc(100% / 4 - 8px);
+  padding: 0 20px 30px;
+}
+
+.product-main-img .common-img {
+  width: 100%;
+
+  padding: 31px 0;
+}
+
+.heart-icon svg {
+  position: absolute;
+  top: 10px;
+  right: 11px;
+  font-size: 30px;
+  color: #616161; z-index: 11;
+}
+.resultdata.all-pages-data.active .all-pages-data .metal-name, .metal-name-item-name, .metal-name-by-default {
+	font-size: 22.666px;
+	font-style: normal;
+	font-weight: 400;
+	color: #000;
+	line-height: 31.28px; margin-bottom: 13px;
+}
+
+.product-price {
+	font-size: 22.666px;
+	font-style: normal;
+	font-weight: 400;
+	color: #BCBCBC;
+	line-height: normal;
+}
+.all-card-four-color > a {
+	margin: 0 4px 12px;
+}
+.resultdata.all-pages-data .all-card-four-colors ~ div {
+  padding: 0;
+}
