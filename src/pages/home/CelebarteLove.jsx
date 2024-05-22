@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DOMPurify from "dompurify";
+import { Link } from "react-router-dom";
 
 
 export const CelebarteLove = () => {
@@ -17,7 +18,7 @@ export const CelebarteLove = () => {
                         <div className="celebrate-content">
                             <h3>Celebrate Love with Timeless Elegance!</h3>
                             <p>Explore Our Stunning Collection and Find Your Perfect Piece Today!</p>
-                            <a className="see-btn btn" href="#">See Products {`>`} </a>
+                            <Link className="see-btn btn" to="/engagement-rings/start-with-a-setting">See Products {`>`} </Link>
                         </div>
 
 

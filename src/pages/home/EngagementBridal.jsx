@@ -17,7 +17,7 @@ export const EngagementBridal = () => {
               Graff has been synonymous with the finest diamonds in the world
               for more than 60 years.
             </p>
-            <Link className="button" to="#">
+            <Link className="button" to="/engagement-rings/start-with-a-setting">
               Discover Collections
             </Link>
           </div>
