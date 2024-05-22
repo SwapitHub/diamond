@@ -542,7 +542,7 @@ export const DetailRingProduct = () => {
           {stock_num !== null ? (
              <div className="ring-choose-setting flex">
              <div className="one-choose-setting">
-               <span>1. Choose Diamonds</span>
+               <Link to="/engagement-rings/start-with-a-diamond">1. Choose Diamonds</Link>
              </div>
              <div className="svg-icn">
                <svg
@@ -583,7 +583,7 @@ export const DetailRingProduct = () => {
                </svg>
              </div>
              <div className="one-choose-setting">
-               <span>2. Choose Setting</span>
+               <Link to="/engagement-rings/start-with-a-setting">2. Choose Rings</Link>
              </div>
              <div className="svg-icn">
                <svg
@@ -635,7 +635,7 @@ export const DetailRingProduct = () => {
                   {/* ====================create your ring start */}
               <div className="ring-choose-setting flex">
                 <div className="one-choose-setting">
-                  <span>1. Choose Setting</span>
+                  <Link to="/engagement-rings/start-with-a-setting">1. Choose Rings</Link>
                 </div>
                 <div className="svg-icn">
                   <svg
@@ -677,7 +677,7 @@ export const DetailRingProduct = () => {
                   </svg>
                 </div>
                 <div className="one-choose-setting">
-                  <span>2. Choose Diamonds</span>
+                  <Link to="/engagement-rings/start-with-a-diamond">2. Choose Diamonds</Link>
                 </div>
                 <div className="svg-icn">
                   <svg

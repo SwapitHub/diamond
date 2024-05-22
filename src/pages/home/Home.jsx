@@ -23,16 +23,16 @@ import LoveBrilliance from "./LoveBrilliance";
 
 export const Home = () => {
   return (
-    <>
-      <div>
-        <Banner />
-        <ShopDiamondShape />
-        <SeeProducts />
-        <ShopDiamondCotegory />
-        <MenRings />
-        <AnniversaryRings />
-        <CelebarteLove />
-        <WeddingCollection />
+    <>    
+<div>
+<Banner/>
+  <ShopDiamondShape/>
+  <SeeProducts/>
+  <ShopDiamondCotegory/>
+  <MenRings/>
+<AnniversaryRings/>
+<CelebarteLove/>
+<WeddingCollection/>
 
         <EngagementBridal />
 

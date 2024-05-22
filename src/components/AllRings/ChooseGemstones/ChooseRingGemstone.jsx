@@ -590,7 +590,7 @@ export const ChooseRingGemstone = () => {
           {/* ====================create your ring start */}
           <div className="ring-choose-setting flex">
               <div className="one-choose-setting">
-              <span>1. Choose Gemstones</span>
+              <Link to="/engagement-rings/start-with-a-gemstone">1. Choose Gemstones</Link>
               </div>
               <div className="svg-icn">
                 <svg
@@ -631,7 +631,7 @@ export const ChooseRingGemstone = () => {
                 </svg>
               </div>
               <div className="one-choose-setting">
-                <span>2. Choose Setting</span>
+                <Link to="javscript:void(0)">2. Choose Rings</Link>
               </div>
               <div className="svg-icn">
                 <svg

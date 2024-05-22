@@ -588,7 +588,7 @@ export const FinalRing = () => {
               <div className="main-arrow-heading">
                 <div className="ring-choose-setting flex">
                   <div className="one-choose-setting">
-                    <span><Link to="">1. Choose Setting</Link></span>
+                    <Link to="/engagement-rings/start-with-a-setting">1. Choose Ring </Link>
                   </div>
                   <div className="svg-icn">
                     <svg
@@ -629,7 +629,7 @@ export const FinalRing = () => {
                     </svg>
                   </div>
                   <div className="one-choose-setting">
-                    <span>2. Choose Diamonds</span>
+                    <Link to="/engagement-rings/start-with-a-diamond">2. Choose Diamonds</Link>
                   </div>
                   <div className="svg-icn">
                     <svg

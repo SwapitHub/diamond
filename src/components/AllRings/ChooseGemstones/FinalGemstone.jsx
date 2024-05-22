@@ -581,7 +581,7 @@ export const FinalGemstone = () => {
               <div className="main-arrow-heading" key={diamondItem.id}>
               <div className="ring-choose-setting flex">
                   <div className="one-choose-setting">
-                    <span>1.  Gemstone</span>
+                    <Link to="/engagement-rings/start-with-a-gemstone">1. Choose Gemstone</Link>
                   </div>
                   <div className="svg-icn">
                     <svg
@@ -622,7 +622,7 @@ export const FinalGemstone = () => {
                     </svg>
                   </div>
                   <div className="one-choose-setting">
-                    <span>2. Ring</span>
+                    <Link to="/engagement-rings/start-with-a-setting">2. Choose Rings</Link>
                   </div>
                   <div className="svg-icn">
                     <svg

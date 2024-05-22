@@ -334,7 +334,7 @@ export const GemstonesDetail = () => {
          {/* ====================create your ring start */}
          <div className="ring-choose-setting flex">
                 <div className="one-choose-setting">
-                  <span>1. Choose Gemstone</span>
+                  <Link to="/engagement-rings/start-with-a-gemstone">1. Choose Gemstone</Link>
                 </div>
                 <div className="svg-icn">
                   <svg
@@ -376,7 +376,7 @@ export const GemstonesDetail = () => {
                   </svg>
                 </div>
                 <div className="one-choose-setting">
-                  <span>2. Choose Setting</span>
+                  <Link to="/engagement-rings/start-with-a-setting">2. Choose Rings</Link>
                 </div>
                 <div className="svg-icn">
                   <svg

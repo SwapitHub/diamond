@@ -58,7 +58,6 @@ line-height: 140%; /* 28px */
   font-weight: 400;
   line-height: 138%;
   text-transform: capitalize;
-  padding-top: 60px;
 }
 h2{
   color: #000;
@@ -122,7 +121,7 @@ nav a {
   color: #232323;
   font-size: 16px;
   letter-spacing: 0;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   display: inline-block;
 }
 
@@ -213,6 +212,8 @@ nav.nav > ul,
 nav.nav > ul {
   column-gap: 50px;
   justify-content: center;
+  position: relative;
+  z-index: 11;
 }
 
 nav.nav {
@@ -475,6 +476,10 @@ nav.mobile-nav {
 
 .ShopDiamondShape {
   display: block;
+}
+.home-page section.own-engagment.gemstone.WeddingCollection {
+  padding: 0;
+  background: none;
 }
 
 /* Shop diamonds by shape end */
@@ -1414,7 +1419,7 @@ line-height: normal;
 .Setting-Carat > a:hover,
 .Diamond-Original > a:hover,
 .Diamond-Original > a.active {
-  border: 2px solid #310f4c;
+  border: 2px solid #734e90;
 }
 
 .Setting-Carat {
@@ -1593,9 +1598,14 @@ footer.footer h4 {
 }
 
 .ftr-contact.flex > ul > h4 > a {
-  color: #232323;
   display: inline-block;
+  color: #310F4C;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
 ul.ftr-contact-form > h4 {
@@ -1606,12 +1616,31 @@ ul.ftr-contact-form > h4 {
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 28px;
-  color: #232323;
+  color: #310F4C;
+  font-weight: 500;
+  
+}
+ul.ftr-contact-form > p {
+  color: #310F4C;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
 }
 
 .copy-right {
   text-align: center;
   padding: 23px 0px;
+}
+.copy-right > p {
+  color: #000;
+  font-family: Rubik;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px;
+  text-transform: uppercase;
 }
 
 .ftr-desktop {
@@ -2303,8 +2332,7 @@ a.all-card-four-colors.active {
   display: block;
 }
 
-.shop-by-shape-page .shape-main {
-  /* display: flex; */
+.gemstone-main .shop-by-shape-page .shape-main {
   column-gap: 30px;
   margin: 0 auto;
   width: 100%;
@@ -2321,7 +2349,7 @@ a.all-card-four-colors.active {
   text-align: center;
 }
 
-.shop-by-shape-page .shape-main .shape img,
+/* .shop-by-shape-page .shape-main .shape img,
 .choose-diamonds .lab-grown-shape-icons .shop-style-img > img {
   border: 2px solid #0000;
   display: inline-block;
@@ -2332,7 +2360,7 @@ a.all-card-four-colors.active {
   padding: 10px;
   object-fit: contain;
   min-width: 60px;
-}
+} */
 
 .shop-style-text {
   padding-top: 10px;
@@ -2464,17 +2492,17 @@ a.style-active-common .shop-style-img img {
   display: inline-block;
 }
 
-.shop-by-metal-page {
+/* .shop-by-metal-page {
   column-gap: 35px;
   align-items: center;
   display: flex;
   padding-top: 30px;
-}
+} */
 
-.shop-by-shape-page .shape-main .shape-active img {
+/* .shop-by-shape-page .shape-main .shape-active img {
   border: 2px solid #310f4c;
   display: inline-block;
-}
+} */
 
 .shop-by-metal-page a.metal-color-active {
   border: 2px solid #310f4c;
@@ -3408,7 +3436,7 @@ span.mark {
 }
 
 .product-main-img .common-img {
-  width: 265px;
+  width: 282px;
   height: 265px;
 }
 
@@ -3464,7 +3492,6 @@ span.mark {
 
 .choose-setting-pages-main .style-main {
   width: 50%;
-  padding-bottom: 20px;
 }
 
 .shop-by-shape > a:after {
@@ -3803,7 +3830,9 @@ a.wish-list span {
   gap: 15px;
   padding-bottom: 40px;
 }
-
+.shipping-add .order-data > p {
+  font-size: 15px;
+}
 .order-data span svg {
   font-size: 24px;
 }
@@ -4056,7 +4085,7 @@ ul.acc-list li {
 
 .user-icon a:hover div#user-log {
   display: block;
-  z-index: 10;
+  z-index: 111;
   width: 320px;
 }
 
@@ -4472,7 +4501,7 @@ a.btn-custom,
 
 a.btn-custom:hover, .button:hover {
   color: #310f4c !important;
-  background: #e8e8e8;
+  background: #e8e8e8 !important;
 }
 
 a.btn-custom.bg-trans:hover,
@@ -4658,12 +4687,12 @@ span.step-counting {
 .shop-by-metal-page .shop-by-metal-color a {
   border-radius: 50%;
 }
-
+/* 
 .shop-by-shape-page .shop-by-metal-page {
   padding-left: 0;
   width: 40%;
   padding-top: 12px;
-}
+} */
 
 .metal-variants {
   width: 100%;
@@ -4680,12 +4709,12 @@ span.step-counting {
   flex-wrap: wrap;
 }
 
-.metal-variant-list .shop-by-metal-color {
+/* .metal-variant-list .shop-by-metal-color {
   width: 19%;
   padding-bottom: 20px;
   position: relative;
   text-align: center;
-}
+} */
 
 .metal-variant-list .shop-by-metal-color a > div {
   position: absolute;
@@ -4701,9 +4730,9 @@ span.step-counting {
   height: 50px;
 }
 
-.shop-by-shape-page .shape-main {
+/* .shop-by-shape-page .shape-main {
   padding: 30px 0 25px 0;
-}
+} */
 
 .corusel-diamond {
   display: flex;
@@ -4712,9 +4741,7 @@ span.step-counting {
   margin: 10px 0;
 }
 
-.shop-by-page-common.shop-by-shape-style {
-  max-width: 50%;
-}
+
 .singleProduct-text .title span {
   font-size: 16px;
 }
@@ -5186,7 +5213,7 @@ ul.king-shopping-list li {
 
 .bag-icon a:hover div#user-log {
   display: block;
-  z-index: 10;
+  z-index: 111;
   width: 330px;
   background-color: white;
   margin-top: 11px;
@@ -7034,7 +7061,7 @@ section.hintt-drop-popup {
   position: absolute;
   right: 0px;
   background: white;
-  z-index: 9;
+  z-index: 111;
 }
 
 .order-history-main ul li {
@@ -7832,14 +7859,16 @@ li.similar-span.similar-img {
   mix-blend-mode: multiply;
 }
 
-.sticky-right-column .right-product-content h4.heading-four {
+.sticky-right-column .right-product-content h5.heading-four {
   margin-bottom: 0;
   padding-bottom: 0px;
+  font-size: 18px;
 }
 
 .sticky-right-column .right-product-content p {
   margin-bottom: 0;
   padding-bottom: 0px;
+  font-size: 14px;
 }
 
 .custom-bg-right ul li > p {
@@ -8759,7 +8788,7 @@ a.transparent-btn {
 }
 .header-heart-icon a:hover div#user-log {
   display: block;
-  z-index: 10;
+  z-index: 111;
   width: 330px;
   background-color: white;
   margin-top: 11px;
@@ -9475,7 +9504,7 @@ section.new-popups {
 .shoping-car-page,
 section.gemstone-main {
   position: relative;
-  padding: 60px;
+  padding: 0 60px 60px;
 }
 
 .container.choose-diamonds > *,
