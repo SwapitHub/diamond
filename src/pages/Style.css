@@ -656,8 +656,8 @@ nav.mobile-nav {
 }
 
 .all-pages-data {
-  width: calc(100% / 4 - 20px);
-  margin: 10px;
+  /* width: calc(100% / 4 - 20px);
+  margin: 10px; */
   text-align: center;
   position: relative;
   box-shadow: 0px 0px 8px 2px #d3d3d3;
@@ -779,7 +779,7 @@ nav.mobile-nav {
   background: #fff;
   max-width: 100% !important;
   max-height: none !important;
-  padding: 31px;
+  /* padding: 31px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -789,13 +789,13 @@ nav.mobile-nav {
   text-align: center;
 }
 
-.heart-icon svg {
+/* .heart-icon svg {
   position: absolute;
   top: 5px;
   right: 8px;
   font-size: 20px;
   color: #616161;
-}
+} */
 
 /* BridalSets End */
 /* product UI style */
@@ -955,11 +955,11 @@ line-height: normal;
   padding-right: 25px;
 }
 
-.best-seller {
+/* .best-seller {
   position: static;
   right: 50px;
   padding-left: 20px;
-}
+} */
 
 .best-seller:hover .best-seller-drop-down {
   opacity: 1;
@@ -988,7 +988,7 @@ line-height: normal;
   top: 2px;
 }
 
-.best-seller-main {
+/* .best-seller-main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -998,7 +998,7 @@ line-height: normal;
   margin-top: 32px;
   align-items: center;
   gap: 15px;
-}
+} */
 
 .best-seller-drop-down {
   background: #fff;
@@ -2059,7 +2059,7 @@ section.lab-grown-diamonds ul {
 .resultdata.setings-Page-img {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 35px;
+  /* margin-top: 35px; */
   position: relative;
 }
 
@@ -2103,9 +2103,9 @@ section.lab-grown-diamonds ul {
   justify-content: center;
 }
 
-.all-card-four-color > a {
+/* .all-card-four-color > a {
   margin: 15px 6px 0;
-}
+} */
 
 .all-img2,
 .all-img3,
@@ -2192,10 +2192,10 @@ section.lab-grown-diamonds ul {
   display: inline-block;
 }
 
-.product-price {
+/* .product-price {
   font-size: 14px;
   color: #000;
-}
+} */
 
 .all-img1.img-1,
 .all-img1.img-2,
@@ -2540,14 +2540,14 @@ a.style-active-common .shop-style-img img {
   display: flex !important;
 }
 
-.resultdata.all-pages-data.active .all-pages-data .metal-name,
+/* .resultdata.all-pages-data.active .all-pages-data .metal-name,
 .metal-name-item-name,
 .metal-name-by-default {
   font-size: 14px;
   padding-top: 10px;
   color: #000;
   padding-bottom: 10px;
-}
+} */
 
 /* =========hover */
 .metal-name-item-name,
@@ -8499,7 +8499,7 @@ ul.product-list li iframe {
   width: 100%;
   height: 100%;
 }
-.best-seller label {
+/* .best-seller label {
   width: auto;
   margin-right: 15px;
 }
@@ -8509,18 +8509,18 @@ ul.product-list li iframe {
   background: #fff;
   border: none !important;
   min-width: 210px !important;
-}
+} */
 .best-seller .css-t3ipsp-control {
   width: auto;
   background: #fff;
 }
 
-.best-seller form {
+/* .best-seller form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
+} */
 .best-seller .css-t3ipsp-control:hover {
   border-color: none !important;
   box-shadow: none !important;
