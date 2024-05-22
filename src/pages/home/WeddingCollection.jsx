@@ -10,9 +10,9 @@ export const WeddingCollection = () => {
                     </div>
                     <div className="ring-grid-sec">
                         <div className="grid-wrapper-bar">
-                            <Link to="/gemstones/gemstone-shop-all?style=moissanite">
+                            <Link to="/engagement-rings/start-with-a-setting">
                                 <div className="img-bar">
-                                    <img src="/images/engement_ring.png" />
+                                    <img src="/images/engement_ring.png" alt=''/>
                                 </div>
                                 <div className="contant-bar">
                                     <h5>Engagement Rings</h5>
@@ -20,9 +20,9 @@ export const WeddingCollection = () => {
                             </Link>
                         </div>
                         <div className="grid-wrapper-bar">
-                            <Link to="/gemstones/gemstone-shop-all?style=sapphire">
+                            <Link to="#">
                                 <div className="img-bar">
-                                    <img src="/images/wedding_jwelary.png" />
+                                    <img src="/images/wedding_jwelary.png" alt=''/>
                                 </div>
                                 <div className="contant-bar">
                                     <h5>Wedding Jewerly</h5>
@@ -30,9 +30,9 @@ export const WeddingCollection = () => {
                             </Link>
                         </div>
                         <div className="grid-wrapper-bar">
-                            <Link to="/gemstones/gemstone-shop-all?style=morganite">
+                            <Link to="#">
                                 <div className="img-bar">
-                                    <img src="/images/wedding_collection.png" />
+                                    <img src="/images/wedding_collection.png" alt=''/>
                                 </div>
                                 <div className="contant-bar">
                                     <h5>wedding collection</h5>

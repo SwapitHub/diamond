@@ -313,7 +313,7 @@ nav.mobile-nav {
 }
 
 .content a {
-  overflow: hidden;
+  /* overflow: hidden; */
   display: none;
   max-height: 0;
   display: inline-block;
@@ -5388,17 +5388,63 @@ span.qty > span:last-child {
   padding: 0 15px 0 55px;
 }
 
-.order-box {
-  border: 1px solid #eaeaea;
-  padding: 15px;
+.last-update-order p {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-align: center;
+}
+
+.add-per-info p {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+}
+.add-per-info p span {
+  font-weight: 800;
 }
 
 .order-box h3 {
-  font-size: 16px !important;
-  margin: 10px 0;
-  text-align: center;
-  text-transform: capitalize;
   font-weight: normal;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 27px;
+}
+.order-box .order-para-checkout {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+.detail-content-list-checkout ul li {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  color: #000;
+  line-height: 24.09px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.detail-content-list-checkout ul li:first-child span {
+  font-weight: 700;
+}
+.order-box {
+  padding: 23px 21px;
+  background: #fff;
 }
 
 .table-count .row {
@@ -5465,13 +5511,25 @@ span.qty > span:last-child {
   padding: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  padding: 21px 166px;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .shipping-info h4 {
-  font-size: 16px;
-  margin: 10px 0;
-  text-transform: capitalize;
-  font-weight: normal;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shipping-info span {
+ font-size: 23px;
 }
 
 .ship-card {
@@ -5493,9 +5551,39 @@ span.qty > span:last-child {
 }
 
 .add-form-gift {
-  border: 1px solid #eaeaea;
-  padding: 15px;
   margin-bottom: 20px;
+  background: #fff;
+  padding: 16px 26px;
+}
+.add-form-gift .add-per-info {
+  display: flex;
+  justify-content: space-between;
+}
+.add-form-gift-message .add-per-info {
+  display: inline-flex;
+  padding: 16px 26px;
+  justify-content: center;
+  align-items: center;
+  gap: 133px;
+  background: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.add-form-gift-message .add-form {
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 16px 26px;
+}
+.add-form-gift-message .add-per-info p {
+  color: #734E90;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+}
+.add-form-gift-message .add-per-info span {
+  font-size: 32px;
 }
 
 .add-form-gift h3 {
@@ -5507,11 +5595,6 @@ span.qty > span:last-child {
   font-size: 27px;
   vertical-align: middle;
   margin-right: 10px;
-}
-
-.add-form {
-  margin-top: 10px;
-  padding-left: 37px;
 }
 
 .add-form input {
@@ -5563,10 +5646,31 @@ span.qty > span:last-child {
   accent-color: white;
 }
 
-.add-per-info {
-  position: relative;
+.add-form-gift-checkout .add-per-info {
   display: flex;
+  width: 524px;
+  padding: 19px 26px;
+  justify-content: space-between;
   align-items: center;
+  border-radius: 5px;
+  background: #734E90;
+}
+.add-form-gift-checkout p {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16.971px;
+}
+.add-form-gift-checkout span {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 27px;
+  text-transform: uppercase;
 }
 
 .shop-bag > h1 {
@@ -8669,7 +8773,7 @@ a.transparent-btn {
 }
 .add-form-gift .add-per-info svg:first-child {
   min-width: 30px;
-  margin-right: 10px;
+  
 }
 
 /* 29-02-2024 */
