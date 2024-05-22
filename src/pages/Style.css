@@ -5313,8 +5313,9 @@ span.qty > span:last-child {
 }
 
 .product-info-inner .product-info-left {
-  width: 75%;
+  /* width: 75%; */
   padding-right: 15px;
+  line-height: 2rem;
 }
 
 .product-info-inner .product-info-right {

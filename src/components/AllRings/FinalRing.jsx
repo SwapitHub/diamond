@@ -1179,7 +1179,7 @@ export const FinalRing = () => {
                               onClose={() => setOpen(false)}
                               position="center"
                             >
-                              <DropHint setOpen={setOpen} />
+                              <DropHint setOpen={setOpen} filterData={filterData} diamondItem={diamondItem} productColor={productColor}/>
                             </Popup>
                           </Link>
                         </li>

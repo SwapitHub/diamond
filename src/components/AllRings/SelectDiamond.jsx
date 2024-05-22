@@ -651,7 +651,7 @@ export const SelectDiamond = () => {
                                   onClose={() => setOpen(false)}
                                   position="center"
                                 >
-                                  <DropHint setOpen={setOpen} />
+                                  <DropHint setOpen={setOpen} diamond={item}/>
                                 </Popup>
                               </Link>
                             </li>
