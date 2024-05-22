@@ -241,8 +241,8 @@ const ChooseRingSetting = () => {
 
         if (scrollTop + clientHeight >= 0.7 * scrollHeight && !loading) {
           setLoading(true);
-          setPage((prev) => prev + 1);
           setTimeout(() => {
+            setPage((prev) => prev + 1);
             setLoading(false);
           }, 2000);
         }

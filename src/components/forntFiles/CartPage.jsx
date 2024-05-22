@@ -210,15 +210,7 @@ export const CartPage = () => {
 
   // =======remove to card
   useEffect(() => {
-    axios
-      .get(`${baseUrl}/remove-cartitem/${removeCartItem}`)
-      .then((res) => {
-        console.log("=====", res.data);
-        dispatch(productListCart());
-      })
-      .catch((error) => {
-        console.log("CSRF Token API Error:", error);
-      });
+   
   }, [removeCartItem]);
   // ==================
   // =======================
@@ -270,23 +262,11 @@ export const CartPage = () => {
       });
   }, []);
   // ========================end
-  useEffect(() => {
-    axios
-      .get(
-        "http://ec2-3-18-62-57.us-east-2.compute.amazonaws.com/admin/api/csrf-token"
-      )
-      .then((res) => {
-        setShapeData(res.data.csrf_token);
-      })
-      .catch((error) => {
-        console.log("CSRF Token API Error:", error);
-      });
-  }, []);
   // =============
   // =============
   useEffect(() => {
     axios
-      .get("${baseUrl}/metalcolor")
+      .get(`${baseUrl}/metalcolor`)
       .then((res) => {
         setMetalColor(res.data.data);
       })
@@ -311,45 +291,43 @@ export const CartPage = () => {
   //   });
   //   return total;
   // };
+  console.log(cartDetails);
+  const handleWishlist = async () => {
+    cartDetails.map((item) => {
+      
+        // Construct URL for API call
 
-  const handleWishlist = async (
-    product_type,
-    user_id,
-    gemstone_id,
-    gemstone_price,
-    ring_id,
-    ring_color,
-    img_sku,
-    ring_price,
-    diamond_id,
-    diamond_price,
-    ring_type,
-    ring_size
-  ) => {
-    try {
-      // Construct URL for API call
-      const apiUrl = `${baseUrl}/add_to_wishlist?user_id=${user_id}&gemstone_price=${gemstone_price}&gemstone_id=${gemstone_id}&product_type=${product_type}&ring_id=${ring_id}&ring_color=${ring_color}&img_sku=${img_sku}&ring_price=${ring_price}&diamond_id=${diamond_id}&diamond_price=${diamond_price}&ring_type=${ring_type}&ring_size=${ring_size}`;
-      // Make API call
-      console.log(apiUrl);
-      const response = await axios.get(apiUrl, {
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRF-TOKEN": shapeData,
-        },
-      });
+        const apiUrl = `${baseUrl}/add_to_wishlist?user_id=${item?.user_id}&gemstone_price=${item?.gemstone_price}&gemstone_id=${item?.gemstone_id}&product_type=${item?.product_type}&ring_id=${item?.ring_id}&ring_color=${item?.ring_color}&img_sku=${item?.img_sku}&ring_price=${item?.ring_price}&diamond_id=${item?.diamond_id}&diamond_price=${item?.diamond_price}&ring_type=${item?.ring_type}&ring_size=${item?.ring_size}`;
+        // Make API call
+        console.log(apiUrl);
+        const response = axios.get(apiUrl, {
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": shapeData,
+          },
+        });
 
-      if (response.status === 200) {
-        console.log("Wishlist item added successfully:", response.data.res);
-        dispatch(productList());
-      } else {
-        console.error(
-          "Error adding item to wishlist. Status:",
-          response.status
-        );
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
+        if (response.status === 200) {
+          console.log("Wishlist item added successfully:", response.data.res);
+          axios
+          .get(`${baseUrl}/remove-cartitem/${item?.id}`)
+          .then((res) => {
+            console.log("=====", res.data);
+            dispatch(productListCart());
+          })
+          .catch((error) => {
+            console.log("CSRF Token API Error:", error);
+          });
+          if(cartDetails[cartDetails.length-1] == cartDetails.slice(-1)){
+            dispatch(productList());
+          }
+        } else {
+          console.error(
+            "Error adding item to wishlist. Status:",
+            response.status
+          );
+        }
+    });
   };
 
   const handleRemoveItem = (itemId, ring_id) => {
@@ -1880,7 +1858,7 @@ export const CartPage = () => {
                   })}
                 </div>
 
-                <div className="shipping-info">
+                <div className="shipping-info"  onClick={()=>handleWishlist()}>
                   <h4>
                     Move to Wish List{" "}
                     <span>
